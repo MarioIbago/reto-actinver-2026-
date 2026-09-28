@@ -210,8 +210,21 @@ Study:
 
 Do not reuse crypto-specific assumptions.
 
+### TradingView charting libraries — official comparison
+https://es.tradingview.com/free-charting-libraries/
+
+Official comparison and licensing note:
+- Lightweight Charts: open source, Apache 2.0, suitable for personal projects.
+- Advanced Charts: proprietary; not offered for personal/hobby/study/test use.
+- Trading Platform: proprietary, oriented to broker integrations/direct trading.
+
+Project decision:
+**Lightweight Charts is the preferred M9 candidate.**
+Advanced Charts and Trading Platform are STUDY ONLY unless usage/licensing conditions change.
+
 ### TradingView Lightweight Charts
 https://github.com/tradingview/lightweight-charts
+https://es.tradingview.com/lightweight-charts/
 
 High-performance financial charting library.
 
