@@ -1,16 +1,71 @@
-# Reto Actinver 2026 — Research & Tournament System
+# Reto Actinver 2026 — Quant Research & Tournament System
 
-Repositorio maestro para construir, validar y operar un sistema cuantitativo orientado al **Reto Actinver 2026**.
+Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado actual: **solo arquitectura + system prompts por fase**. No se han implementado todavía modelos, backtests, feeds de noticias ni automatización operativa.
+> Estado: arquitectura + prompts + source material. M0 es la fase activa; el código financiero todavía no debe existir.
 
-## Misión
+## Objetivo
 
-Construir un sistema reproducible que transforme datos de mercado, eventos, noticias e investigación cuantitativa en decisiones de portafolio para el simulador del Reto Actinver, manteniendo la ejecución final dentro del portal como una acción manual del participante.
+No buscamos un portafolio tradicional ni un bot de picks.
 
-La función objetivo final no es simplemente maximizar Sharpe o retorno promedio. El sistema deberá, en su fase de torneo, estudiar cómo maximizar la probabilidad de terminar en el primer lugar dadas las reglas, el capital, el ranking, el tiempo restante y las distribuciones de retorno estimadas.
+El objetivo final es construir evidencia suficiente para alimentar un Tournament Brain que estudie:
 
-## Orden de construcción
+```text
+maximize P(final_rank = 1)
+```
+
+bajo reglas reales, costos, ejecución, liquidez, ranking y tiempo restante.
+
+## Idea central
+
+```text
+RESEARCH / RULES / MARKET DATA / NEWS
+                ↓
+        falsifiable hypotheses
+                ↓
+              CODEX
+                ↓
+             GITHUB
+                ↓
+         GITHUB ACTIONS
+                ↓
+      PYTHON / STATS / ML / MC
+                ↓
+          VALIDATION
+        ↙             ↘
+     REJECT         PROMOTE
+                       ↓
+                 ALPHA ENGINE
+                       ↓
+                RISK/CONSTRAINTS
+                       ↓
+                TOURNAMENT BRAIN
+                       ↓
+                   TRADE SHEET
+                       ↓
+                     HUMAN
+                       ↓
+                    ACTINVER
+```
+
+## Read first
+
+Owner:
+1. `docs/START_HERE.md`
+2. `MASTER_PLAN.md`
+
+Codex:
+1. `README.md`
+2. `MASTER_PLAN.md`
+3. `AGENTS.md`
+4. `docs/CODEX_START_HERE.md`
+5. `docs/architecture.md`
+6. `docs/research_standard.md`
+7. `prompts/00_GLOBAL_SYSTEM_PROMPT.md`
+8. `prompts/CURRENT_PHASE.md`
+9. active phase prompt
+
+## Roadmap
 
 M0 → Foundation & Research Infrastructure  
 M1 → Rules & Eligible Universe  
@@ -18,106 +73,75 @@ M2 → Point-in-Time Data Engine
 M3 → Actinver Execution Simulator  
 M4 → Baselines & Validation Engine  
 M5 → Research Factory  
-M6 → News/Event Engine + Scheduled Intelligence  
+M6 → News/Event Engine + Intelligence  
 M7 → Alpha Ensemble  
 M8 → Tournament Brain  
 M9 → Trade Sheet & Human Execution Interface
 
-Si eres el dueño del proyecto y vas a empezar, lee primero:
-- `docs/START_HERE.md`
-- `docs/codex_best_practices.md`
+No avanzar por intuición. Cada fase tiene gate.
 
-Codex debe leer:
-- `AGENTS.md`
-- `prompts/00_GLOBAL_SYSTEM_PROMPT.md`
-- el prompt de la fase activa en `prompts/phases/`
+## Source material
 
-No se debe avanzar a una fase posterior hasta satisfacer los criterios de salida de la fase activa.
+Raw evidence stays in:
+`research/source_material/`
 
-## Estructura objetivo
+Actualmente incluye:
+- participant-guide snapshot;
+- raw 207-instrument universe list.
+
+M1 normalizará/verificará símbolos y reglas. No usar raw material como configuración ejecutable.
+
+## Scientific rule
+
+Una estrategia no se promueve porque el backtest se vea bien.
+
+Debe sobrevivir, según corresponda:
+- point-in-time checks;
+- leakage controls;
+- time-aware OOS/walk-forward;
+- costs/execution;
+- liquidity;
+- robustness;
+- multiple-testing accounting;
+- comparison with simple baselines.
+
+Los resultados negativos se preservan.
+
+## Agent roles
+
+- ChatGPT Research: deep research / methodology.
+- Perplexity Pro: current web/news/source verification.
+- Codex: production repo implementation.
+- Human: phase approval + final Actinver execution.
+
+Research can parallelize; production code is single-writer by default.
+
+## External references
+
+See `docs/reference_projects.md`.
+
+References are not automatic dependencies.
+
+## Current priority — M0
+
+El primer éxito debe ser:
 
 ```text
-reto-actinver-2026/
-│
-├── README.md
-├── AGENTS.md
-├── pyproject.toml
-├── .gitignore
-├── .env.example
-│
-├── config/
-│   ├── actinver_rules.yaml
-│   ├── universe.yaml
-│   └── research.yaml
-│
-├── docs/
-│   ├── objective.md
-│   ├── architecture.md
-│   ├── research_standard.md
-│   └── actinver_rules.md
-│
-├── prompts/
-│   ├── 00_GLOBAL_SYSTEM_PROMPT.md
-│   ├── CURRENT_PHASE.md
-│   └── phases/
-│       ├── M0_FOUNDATION.md
-│       ├── M1_RULES_UNIVERSE.md
-│       ├── M2_DATA_ENGINE.md
-│       ├── M3_EXECUTION_SIMULATOR.md
-│       ├── M4_BASELINES_VALIDATION.md
-│       ├── M5_RESEARCH_FACTORY.md
-│       ├── M6_NEWS_EVENTS.md
-│       ├── M7_ALPHA_ENSEMBLE.md
-│       ├── M8_TOURNAMENT_BRAIN.md
-│       └── M9_TRADE_SHEET.md
-│
-├── data/
-│   ├── raw/
-│   ├── interim/
-│   ├── processed/
-│   └── metadata/
-│
-├── src/
-│   └── actinver/
-│       ├── data/
-│       ├── execution/
-│       ├── features/
-│       ├── strategies/
-│       ├── validation/
-│       ├── portfolio/
-│       ├── tournament/
-│       ├── news/
-│       └── reporting/
-│
-├── experiments/
-│   ├── specs/
-│   └── results/
-│
-├── research/
-│   ├── papers/
-│   ├── hypotheses/
-│   ├── accepted/
-│   └── rejected/
-│
-├── tests/
-│
-├── reports/
-│   ├── morning/
-│   ├── evening/
-│   └── trade_sheets/
-│
-└── .github/
-    └── workflows/
-        ├── test.yml
-        ├── research.yml
-        ├── nightly.yml
-        └── morning.yml
+workflow_dispatch
+→ clean runner
+→ tests
+→ deterministic Python smoke
+→ JSON result
+→ uploaded artifact
+→ verified PASS/FAIL
 ```
 
-## Fuentes oficiales principales
+No real data, models, signals or UI yet.
+
+## Official sources
 
 - https://www.retoactinver.com/
 - https://www.retoactinver.com/bases-y-mecanica
 - https://www.retoactinver.com/es-mx/general
 
-Las reglas pueden cambiar. M1 debe volver a verificar fuentes oficiales antes de congelar la configuración.
+M1 must re-verify/version current rules.

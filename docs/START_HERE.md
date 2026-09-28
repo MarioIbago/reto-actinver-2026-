@@ -2,121 +2,100 @@
 
 Este documento es para el dueño del proyecto.
 
-## Método de trabajo
-
-1. ChatGPT Research investiga y produce dossiers.
-2. Codex implementa una sola fase.
-3. Codex ejecuta tests y deja reporte.
-4. ChatGPT revisa.
-5. Solo entonces avanzamos.
-
-## Qué haces ahora
-
-### 1. Abre el repo con Codex
-Repositorio:
-`MarioIbago/reto-actinver-2026-`
-
-Primer mensaje recomendado:
+## 1. Método
 
 ```text
-Lee completos y en este orden:
-1. AGENTS.md
-2. prompts/00_GLOBAL_SYSTEM_PROMPT.md
-3. prompts/CURRENT_PHASE.md
-4. el prompt de la fase activa
-
-Después inspecciona el repositorio.
-
-Trabaja únicamente en la fase activa.
-Antes de modificar archivos, explícame:
-- estado actual;
-- plan;
-- archivos que propones tocar;
-- tests que ejecutarás;
-- criterios de salida.
-
-No avances a otra fase.
+Research
+   ↓
+dossier / evidence
+   ↓
+Codex
+   ↓
+implementation
+   ↓
+tests / GitHub Actions
+   ↓
+experiment
+   ↓
+validation
+   ↓
+REJECT / PROMOTE
 ```
 
-### 2. La fase activa es M0
-M0 solo debe construir infraestructura científica: packaging, schemas, ExperimentSpec/ExperimentResult, logging, tests, CI, ledger y reproducibilidad.
+No construir todo a la vez.
 
-No pedir todavía:
+## 2. Documentos principales
+
+Lee:
+1. `MASTER_PLAN.md`
+2. `docs/architecture.md`
+3. `docs/research_standard.md`
+
+Codex usa además:
+- `AGENTS.md`
+- `docs/CODEX_START_HERE.md`
+- `prompts/CURRENT_PHASE.md`
+- prompt de fase.
+
+## 3. Fase activa
+
+M0 — Foundation & Research Infrastructure.
+
+Todavía NO:
 - estrategias;
 - picks;
-- noticias en vivo;
+- noticias en producción;
 - ML;
-- UI;
-- Tournament Brain.
+- backtests financieros;
+- Tournament Brain;
+- UI.
 
-### 3. Cuando Codex termine
-Comparte con ChatGPT:
-- reporte de fase;
-- commit o PR;
-- salida de tests;
-- dudas/riesgos.
+M0 solo prueba que el laboratorio funciona.
 
-### 4. Tu lista de instrumentos Actinver es muy valiosa
-Cuando lleguemos a M1, esa lista será uno de los inputs principales.
+## 4. Primer prompt a Codex
 
-No la limpies manualmente antes de guardarla.
+Pídele:
+- leer los docs obligatorios;
+- inspeccionar repo;
+- planificar M0;
+- no implementar hasta revisar el plan.
 
-Preferencia de formato:
-1. CSV/XLSX oficial;
-2. PDF/documento oficial;
-3. lista copiada del simulador;
-4. capturas si no existe otra opción.
+Después autoriza implementación por pasos pequeños siguiendo `docs/M0_RUNBOOK.md`.
 
-La versión normalizada terminará en:
-`data/metadata/actinver_universe.csv`
+## 5. Source material
 
-## Cómo usamos Research
-
-Research sirve para:
-- papers;
-- señales 1–30 días;
-- microestructura BMV;
-- M6/rank optimization;
-- fuentes de datos;
-- noticias/NLP;
-- validación;
-- UI/referencias técnicas.
-
-Research produce dossiers; Codex los convierte en código y experimentos.
-
-## Orden correcto
-
-```text
-RESEARCH
-  ↓
-DOSSIER
-  ↓
-CODEX
-  ↓
-IMPLEMENTATION
-  ↓
-TESTS / ACTIONS
-  ↓
-EXPERIMENT
-  ↓
-VALIDATION
-  ↓
-PROMOTE / REJECT
-```
-
-
-## Source material always at hand
-
-Before research or M1, check:
+Siempre disponible:
 - `research/source_material/reto-actinver-2026-guia.md`
 - `research/source_material/actinver_universe_symbols_raw.md`
 
-The raw universe contains 207 instruments from the supplied 2026 guide. Do not normalize or overwrite it outside M1.
+Ese universo raw tiene 207 instrumentos.
 
-## Simulated agents
+No normalizar/editar fuera de M1.
 
-Before building real multi-agent infrastructure, read:
+## 6. Research paralelo
+
+Mientras Codex trabaja en M0:
+- ChatGPT Research puede preparar dossiers;
+- Perplexity puede verificar universe/news/sources;
+- manual research roles can critique/synthesize.
+
+Research no modifica producción.
+
+## 7. Simulated agents
+
+Antes de construir multi-agent infrastructure:
 - `docs/manual_agent_workflow.md`
 - `prompts/manual_agents/00_MANAGER.md`
 
-Research roles may run independently; Codex remains the single production-code writer.
+Codex sigue siendo single production-code writer.
+
+## 8. Cuando M0 termine
+
+Trae:
+- `docs/phase_reports/M0_REPORT.md`;
+- commit/PR;
+- test output;
+- GitHub workflow run;
+- artifact.
+
+Solo después decidimos M1.
