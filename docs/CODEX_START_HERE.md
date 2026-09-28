@@ -18,6 +18,10 @@ Estás construyendo el laboratorio científico del Reto Actinver 2026, no invent
 
 Para reglas/universo, consulta además `research/source_material/`, pero no normalices ese material fuera de M1.
 
+## Execution sequence
+
+For M0, follow `docs/M0_RUNBOOK.md` one step at a time. Do not collapse audit, implementation, remote verification and closing audit into one opaque task.
+
 ## Current mission
 
 La fase activa es M0.
