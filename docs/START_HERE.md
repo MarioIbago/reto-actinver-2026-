@@ -103,3 +103,20 @@ VALIDATION
   ↓
 PROMOTE / REJECT
 ```
+
+
+## Source material always at hand
+
+Before research or M1, check:
+- `research/source_material/reto-actinver-2026-guia.md`
+- `research/source_material/actinver_universe_symbols_raw.md`
+
+The raw universe contains 207 instruments from the supplied 2026 guide. Do not normalize or overwrite it outside M1.
+
+## Simulated agents
+
+Before building real multi-agent infrastructure, read:
+- `docs/manual_agent_workflow.md`
+- `prompts/manual_agents/00_MANAGER.md`
+
+Research roles may run independently; Codex remains the single production-code writer.
