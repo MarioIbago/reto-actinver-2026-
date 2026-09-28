@@ -23,7 +23,11 @@ M7 → Alpha Ensemble
 M8 → Tournament Brain  
 M9 → Trade Sheet & Human Execution Interface
 
-Lee primero:
+Si eres el dueño del proyecto y vas a empezar, lee primero:
+- `docs/START_HERE.md`
+- `docs/codex_best_practices.md`
+
+Codex debe leer:
 - `AGENTS.md`
 - `prompts/00_GLOBAL_SYSTEM_PROMPT.md`
 - el prompt de la fase activa en `prompts/phases/`
