@@ -85,7 +85,7 @@ PAPERS / OFFICIAL RULES / MARKET DATA / NEWS / EVENTS
                          ↓
             VALIDATION + ARTIFACTS + LOGS
                          ↓
-                     REJECT / PROMOTE
+          REJECT / NEEDS_MORE_EVIDENCE / PROMOTE
                          ↓
                     ALPHA ENGINE
                          ↓
