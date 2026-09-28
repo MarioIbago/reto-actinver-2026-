@@ -1,4 +1,4 @@
-# PERPLEXITY COMPUTER — RESEARCH TO CODEX HANDOFF
+# PERPLEXITY PRO — RESEARCH TO CODEX HANDOFF
 
 You have completed qualitative/web research.
 
