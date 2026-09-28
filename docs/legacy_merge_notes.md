@@ -69,11 +69,13 @@ Merged into:
 - deterministic smoke experiment;
 - workflow_dispatch;
 - JSON artifact;
-- PASS/FAIL Foundation gate.
+- PASS/FAIL Foundation gate;
+- five-step M0 execution sequence: audit → scaffold → Actions → remote verification → closing audit.
 
 Merged into:
 - `docs/CODEX_START_HERE.md`
 - `prompts/phases/M0_FOUNDATION.md`
+- `docs/M0_RUNBOOK.md`
 
 ## Phase mapping
 
