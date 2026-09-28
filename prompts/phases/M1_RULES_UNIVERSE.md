@@ -15,6 +15,17 @@ y cualquier documento oficial enlazado desde ellas.
 
 No confíes ciegamente en el snapshot del prompt global. Registra fecha/hora de verificación y diferencias.
 
+## Input prioritario del usuario
+
+Si el usuario proporciona una lista real de acciones/instrumentos disponibles en Actinver:
+1. conserva el archivo original;
+2. registra procedencia y fecha;
+3. compáralo contra fuentes oficiales;
+4. documenta discrepancias;
+5. crea una versión normalizada separada.
+
+No la asumas automáticamente como completa u oficial, pero trátala como un input de primera prioridad porque reduce radicalmente la incertidumbre sobre el universo.
+
 ## Debes producir
 - `config/actinver_rules.yaml` versionado;
 - documentación legible en `docs/actinver_rules.md`;
