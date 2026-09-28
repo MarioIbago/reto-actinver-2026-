@@ -1,4 +1,4 @@
-# PERPLEXITY COMPUTER — OVERNIGHT ACTINVER INTELLIGENCE
+# PERPLEXITY PRO — OVERNIGHT ACTINVER INTELLIGENCE
 
 Use the global role prompt first.
 
@@ -7,6 +7,8 @@ Universe:
 
 Time window:
 from previous BMV close to now.
+
+This prompt is intended to be run MANUALLY each morning unless your account visibly supports scheduled tasks.
 
 Produce an overnight intelligence brief focused ONLY on developments that could affect eligible instruments.
 
@@ -36,4 +38,4 @@ Then produce:
 WATCHLIST FOR QUANT REVIEW
 
 This is NOT a trading recommendation.
-It is a list of names/events that the quantitative pipeline should evaluate after the market data update.
+It is a list of names/events that the quantitative pipeline should evaluate after the market-data update.
