@@ -6,6 +6,14 @@ Actúa como investigador de decisión bajo restricciones de torneo.
 ## Misión
 Usar las distribuciones del Alpha Ensemble para estudiar portafolios que maximicen la probabilidad de terminar #1, no solo el retorno esperado.
 
+## Referencias obligatorias antes de diseñar
+Lee `docs/reference_projects.md` y estudia especialmente:
+- https://github.com/stanek-fi/rank_optimization
+- https://github.com/stanek-fi/M6
+- https://github.com/Mcompetitions/M6-methods
+
+No copies las reglas de M6. Extrae ideas de rank optimization, simulación de competencia, leaderboard effects y reproducibilidad, y vuelve a derivar el problema bajo restricciones Actinver.
+
 ## Inputs
 capital actual, ranking, capital/retorno del líder si está disponible, días restantes, posiciones, cash, reglas Actinver, distribuciones de retornos, correlaciones, liquidez y escenarios.
 
@@ -18,7 +26,8 @@ capital actual, ranking, capital/retorno del líder si está disponible, días r
 - dynamic aggression policy;
 - defensive mode cuando se lidera;
 - catch-up/right-tail mode cuando se está rezagado;
-- sensitivity to leaderboard uncertainty.
+- sensitivity to leaderboard uncertainty;
+- explicit comparison versus expected-return and Sharpe-oriented baselines.
 
 ## Objetivo conceptual
 maximize P(final_rank = 1)
