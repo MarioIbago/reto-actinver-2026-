@@ -6,8 +6,21 @@ Antes de modificar código o configuración:
 2. Lee `prompts/00_GLOBAL_SYSTEM_PROMPT.md`.
 3. Lee `prompts/CURRENT_PHASE.md`.
 4. Lee el prompt completo de la fase activa.
-5. Inspecciona el estado real del repositorio.
-6. No asumas que una fase está terminada porque exista su carpeta.
+5. Consulta `docs/reference_projects.md` si la fase toca arquitectura, backtesting, optimización, NLP, experiment tracking o UI/UX.
+6. Inspecciona el estado real del repositorio.
+7. No asumas que una fase está terminada porque exista su carpeta.
+
+## Política de referencias externas
+Las referencias de `docs/reference_projects.md` existen para evitar reinventar componentes maduros y para estudiar patrones de arquitectura/UX. No son dependencias automáticas.
+
+Antes de reutilizar cualquier proyecto:
+- verifica licencia vigente;
+- verifica mantenimiento;
+- documenta por qué encaja;
+- identifica supuestos incompatibles con Actinver;
+- clasifica la decisión como BUILD CUSTOM / ADAPT / STUDY ONLY / IGNORE.
+
+Nunca copies código o una arquitectura completa solo porque el proyecto sea popular.
 
 ## Disciplina por fases
 Solo implementa la fase activa. No adelantes módulos de fases futuras salvo interfaces mínimas indispensables.
