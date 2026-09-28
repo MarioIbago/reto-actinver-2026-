@@ -60,7 +60,7 @@ Pídele:
 - planificar M0;
 - no implementar hasta revisar el plan.
 
-Después autoriza implementación por pasos pequeños.
+Después autoriza implementación por pasos pequeños siguiendo `docs/M0_RUNBOOK.md`.
 
 ## 5. Source material
 
