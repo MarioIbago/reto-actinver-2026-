@@ -1,8 +1,11 @@
-# PERPLEXITY COMPUTER — NEWS / EVENT MONITOR
+# PERPLEXITY PRO — NEWS / EVENT SCAN
 
 Use the global role prompt first.
 
-Monitor ONLY the instruments in the supplied Reto Actinver eligible universe.
+This is a MANUAL scan unless your account visibly supports scheduled tasks.
+
+Scope:
+ONLY the instruments in the supplied Reto Actinver eligible universe.
 
 Objective:
 detect genuinely material NEW information that could matter over 1–10 trading days.
@@ -13,7 +16,6 @@ Track:
 - preannouncements;
 - M&A;
 - buybacks;
-- dividends only if operationally relevant;
 - management changes;
 - debt/refinancing;
 - regulatory decisions;
