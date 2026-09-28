@@ -24,29 +24,37 @@ ChatGPT Research should prioritize primary/academic sources and explicitly separ
 - hypotheses;
 - speculation.
 
-## Perplexity Computer
+## Perplexity Pro
 
 Primary role:
 - live web research;
 - qualitative company/event research;
 - current news discovery;
 - source triangulation;
-- recurring monitoring;
-- browser-based data extraction;
-- research dashboards/reports/spreadsheets;
-- lightweight prototypes OUTSIDE the core quant engine unless explicitly authorized.
+- fast source verification;
+- recurring MANUAL research briefs;
+- file-assisted research;
+- current-market/context discovery.
 
-Best use cases:
+Use Perplexity Pro Search / Research for:
 - overnight news;
 - earnings/guidance/filings;
-- analyst revisions;
+- analyst revisions when sourced;
 - commodity/FX/macro shocks;
 - official Actinver updates;
 - competitor/product/source discovery;
 - qualitative dossiers;
-- monitoring a list of eligible instruments.
+- verifying claims before they enter the repo.
 
-Perplexity Computer must NOT become the source of truth for:
+If Projects are available, keep a dedicated Actinver project with:
+- the eligible-universe file;
+- project instructions;
+- recurring research threads;
+- source documents.
+
+Do NOT depend on Perplexity Computer, browser automation, or scheduled tasks unless they are actually visible in the user's account.
+
+Perplexity Pro must NOT become the source of truth for:
 - statistical alpha validation;
 - backtest results;
 - promotion/rejection of strategies;
@@ -86,10 +94,6 @@ Research agents do not silently change production code.
 
 ## Model-specific note
 
-If Perplexity Computer exposes Claude Fable 5.1 in the orchestrator/model selector, it is a strong candidate for:
-- long synthesis;
-- multi-source qualitative research;
-- adversarial company/event analysis;
-- research planning.
+Do not hard-code any Perplexity model name into the workflow. If a model such as Fable 5.1 appears in the user's model selector, it may be tested for synthesis quality, but availability can change.
 
-Do not hard-code a model name into workflows. Model availability can change.
+The architecture depends on ROLE, not model brand.
