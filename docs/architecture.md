@@ -193,6 +193,7 @@ data/processed/        research-ready outputs
 data/metadata/         manifests, universe, provenance
 
 research/source_material/ raw human/official evidence snapshots
+research/dossiers/        deep-research outputs / evidence packages
 research/papers/          paper records
 research/hypotheses/      falsifiable ideas
 research/accepted/        promoted research evidence
