@@ -17,6 +17,7 @@ Files:
 - `04_SOURCE_VERIFICATION.md`
 - `05_RESEARCH_TO_CODEX_HANDOFF.md`
 - `06_CREATE_FILES_SANDBOX.md`
+- `07_UNIVERSE_MAPPING.md`
 
 Core rule:
 Perplexity researches and verifies current web information.
