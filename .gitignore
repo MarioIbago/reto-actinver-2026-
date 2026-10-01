@@ -1,5 +1,8 @@
-# M0 will expand this file.
 .env
 .venv/
 __pycache__/
 .pytest_cache/
+build/
+dist/
+*.egg-info/
+experiments/results/m0/
