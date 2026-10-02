@@ -1,1 +1,75 @@
-# PLACEHOLDER — M0 will replace with a functioning CI workflow.
+name: M0 Foundation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  foundation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
+    env:
+      M0_ARTIFACT_DIR: experiments/results/m0/ci
+    steps:
+      - name: Checkout exact workflow commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Prepare logs and check checkout identity
+        run: |
+          mkdir -p "$M0_ARTIFACT_DIR/logs"
+          git rev-parse HEAD | tee "$M0_ARTIFACT_DIR/logs/checkout-sha.log"
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install package
+        run: |
+          python -m pip install . 2>&1 | tee "$M0_ARTIFACT_DIR/logs/install.log"
+
+      - name: Check installed dependencies
+        run: |
+          python -m pip check 2>&1 | tee "$M0_ARTIFACT_DIR/logs/pip-check.log"
+
+      - name: Run complete test suite
+        run: |
+          python -m unittest discover -s tests -v 2>&1 | tee "$M0_ARTIFACT_DIR/logs/tests.log"
+
+      - name: Run deterministic smoke
+        run: |
+          actinver-m0 smoke \
+            --spec experiments/specs/HARNESS_SMOKE_001.json \
+            --output-dir "$M0_ARTIFACT_DIR/bundle" \
+            --run-id "canonical-harness-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            2>&1 | tee "$M0_ARTIFACT_DIR/logs/smoke.log"
+
+      - name: Verify spec, payload and checkout identity
+        run: |
+          actinver-m0 verify \
+            --spec experiments/specs/HARNESS_SMOKE_001.json \
+            --output-dir "$M0_ARTIFACT_DIR/bundle" \
+            --commit-sha "$(git rev-parse HEAD)" \
+            2>&1 | tee "$M0_ARTIFACT_DIR/logs/verifier.log"
+
+      - name: Preserve result and diagnostic logs
+        if: ${{ always() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: m0-foundation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.M0_ARTIFACT_DIR }}/
+          if-no-files-found: error
+          retention-days: 30
