@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "experiment_id": "HARNESS_SMOKE_001",
+  "hypothesis": "Explicit integer arithmetic reproduces a preregistered vector and canonical payload without RNG or financial data.",
+  "dataset_version": "synthetic_arithmetic_v1",
+  "universe_version": null,
+  "parameters": {
+    "sample_count": 8,
+    "modulus": 101
+  },
+  "benchmark": {
+    "expected_values": [43, 46, 51, 58, 67, 78, 91, 5]
+  },
+  "seed": 42,
+  "commit_sha": null
+}

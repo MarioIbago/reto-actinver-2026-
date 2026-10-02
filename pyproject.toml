@@ -1,1 +1,18 @@
-# Placeholder. M0 owns the real Python project configuration.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reto-actinver-2026"
+version = "0.1.0"
+description = "Minimal deterministic M0 research harness"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+actinver-m0 = "actinver.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["actinver"]
+namespaces = false
