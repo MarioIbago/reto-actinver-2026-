@@ -30,8 +30,8 @@
   "research": {
     "comparison_report": "reports/intraday/2026-10-05_1600_cdmx.md",
     "comparison_cut_local": "2026-10-05T16:00:09-06:00",
-    "deep_research_status": "PUBLIC_WEB_RESEARCH_COMPLETE; AGENT_BROWSER_UNAVAILABLE",
-    "method": "Public web research, issuer/regulator/market pages, and secondary cross-checks; material claims were checked against primary sources where available.",
+    "deep_research_status": "PUBLIC_WEB_RESEARCH_COMPLETE; PERPLEXITY_DEEP_RESEARCH_UNAVAILABLE_UPGRADE_REQUIRED",
+    "method": "Public web research, issuer/regulator/market pages, and secondary cross-checks; material claims were checked against primary sources where available. Perplexity Research mode was not run because the signed-in session displayed a required plan upgrade.",
     "primary_sources_verified": 16,
     "perplexity_used": false,
     "changes_since_prior_review": [
@@ -40,7 +40,8 @@
       "Corrected ASUR coverage: the official Sep 28 filing documents the Sep 1 close of the CPC Aeroportos acquisition, consideration, scale, and integration/financing risks; this is not new Oct 5 news.",
       "Verified BMV summer-session hours end at 14:00 CDMX, so the vendor's 13:55–14:00 bar is the scheduled final five-minute window; Actinver identity and bid/ask remain unverified.",
       "No candidate passed the combined catalyst, entry, risk/reward, execution-identity, fresh-quote, and portfolio-state requirements.",
-      "Enmienda de las 16:00: dos fuentes secundarias reportan una mejora de Morgan Stanley para WFC de Equal Weight a Overweight (objetivo USD 102, Top Pick). Es investigación de analista, no un comunicado del emisor; WFC tocó la zona de retroceso pero cerró por encima y el R/R observado no valida una orden."
+      "Enmienda de las 16:00: dos fuentes secundarias reportan una mejora de Morgan Stanley para WFC de Equal Weight a Overweight (objetivo USD 102, Top Pick). Es investigación de analista, no un comunicado del emisor; WFC tocó la zona de retroceso pero cerró por encima y el R/R observado no valida una orden.",
+      "La sesión iniciada de Perplexity mostró que Investigación profunda requiere actualizar el plan; no se envió una consulta allí. Se usó investigación web pública y verificación primaria."
     ]
   },
   "market_data": {

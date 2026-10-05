@@ -13,7 +13,8 @@ pasó todos los filtros de catalizador, precio, riesgo/recompensa, cotización
 ejecutable, identidad exacta del simulador y estado actual de la cuenta. Los
 precios son referencias retrasadas de barras regulares, no posturas bid/ask ni
 precios Actinver. Al preparar este memo, las barras de las 14:00 tenían 124
-minutos de antigüedad.
+minutos de antigüedad. La sesión iniciada de Perplexity mostró que Investigación
+profunda requiere actualizar el plan; no se envió una consulta allí.
 
 El corte usa la barra final programada 13:55–14:00 CDMX. Durante el horario de
 verano estadounidense, el horario continuo publicado por BMV es 07:30–14:00
