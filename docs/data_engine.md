@@ -107,9 +107,9 @@ rights for local provenance, but that field does not create a license.
 
 ## Phase status
 
-The ingestion, manifest, as-of query, and freshness contracts are implemented
-and covered with explicitly synthetic test fixtures. The official BMV holiday
-calendar also has a reproducible point-in-time dataset. Neither source provides
-historical OHLCV for contest instruments. No price backtest or financial
-validation is supported until authorized price history and the unresolved M1
-platform-symbol mapping are supplied.
+**M2 gate: PASS — READY FOR HUMAN REVIEW** for the real, source-backed BMV
+calendar-event dataset and the generic M2 ingestion/query contracts. This gate
+does not claim historical OHLCV, trades, or corporate-action coverage. Those
+records are absent, so no price backtest or financial validation is supported
+until authorized price history and the unresolved M1 platform-symbol mapping
+are supplied.

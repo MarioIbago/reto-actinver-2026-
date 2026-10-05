@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: M0 y M1 pasaron sus gates técnicos. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 está activa; el motor PIT pasa pruebas de software y aún no hay OHLCV histórico autorizado. No hay estrategias ni backtests financieros.
+> Estado: M0–M2 pasaron sus gates técnicos. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV histórico autorizado. M3 es la fase activa. No hay estrategias ni backtests financieros.
 
 ## Objetivo
 
@@ -123,11 +123,11 @@ See `docs/reference_projects.md`.
 
 References are not automatic dependencies.
 
-## Current priority — M2
+## Current priority — M3
 
-El motor M2 ofrece ingestión, manifests, consultas PIT y controles de frescura. La fuente BMV versionada permite construir el calendario 2026 como eventos date-level y consultar qué cierres se conocían en un timestamp. El dataset se mantiene local con derechos de redistribución desconocidos. Aún no hay precios OHLCV autorizados; no se deben producir afirmaciones de backtest.
+Construir el simulador determinista de órdenes, fills y ledger con las reglas versionadas de Actinver. Los resultados de práctica no están disponibles en el repositorio; comparar con datos reales solo si aparece un export autorizado.
 
-No strategy backtests, predictive models, signal logic or trading UI are in scope until sus fases y datos de entrada estén habilitados.
+No strategy backtests, predictive models, signal logic or trading UI are in scope until sus fases y datos de entrada estén habilitados. M4 no podrá respaldar afirmaciones financieras sin OHLCV autorizado y símbolos operables verificados.
 
 ## Official sources
 
