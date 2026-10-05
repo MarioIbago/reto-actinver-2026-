@@ -6,9 +6,9 @@ Before changing production code, read `README.md`, `MASTER_PLAN.md`, `AGENTS.md`
 
 Raw evidence under `research/source_material/` must remain unchanged. M1 owns normalization of rules and the guide universe; M2 owns PIT market-data ingestion and manifests.
 
-## Current phase: M4 — Baselines & Validation Engine
+## Current phase: M5 — Research Factory
 
-Follow `prompts/phases/M4_BASELINES_VALIDATION.md`. Build reproducible baselines and validation gates; never use synthetic fixtures to claim financial performance or promote a strategy. The M3 simulator is available through `actinver-exec simulate` and is documented in `docs/actinver_execution.md`.
+Follow `prompts/phases/M5_RESEARCH_FACTORY.md`. Preserve hypotheses, pre-registered ExperimentSpecs, attempts, falsification notes, results, and negative outcomes in a reproducible research factory. Never use synthetic fixtures to claim financial performance or promote a strategy. The M3 simulator is available through `actinver-exec simulate` and M4 validation through `actinver-m4 evaluate`.
 
 Completed M1 outputs:
 
@@ -39,7 +39,7 @@ python scripts/build_bmv_calendar_dataset.py --ingestion-time $ingestionTime --c
 
 Keep the timestamp and commit SHA emitted in the phase report when repeating an exact dataset build.
 
-M4 may develop baselines and statistical methods, but all financial results must remain `NEEDS_MORE_EVIDENCE` until authorized price data, point-in-time instrument identity, and the M3 execution inputs are available.
+M4's software gate passed with synthetic fixtures only. All financial results must remain `NEEDS_MORE_EVIDENCE` until authorized price data, point-in-time instrument identity, and the M3 execution inputs are available. M5 must not advance into news extraction, alpha production, tournament optimization, or a trade interface before their phases.
 
 ## Completed M0 reference
 
