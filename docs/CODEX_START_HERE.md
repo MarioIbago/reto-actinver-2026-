@@ -6,9 +6,9 @@ Before changing production code, read `README.md`, `MASTER_PLAN.md`, `AGENTS.md`
 
 Raw evidence under `research/source_material/` must remain unchanged. M1 owns normalization of rules and the guide universe; M2 owns PIT market-data ingestion and manifests.
 
-## Current phase: M6 — News/Event Engine
+## Current phase: M7 — Alpha Ensemble
 
-Follow `prompts/phases/M6_NEWS_EVENTS.md`. Build point-in-time event ingestion, deduplication, structured extraction contracts, and evaluation tooling that keeps extraction separate from future-return labeling. No LLM output may directly decide BUY/SELL. No authorized historical news corpus, OHLCV history, or authenticated Actinver ticker mapping is currently available; preserve those evidence gaps and do not claim financial performance from fixtures. M5's completed research factory is available through `actinver-research`; see `docs/actinver_research_factory.md` and `docs/phase_reports/M5_REPORT.md`.
+Follow `prompts/phases/M7_ALPHA_ENSEMBLE.md`. Admit only signals with a recorded `PROMOTE` decision from the M5 research process. No real financial signal currently meets that bar; build and verify the ensemble mechanics with synthetic fixtures without treating them as alpha evidence. Keep Alpha Score distinct from Believability Score, use calibrated OOS inputs, and preserve regime, correlation, uncertainty, and ablation diagnostics. M6's empirical gate remains `NEEDS_MORE_EVIDENCE` because authorized historical news/prices and authenticated simulator mapping are unavailable; see `docs/phase_reports/M6_REPORT.md`.
 
 M6's software path is available through `actinver-news` for source revision normalization, as-of queries, extraction payloads/snapshots, digests, alerts, separately cut PIT labels, and chronological evaluation. See `docs/actinver_news_events.md` and `docs/phase_reports/M6_REPORT.md`. All schedule specs are disabled until licensed source connectors and a runner exist. The software gate passes; M6 empirical predictive value remains `NEEDS_MORE_EVIDENCE`.
 

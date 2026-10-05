@@ -59,6 +59,7 @@ Commands and outcomes on the local branch:
 - `git diff --cached --check` — PASS.
 - GitHub Actions [run #137](https://github.com/MarioIbago/reto-actinver-2026-/actions/runs/37315359219) — PASS on commit `54d527db33ed93543b2e748b798ca165d9ad02d8`; install, dependency check, all 126 tests, deterministic smoke, checkout identity, and artifact verification succeeded.
 - CI artifact ID `11347417420`, digest `sha256:2ef1b84d0d243d3b9e2543eece6b00e469a5824713b76dc76bc90bfa688d7ede`.
+- Pull request [#20](https://github.com/MarioIbago/reto-actinver-2026-/pull/20) merged into `main` at `e3c0887160013f6ff21ee7c7fd7ffd5eefda2b35`. The final report-only update passed the complete Actions run [#138](https://github.com/MarioIbago/reto-actinver-2026-/actions/runs/37315565896), artifact `11348136997`, digest `sha256:5f8103cf49d21f068d0d10e337faff2ae5cf2fe2fdbf9a11e221a5f946fdbe10`.
 
 An M2 regression test reproduced a timestamp-ordering defect where lexical
 comparison could place an exact-second timestamp after a later fractional
