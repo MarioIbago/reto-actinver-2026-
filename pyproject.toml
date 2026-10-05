@@ -5,12 +5,15 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "reto-actinver-2026"
 version = "0.1.0"
-description = "Minimal deterministic M0 research harness"
+description = "Reproducible research harness and Reto Actinver M1 rules/universe tools"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "PyYAML>=6.0,<7",
+]
 
 [project.scripts]
 actinver-m0 = "actinver.cli:main"
+actinver-m1 = "actinver.m1_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
