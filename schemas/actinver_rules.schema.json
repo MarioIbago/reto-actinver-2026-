@@ -35,7 +35,47 @@
         "additionalProperties": true
       }
     },
-    "rules": {"type": "object", "required": ["starting_capital_actipesos", "short_selling_allowed", "allowed_order_sides", "allowed_order_types", "costs", "portfolio_constraints", "instrument_eligibility"]},
+    "rules": {
+      "type": "object",
+      "required": ["starting_capital_actipesos", "short_selling_allowed", "allowed_order_sides", "allowed_order_types", "costs", "portfolio_constraints", "instrument_eligibility", "market_execution_windows", "market_calendar"],
+      "properties": {
+        "market_execution_windows": {
+          "type": "object",
+          "required": ["weekdays_only", "exclude_bmv_holidays", "holiday_calendar_source", "windows", "source_timezone"],
+          "properties": {
+            "weekdays_only": {"type": "boolean"},
+            "exclude_bmv_holidays": {"type": "boolean"},
+            "holiday_calendar_source": {"type": "string"},
+            "windows": {"type": "array", "items": {"type": "object"}},
+            "source_timezone": {"type": "string"}
+          },
+          "additionalProperties": true
+        },
+        "market_calendar": {
+          "type": "object",
+          "required": ["calendar_id", "year", "source_id", "holidays"],
+          "properties": {
+            "calendar_id": {"type": "string"},
+            "year": {"type": "integer"},
+            "source_id": {"type": "string"},
+            "holidays": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["date", "name"],
+                "properties": {
+                  "date": {"type": "string", "format": "date"},
+                  "name": {"type": "string"}
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
     "ambiguities": {"type": "array", "items": {"type": "object", "required": ["ambiguity_id", "description", "resolution_policy"]}}
   },
   "additionalProperties": true

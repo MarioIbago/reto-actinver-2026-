@@ -64,11 +64,17 @@ def validate_rules(rules: Any) -> None:
         raise M1DataError(f"Rules missing required fields: {', '.join(missing)}")
     if not isinstance(rules["sources"], list) or not rules["sources"]:
         raise M1DataError("Rules must include at least one dated source")
+    source_ids = set()
     for source in rules["sources"]:
         if not isinstance(source, dict) or not all(
             source.get(field) for field in ("source_id", "url", "checked_at_utc")
         ):
             raise M1DataError("Each rules source needs source_id, url and checked_at_utc")
+        source_ids.add(source["source_id"])
+        if source.get("repository_snapshot_path") and not source.get(
+            "repository_snapshot_sha256"
+        ):
+            raise M1DataError("A repository source snapshot must include its SHA-256")
     values = rules["rules"]
     required_rules = {
         "starting_capital_actipesos",
@@ -104,6 +110,77 @@ def validate_rules(rules: Any) -> None:
     cap = _decimal(constraints.get("maximum_single_instrument_weight"), "concentration cap")
     if cap > 1:
         raise M1DataError("maximum_single_instrument_weight cannot exceed 1")
+
+    calendar = values.get("market_calendar")
+    if not isinstance(calendar, dict) or type(calendar.get("year")) is not int:
+        raise M1DataError("Rules must include a year-scoped market_calendar")
+    calendar_source_id = calendar.get("source_id")
+    if calendar_source_id not in source_ids:
+        raise M1DataError("market_calendar source_id must reference a dated rules source")
+    holidays = calendar.get("holidays")
+    if not isinstance(holidays, list):
+        raise M1DataError("market_calendar holidays must be an array")
+    holiday_dates = []
+    for item in holidays:
+        if not isinstance(item, dict) or not item.get("name"):
+            raise M1DataError("Each market-calendar holiday needs a name and date")
+        holiday = _as_date(item.get("date"))
+        if holiday.year != calendar["year"]:
+            raise M1DataError("Market-calendar holiday dates must match the calendar year")
+        holiday_dates.append(holiday)
+    if len(holiday_dates) != len(set(holiday_dates)) or holiday_dates != sorted(holiday_dates):
+        raise M1DataError("Market-calendar holiday dates must be unique and sorted")
+    execution_windows = values.get("market_execution_windows")
+    if not isinstance(execution_windows, dict) or execution_windows.get(
+        "holiday_calendar_source"
+    ) != calendar_source_id:
+        raise M1DataError("Execution windows must reference the market-calendar source")
+    if execution_windows.get("weekdays_only") is not True or execution_windows.get(
+        "exclude_bmv_holidays"
+    ) is not True:
+        raise M1DataError("The scheduled-day classifier requires weekday and holiday exclusions")
+
+
+def bmv_trading_day_status(as_of: str | date, rules: Mapping[str, Any]) -> dict[str, Any]:
+    """Classify scheduled BMV sessions using a sourced annual calendar snapshot."""
+    point = _as_date(as_of)
+    calendar = rules["rules"]["market_calendar"]
+    source_id = calendar["source_id"]
+    if point.year != calendar["year"]:
+        return {
+            "date": point.isoformat(),
+            "status": "UNKNOWN",
+            "is_bmv_trading_day": None,
+            "source_id": source_id,
+            "reason": f"No BMV holiday snapshot is available for {point.year}.",
+        }
+    if point.weekday() >= 5:
+        return {
+            "date": point.isoformat(),
+            "status": "CLOSED",
+            "is_bmv_trading_day": False,
+            "source_id": source_id,
+            "reason": "Actinver rules schedule regular BMV execution on weekdays only.",
+        }
+    holiday = next(
+        (item for item in calendar["holidays"] if item["date"] == point.isoformat()),
+        None,
+    )
+    if holiday:
+        return {
+            "date": point.isoformat(),
+            "status": "CLOSED",
+            "is_bmv_trading_day": False,
+            "source_id": source_id,
+            "reason": f"BMV holiday: {holiday['name']}.",
+        }
+    return {
+        "date": point.isoformat(),
+        "status": "SCHEDULED_SESSION",
+        "is_bmv_trading_day": True,
+        "source_id": source_id,
+        "reason": "Weekday is absent from the published BMV 2026 holiday list; exceptional suspensions may still apply.",
+    }
 
 
 def load_universe(path: str | Path) -> dict[str, Any]:
@@ -190,6 +267,24 @@ def verify_source_material(universe: Mapping[str, Any], repository_root: str | P
             raise M1DataError(f"Could not verify source material {path}: {exc}") from exc
         if observed != source.get(digest_field):
             raise M1DataError(f"Source material changed since snapshot build: {path}")
+
+
+def verify_rule_source_material(rules: Mapping[str, Any], repository_root: str | Path) -> None:
+    """Check any preserved rule-source captures referenced by the ruleset."""
+    root = Path(repository_root)
+    for source in rules.get("sources", []):
+        snapshot = source.get("repository_snapshot_path")
+        expected = source.get("repository_snapshot_sha256")
+        if not snapshot:
+            continue
+        path = root / snapshot
+        try:
+            canonical_bytes = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+            observed = hashlib.sha256(canonical_bytes).hexdigest()
+        except OSError as exc:
+            raise M1DataError(f"Could not verify rule source material {path}: {exc}") from exc
+        if observed != expected:
+            raise M1DataError(f"Rule source material changed since capture: {path}")
 
 
 def diff_universes(before: Mapping[str, Any], after: Mapping[str, Any]) -> dict[str, Any]:

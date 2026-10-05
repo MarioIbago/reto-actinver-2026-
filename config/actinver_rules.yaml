@@ -43,6 +43,17 @@ sources:
     publisher: Actinver
     checked_at_utc: "2026-10-05T07:57:04Z"
     notes: ["Redirects to /inicio; the same homepage FAQ content was reviewed."]
+  - source_id: bmv_holidays_2026
+    title_as_displayed: ".::. Grupo BMV .::. Calendario de Días Festivos"
+    url: https://www.bmv.com.mx/es/Grupo_BMV/Calendario_de_dias_festivos/_rid/662/_mod/TAB_DIAS_FEST
+    publisher: Grupo BMV
+    checked_at_utc: "2026-10-05T08:15:08Z"
+    capture_http_status: 200
+    repository_snapshot_path: research/source_material/bmv_2026_holidays_official.html
+    repository_snapshot_sha256: 7702be0373cd46f46a3c273b5dcf02285e94206a44e073f9a8a7cf7ff8eee164
+    snapshot_hash_policy: "SHA-256 after normalizing CRLF and CR line endings to LF; source content is not otherwise transformed."
+    notes:
+      - "The page lists the 2026 non-working dates for BMV. The downloaded HTML is preserved as the source capture."
 rules:
   starting_capital_actipesos: 1000000
   currency: MXN
@@ -57,7 +68,7 @@ rules:
   market_execution_windows:
     weekdays_only: true
     exclude_bmv_holidays: true
-    holiday_calendar_source: null
+    holiday_calendar_source: bmv_holidays_2026
     windows:
       - start_date: "2026-10-05"
         end_date: "2026-11-02"
@@ -68,6 +79,22 @@ rules:
         open: "08:30:00"
         close: "15:00:00"
     source_timezone: America/Mexico_City
+  market_calendar:
+    calendar_id: bmv-trading-calendar-2026
+    year: 2026
+    source_id: bmv_holidays_2026
+    holidays:
+      - {date: "2026-01-01", name: "Año Nuevo"}
+      - {date: "2026-02-02", name: "Conmemoración del 5 de febrero"}
+      - {date: "2026-03-16", name: "Conmemoración del 21 de marzo"}
+      - {date: "2026-04-02", name: "Jueves Santo"}
+      - {date: "2026-04-03", name: "Viernes Santo"}
+      - {date: "2026-05-01", name: "Día del trabajo"}
+      - {date: "2026-09-16", name: "Día de la Independencia"}
+      - {date: "2026-11-02", name: "Día de muertos"}
+      - {date: "2026-11-16", name: "Conmemoración del 20 de noviembre"}
+      - {date: "2026-12-12", name: "Día del empleado bancario"}
+      - {date: "2026-12-25", name: "Navidad"}
   order_execution:
     market: next_bmv_trade_after_order_registration
     limit: subsequent_bmv_trade_at_requested_price

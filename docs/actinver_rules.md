@@ -40,7 +40,7 @@ Run it with `actinver-m1 validate-order --input order.json --as-of 2026-10-05`. 
 
 The official competition window is **2026-10-05 through 2026-11-13 at 15:00 America/Mexico_City**. Starting capital is **1,000,000 actipesos**. The award rule for performance uses **absolute portfolio gain** at the end of the six-week event.
 
-The simulator accepts market and limit orders 24/7, subject to maintenance; execution follows BMV sessions on weekdays excluding holidays. The published regular hours are 07:30–14:00 CDMX, changing on November 3 to 08:30–15:00. Orders received after market hours receive the next BMV business date. A market order uses the next BMV trade after registration; a limit order requires a later BMV trade at the requested price. A request does not guarantee a fill. Unfilled orders expire after one day and may be cancelled; filled orders cannot be cancelled and orders cannot be modified.
+The simulator accepts market and limit orders 24/7, subject to maintenance; execution follows BMV sessions on weekdays excluding holidays. The official [Grupo BMV 2026 holiday calendar](https://www.bmv.com.mx/es/Grupo_BMV/Calendario_de_dias_festivos/_rid/662/_mod/TAB_DIAS_FEST) is preserved in `research/source_material/bmv_2026_holidays_official.html`; the rules config stores its SHA-256 and normalized dates. Use `actinver-m1 market-day --as-of 2026-11-02` to check the Día de muertos closure. The published regular hours are 07:30–14:00 CDMX, changing on November 3 to 08:30–15:00. Orders received after market hours receive the next BMV business date. A market order uses the next BMV trade after registration; a limit order requires a later BMV trade at the requested price. A request does not guarantee a fill. Unfilled orders expire after one day and may be cancelled; filled orders cannot be cancelled and orders cannot be modified.
 
 The simulator uses a 0.10% commission plus 16% IVA on the commission, charged on buys and sells. The combined modeled rate is 0.116%. Purchases are checked against buying power, including cash and realized sale proceeds less pending buy reservations; sales cannot exceed held quantities and short sales are prohibited.
 
@@ -74,7 +74,7 @@ The page `https://www.retoactinver.com/es-mx/general` redirects to `/inicio`; it
 
 1. The exact symbol/series in the logged-in simulator search has not been checked. The current snapshot only promises guide-annex membership.
 2. The sources do not settle whether Actinver measures five assets as any guide instrument or only shares, nor whether concentration means peak holding weight or period purchase notional. Both readings must pass before the software says `COMPLIANT`; official award eligibility remains `INDETERMINATE` while these conflicts remain.
-3. The official BMV holiday calendar is not bundled, so execution-date checking cannot yet resolve holidays.
+3. The calendar classifies scheduled weekdays and listed 2026 holidays only. It cannot predict exceptional suspensions or unlisted shortened sessions.
 4. The one-day unfilled-order expiration is published without saying whether “day” means a calendar or business day.
 5. The annex supplies no point-in-time sector, liquidity, currency or exact-series attributes. Those values remain unknown rather than being backfilled from present-day sources.
 

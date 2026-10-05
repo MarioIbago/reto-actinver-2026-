@@ -1,12 +1,16 @@
 import json
+import re
 import subprocess
 import sys
 import tempfile
 import unittest
+from datetime import date
+from html import unescape
 from pathlib import Path
 
 from actinver.m1 import (
     M1DataError,
+    bmv_trading_day_status,
     diff_rules,
     diff_universes,
     eligible_instruments,
@@ -15,6 +19,7 @@ from actinver.m1 import (
     validate_order,
     validate_portfolio,
     verify_source_material,
+    verify_rule_source_material,
 )
 
 
@@ -83,6 +88,58 @@ class M1SnapshotTests(unittest.TestCase):
             from actinver.m1 import validate_rules
 
             validate_rules(broken)
+
+    def test_rule_source_capture_fingerprint_is_verified(self):
+        verify_rule_source_material(self.rules, ROOT)
+        source_index = next(
+            index
+            for index, source in enumerate(self.rules["sources"])
+            if source.get("repository_snapshot_path")
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            changed_file = Path(directory) / "changed.html"
+            changed_file.write_text("altered source", encoding="utf-8")
+            altered = dict(self.rules)
+            altered["sources"] = [dict(item) for item in self.rules["sources"]]
+            altered["sources"][source_index]["repository_snapshot_path"] = str(changed_file)
+            with self.assertRaises(M1DataError):
+                verify_rule_source_material(altered, ROOT)
+
+    def test_bmv_holiday_weekend_coverage_and_session_status(self):
+        self.assertEqual(len(self.rules["rules"]["market_calendar"]["holidays"]), 11)
+        source_path = ROOT / "research/source_material/bmv_2026_holidays_official.html"
+        source_text = source_path.read_text(encoding="utf-8", errors="replace")
+        visible_text = " ".join(
+            unescape(re.sub(r"<[^>]+>", " ", source_text)).split()
+        ).casefold()
+        month_names = (
+            "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre"
+        ).split()
+        for holiday_row in self.rules["rules"]["market_calendar"]["holidays"]:
+            holiday_date = date.fromisoformat(holiday_row["date"])
+            expected = (
+                re.escape(holiday_row["name"].casefold())
+                + rf"\s+0?{holiday_date.day}\s+de\s+{month_names[holiday_date.month - 1]}"
+            )
+            self.assertRegex(visible_text, expected)
+
+        holiday = bmv_trading_day_status("2026-11-02", self.rules)
+        self.assertEqual(holiday["status"], "CLOSED")
+        self.assertEqual(holiday["reason"], "BMV holiday: Día de muertos.")
+
+        weekend = bmv_trading_day_status("2026-10-31", self.rules)
+        self.assertEqual(weekend["status"], "CLOSED")
+
+        regular = bmv_trading_day_status("2026-11-03", self.rules)
+        self.assertEqual(regular["status"], "SCHEDULED_SESSION")
+        self.assertTrue(regular["is_bmv_trading_day"])
+
+        later_holiday = bmv_trading_day_status("2026-11-16", self.rules)
+        self.assertEqual(later_holiday["status"], "CLOSED")
+
+        uncovered = bmv_trading_day_status("2027-01-04", self.rules)
+        self.assertEqual(uncovered["status"], "UNKNOWN")
+        self.assertIsNone(uncovered["is_bmv_trading_day"])
 
     def test_snapshot_diff_detects_added_removed_and_modified_records(self):
         before = {"snapshot_id": "before", "instruments": self.universe["instruments"][:2]}
