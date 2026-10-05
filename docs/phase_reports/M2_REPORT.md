@@ -43,8 +43,16 @@ instrument's newest bar:
 - `python -m pip check` — PASS.
 - `actinver-m1 audit` — PASS; all 207 guide records and source fingerprints.
 - `git diff --check` — PASS (only Git's Windows LF/CRLF conversion notices).
+- GitHub Actions [run 37291455075](https://github.com/MarioIbago/reto-actinver-2026-/actions/runs/37291455075)
+  on PR #10 / commit `1339febd03cf213dff85182b622aac2c3ac24c74` — PASS;
+  package install, complete 61-test suite, deterministic M0 smoke, result
+  verification, and artifact upload all succeeded.
+- CI artifact `m0-foundation-37291455075-1`, ID `11336501576`, SHA-256
+  `54720f76bda8902b0e66cefe0e788cb14e3c289e0b77a6ac13e70080a322c86b`.
+- PR #10 merged to `main` as `a94aa8a2302f3ae8b270bf19989aa494ab549c16`.
 
-Remote CI remains to be run on the implementation PR.
+The CI artifact confirms the software/runner path only; it does not contain
+licensed market history and does not close the M2 data gate.
 
 ## Data rights and evidence gap
 
