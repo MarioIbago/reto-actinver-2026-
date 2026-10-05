@@ -1072,6 +1072,62 @@ def verify_ledger(path: Path) -> dict[str, Any]:
     }
 
 
+def list_promoted_experiments(path: Path) -> dict[str, Any]:
+    """Return only the latest, verified M5 promotion for each hypothesis.
+
+    A later decision for a hypothesis supersedes its earlier decision. The
+    ledger's hash chain is tamper-evident, not an authenticated signature.
+    """
+    records = _read_ledger(path)
+    latest_by_hypothesis: dict[str, tuple[dict[str, Any], dict[str, Any]]] = {}
+    for record in records:
+        if record["event_type"] != "batch_completed":
+            continue
+        for result in record["results"]:
+            latest_by_hypothesis[result["hypothesis_id"]] = (record, result)
+
+    promoted = []
+    seen_experiment_ids: set[str] = set()
+    for record, result in latest_by_hypothesis.values():
+        if (
+            result["scientific_decision"] != "PROMOTE"
+            or result["m5_gate_downgraded"]
+            or result["run_status"] != "COMPLETED"
+        ):
+            continue
+        if result["experiment_id"] in seen_experiment_ids:
+            raise ResearchFactoryError(
+                f"latest promoted decisions reuse experiment ID {result['experiment_id']!r}"
+            )
+        seen_experiment_ids.add(result["experiment_id"])
+        registered = next(
+            item
+            for prior in records
+            if prior["event_type"] == "plan_registered" and prior["batch_id"] == record["batch_id"]
+            for item in prior["registered_experiments"]
+            if item["experiment_id"] == result["experiment_id"]
+        )
+        promoted.append(
+            {
+                "experiment_id": result["experiment_id"],
+                "hypothesis_id": result["hypothesis_id"],
+                "promotion_record_sha256": record["record_sha256"],
+                "scientific_decision": result["scientific_decision"],
+                "m5_gate_downgraded": result["m5_gate_downgraded"],
+                "experiment_spec": registered["experiment_spec"],
+                "validation_result": result["validation_result"],
+            }
+        )
+    promoted.sort(key=lambda item: item["experiment_id"])
+    return {
+        "status": "PASS",
+        "ledger_head_record_sha256": records[-1]["record_sha256"] if records else None,
+        "promoted_experiments": promoted,
+        "promotion_count": len(promoted),
+        "integrity_note": "Verified M5 hash chain; hash chain is not a signed or authenticated record.",
+    }
+
+
 def summarize_ledger(path: Path) -> dict[str, Any]:
     """Count registered/tested hypotheses and every final decision without dropping failures."""
     records = _read_ledger(path)
@@ -1119,6 +1175,7 @@ def summarize_ledger(path: Path) -> dict[str, Any]:
 __all__ = [
     "ResearchFactoryError",
     "code_identity",
+    "list_promoted_experiments",
     "load_plan",
     "register_plan",
     "run_registered_batch",

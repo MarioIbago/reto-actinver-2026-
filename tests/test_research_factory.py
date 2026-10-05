@@ -10,6 +10,7 @@ from actinver.m1 import load_rules
 from actinver.research_factory import (
     ResearchFactoryError,
     code_identity,
+    list_promoted_experiments,
     register_plan,
     run_registered_batch,
     summarize_ledger,
@@ -207,6 +208,9 @@ class ResearchFactoryTests(unittest.TestCase):
         self.assertEqual(summary["decision_attempt_counts"]["REJECT"], 1)
         self.assertEqual(summary["decision_attempt_counts"]["NEEDS_MORE_EVIDENCE"], 1)
         self.assertEqual(summary["decision_attempt_counts"]["PROMOTE"], 0)
+        promotion_index = list_promoted_experiments(self.ledger)
+        self.assertEqual(promotion_index["promotion_count"], 0)
+        self.assertEqual(promotion_index["promoted_experiments"], [])
 
     def test_changed_case_is_preserved_as_a_run_error(self):
         self.register()
@@ -218,6 +222,12 @@ class ResearchFactoryTests(unittest.TestCase):
         summary = summarize_ledger(self.ledger)
         self.assertEqual(summary["run_errors"], 1)
         self.assertEqual(summary["decision_attempt_counts"]["NEEDS_MORE_EVIDENCE"], 2)
+
+    def test_missing_factory_ledger_is_an_empty_promotion_index(self):
+        index = list_promoted_experiments(self.directory / "not-created.jsonl")
+        self.assertEqual(index["status"], "PASS")
+        self.assertIsNone(index["ledger_head_record_sha256"])
+        self.assertEqual(index["promotion_count"], 0)
         self.assertEqual(verify_ledger(self.ledger)["status"], "PASS")
 
     def test_invalid_parameter_fingerprint_fails_before_ledger_append(self):

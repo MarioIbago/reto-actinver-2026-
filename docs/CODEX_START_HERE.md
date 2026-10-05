@@ -8,9 +8,11 @@ Raw evidence under `research/source_material/` must remain unchanged. M1 owns no
 
 ## Current phase: M7 — Alpha Ensemble
 
-Follow `prompts/phases/M7_ALPHA_ENSEMBLE.md`. Admit only signals with a recorded `PROMOTE` decision from the M5 research process. No real financial signal currently meets that bar; build and verify the ensemble mechanics with synthetic fixtures without treating them as alpha evidence. Keep Alpha Score distinct from Believability Score, use calibrated OOS inputs, and preserve regime, correlation, uncertainty, and ablation diagnostics. M6's empirical gate remains `NEEDS_MORE_EVIDENCE` because authorized historical news/prices and authenticated simulator mapping are unavailable; see `docs/phase_reports/M6_REPORT.md`.
+Follow `prompts/phases/M7_ALPHA_ENSEMBLE.md`. Admit only signals with a current M5 `PROMOTE` record and a per-instrument forecast artifact whose digest, target, data, universe, cost model, and horizon match the M5 record. No real signal currently meets that contract; the registry is empty, and M5 does not yet export instrument forecast artifacts. M7's software path is implemented, while its empirical gate remains `NEEDS_MORE_EVIDENCE`. Do not interpret synthetic fixtures as alpha. Keep Alpha Score distinct from Believability Score and preserve PIT, OOS, regime, correlation, uncertainty, and ablation diagnostics; see `docs/actinver_alpha_ensemble.md` and `docs/phase_reports/M7_REPORT.md`.
 
 M6's software path is available through `actinver-news` for source revision normalization, as-of queries, extraction payloads/snapshots, digests, alerts, separately cut PIT labels, and chronological evaluation. See `docs/actinver_news_events.md` and `docs/phase_reports/M6_REPORT.md`. All schedule specs are disabled until licensed source connectors and a runner exist. The software gate passes; M6 empirical predictive value remains `NEEDS_MORE_EVIDENCE`.
+
+M7 provides `actinver-ensemble promotions` and `actinver-ensemble evaluate`. The first reads the latest verified M5 promotion per hypothesis; the second requires an exact M5 forecast-artifact digest and checks instrument IDs against a fingerprint-verified M1 snapshot. Current promotion count is zero. Do not produce financial forecasts from the empty registry.
 
 Completed M1 outputs:
 
