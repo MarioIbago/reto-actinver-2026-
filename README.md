@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: M0 integrado; M1 — Rules & Eligible Universe está activa. El código de M1 valida reglas y metadatos; no hay estrategias ni backtests financieros.
+> Estado: M0 y la implementación inicial M1 están integrados; M1 — Rules & Eligible Universe sigue abierta por la falta de mapeo verificable a símbolos/series del simulador y por ambigüedades oficiales no resueltas. No hay estrategias ni backtests financieros.
 
 ## Objetivo
 
@@ -87,7 +87,8 @@ Raw evidence stays in:
 
 Actualmente incluye:
 - participant-guide snapshot;
-- raw 207-instrument universe list.
+- raw 207-instrument universe list;
+- official Grupo BMV 2026 holiday-calendar capture.
 
 M1 normalizará/verificará símbolos y reglas. No usar raw material como configuración ejecutable.
 
@@ -141,5 +142,6 @@ No strategy backtests, predictive models, signal logic or trading UI are in scop
 - https://www.retoactinver.com/
 - https://www.retoactinver.com/bases-y-mecanica
 - https://www.retoactinver.com/es-mx/general
+- https://www.bmv.com.mx/es/Grupo_BMV/Calendario_de_dias_festivos/_rid/662/_mod/TAB_DIAS_FEST
 
 M1 must re-verify/version current rules.

@@ -11,6 +11,7 @@ from typing import Any
 import yaml
 
 from .m1 import (
+    bmv_trading_day_status,
     M1DataError,
     diff_rules,
     diff_universes,
@@ -20,6 +21,7 @@ from .m1 import (
     validate_order,
     validate_portfolio,
     verify_source_material,
+    verify_rule_source_material,
 )
 
 
@@ -48,6 +50,12 @@ def _parser() -> argparse.ArgumentParser:
     eligible.add_argument("--as-of", required=True)
     eligible.add_argument("--universe", type=Path, default=UNIVERSE_PATH)
 
+    market_day = commands.add_parser(
+        "market-day", help="check the sourced BMV trading-day calendar for a date"
+    )
+    market_day.add_argument("--as-of", required=True)
+    market_day.add_argument("--rules", type=Path, default=RULES_PATH)
+
     order = commands.add_parser("validate-order", help="screen a proposed order against M1 constraints")
     order.add_argument("--input", type=Path, required=True, help="JSON with order and portfolio objects")
     order.add_argument("--as-of", required=True)
@@ -74,12 +82,14 @@ def main(argv: list[str] | None = None) -> int:
             rules = load_rules(args.rules)
             universe = load_universe(args.universe)
             verify_source_material(universe, ROOT)
+            verify_rule_source_material(rules, ROOT)
             eligible_now = eligible_instruments(universe, "2026-10-05")
             result = {
                 "status": "PASS",
                 "ruleset_id": rules["ruleset_id"],
                 "universe_snapshot_id": universe["snapshot_id"],
                 "source_fingerprints": "PASS",
+                "rule_source_captures": "PASS",
                 "counts": universe["observed_counts"],
                 "eligible_on_2026_10_05": len(eligible_now),
                 "ambiguity_count": len(rules["ambiguities"]),
@@ -103,6 +113,9 @@ def main(argv: list[str] | None = None) -> int:
                     for record in records
                 ],
             }
+        elif args.command == "market-day":
+            rules = load_rules(args.rules)
+            result = bmv_trading_day_status(args.as_of, rules)
         elif args.command == "validate-order":
             inputs = _read_json(args.input)
             rules = load_rules(args.rules)

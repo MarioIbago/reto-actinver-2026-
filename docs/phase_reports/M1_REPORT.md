@@ -27,7 +27,7 @@ Checked on 2026-10-05 at 07:57 UTC:
 2. The 50% limit is described as a current portfolio allocation in the guide and as purchases in one share during the period in the rules. Both tests are modeled; portfolio holdings alone cannot certify award eligibility.
 3. The guide lists four FIBRAs but the rules body does not explicitly name FIBRAs. Those records remain guide-listed and carry a rulebook-conflict flag.
 4. The exact symbol/series in the authenticated simulator search was not available from public sources. No login, cookies or simulated orders were accessed; platform symbols remain unverified.
-5. The BMV holiday calendar and source-provided liquidity, sector, currency and per-instrument validity attributes were not included in the reviewed source set. Order expiry is published as one day but the calendar/business-day basis is unspecified.
+5. At this report's initial review, the BMV holiday calendar was not included. The supplemental capture below resolves that gap for listed 2026 non-working dates. The guide still provides no point-in-time liquidity, sector, currency or per-instrument validity attributes, and order expiry is published as one day without specifying calendar-day versus business-day basis.
 6. The sources conflict on enrollment cutoff (guide: October 2; regulation and homepage FAQ: October 4) and the rules-page title says 2025 while its body is explicitly 2026. The discrepancies are recorded in provenance.
 7. The official guide PDF was read from Actinver's public URL, but its binary was not saved in `research/source_material/`; stored SHA-256 values fingerprint the preserved Markdown table and compact symbol list, not the PDF bytes.
 
@@ -48,4 +48,20 @@ M1 OPEN — BLOCKERS REMAIN
 
 ## Exact next step
 
-Obtain a point-in-time export or user-supplied list of exact symbols/series shown in the authenticated Reto Actinver simulator, and a sourced BMV holiday calendar. Compare them with `actinver-2026-guide-annex-v1`, update the snapshots, and rerun the M1 audit before claiming operational eligibility.
+Obtain a point-in-time export of exact symbols/series shown in the authenticated Reto Actinver simulator from an authorized source, compare it with `actinver-2026-guide-annex-v1`, update the snapshot, and rerun the M1 audit before claiming operational eligibility. The simulator mapping is still unverified, so M1 remains OPEN.
+
+## Supplemental BMV calendar capture — 2026-10-05
+
+The [official Grupo BMV 2026 holiday calendar](https://www.bmv.com.mx/es/Grupo_BMV/Calendario_de_dias_festivos/_rid/662/_mod/TAB_DIAS_FEST) was retrieved directly with HTTP 200 at 08:15:08 UTC. The original HTML is preserved at `research/source_material/bmv_2026_holidays_official.html`. The canonicalized-LF SHA-256 recorded in the ruleset is `7702be0373cd46f46a3c273b5dcf02285e94206a44e073f9a8a7cf7ff8eee164`. Its table lists 11 non-working dates in 2026, including Monday 2026-11-02 during the competition.
+
+`actinver-m1 market-day` reports weekends and listed 2026 BMV holidays as `CLOSED`, ordinary listed-year weekdays as `SCHEDULED_SESSION`, and dates without a calendar-year snapshot as `UNKNOWN`. It does not model exceptional suspensions or shortened sessions. The one-day order-expiry ambiguity remains unresolved.
+
+Local follow-up verification:
+
+- `python -m unittest discover -s tests -v` — PASS; 43 tests.
+- `actinver-m1 audit` — PASS; all 207 source records, universe fingerprints and the BMV source-capture fingerprint verified.
+- `actinver-m1 market-day --as-of 2026-11-02` — PASS; reports the official Día de muertos closure.
+- `actinver-m1 market-day --as-of 2026-11-03` — PASS; reports a scheduled session.
+- `python -m pip check` — PASS.
+- `python -m compileall -q src scripts tests` — PASS.
+- Calendar follow-up CI run `37283575486` on commit `22c3aef04c2c3a2f8cfc552cf9ca93192ad61f9b` — PASS; all workflow steps completed successfully. Artifact `11333381383`, SHA-256 `0d333c11d4129aaad9b9ef82a9ea362602fc86532ed957be5790d8994d73b6a9`.

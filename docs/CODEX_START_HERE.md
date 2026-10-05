@@ -12,13 +12,13 @@ Follow `prompts/phases/M1_RULES_UNIVERSE.md`. Verify current official sources, r
 
 Current outputs:
 
-- `config/actinver_rules.yaml` — dated official-source rules and explicit ambiguities.
+- `config/actinver_rules.yaml` — dated rules, explicit ambiguities and the sourced 2026 BMV calendar queried by `actinver-m1 market-day`.
 - `data/metadata/actinver_universe_2026_v1.json` — guide-annex instruments with stable repository IDs and source hashes.
 - `src/actinver/m1.py` and `src/actinver/m1_cli.py` — date queries, rule screens and snapshot diffs.
 - `docs/actinver_rules.md` — source interpretation, limits and commands.
 - `docs/phase_reports/M1_REPORT.md` — evidence, blockers and M1 status.
 
-The guide's 207 symbols have not been mapped to exact authenticated simulator search symbols/series. Preserve them as guide labels and report platform operability as unverified. Source wording also conflicts on the minimum qualifying assets, 50% concentration measurement and FIBRA eligibility. Return `INDETERMINATE` when the supplied evidence cannot resolve a rule.
+The guide's 207 symbols have not been mapped to exact authenticated simulator search symbols/series. Preserve them as guide labels and report platform operability as unverified. Source wording also conflicts on the minimum qualifying assets, 50% concentration measurement and FIBRA eligibility. Return `INDETERMINATE` when the supplied evidence cannot resolve a rule. Scheduled 2026 holidays are captured from the official BMV page; exceptional closures and shortened sessions are not represented.
 
 Useful commands:
 
@@ -26,6 +26,7 @@ Useful commands:
 python -m unittest discover -s tests -v
 actinver-m1 audit
 actinver-m1 eligible --as-of 2026-10-05
+actinver-m1 market-day --as-of 2026-11-02
 ```
 
 ## Completed M0 reference
