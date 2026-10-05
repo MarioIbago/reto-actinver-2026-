@@ -64,4 +64,4 @@ Local follow-up verification:
 - `actinver-m1 market-day --as-of 2026-11-03` — PASS; reports a scheduled session.
 - `python -m pip check` — PASS.
 - `python -m compileall -q src scripts tests` — PASS.
-- Current calendar follow-up CI — pending.
+- Calendar follow-up CI run `37283575486` on commit `22c3aef04c2c3a2f8cfc552cf9ca93192ad61f9b` — PASS; all workflow steps completed successfully. Artifact `11333381383`, SHA-256 `0d333c11d4129aaad9b9ef82a9ea362602fc86532ed957be5790d8994d73b6a9`.
