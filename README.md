@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: M0–M2 pasaron sus gates técnicos. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV histórico autorizado. M3 es la fase activa. No hay estrategias ni backtests financieros.
+> Estado: M0–M3 pasaron sus gates técnicos de software/datos acotados. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV histórico autorizado. M4 es la fase activa. No hay evidencia de alpha ni backtests financieros con datos reales.
 
 ## Objetivo
 
@@ -113,7 +113,7 @@ Los resultados negativos se preservan.
 - ChatGPT Research: deep research / methodology.
 - Perplexity Pro: current web/news/source verification.
 - Codex: production repo implementation.
-- Human: phase approval + final Actinver execution.
+- Human: final manual execution in Actinver; order entry is never automated.
 
 Research can parallelize; production code is single-writer by default.
 
@@ -123,11 +123,11 @@ See `docs/reference_projects.md`.
 
 References are not automatic dependencies.
 
-## Current priority — M3
+## Current priority — M4
 
-Construir el simulador determinista de órdenes, fills y ledger con las reglas versionadas de Actinver. Los resultados de práctica no están disponibles en el repositorio; comparar con datos reales solo si aparece un export autorizado.
+M3 now provides `actinver-exec simulate`: deterministic replay, auditable cash/position/fee ledger, versioned case/result schemas, and provenance. Its synthetic tests establish software mechanics only. No real practice fills, authorized OHLCV/trades, or authenticated simulator symbols are available.
 
-No strategy backtests, predictive models, signal logic or trading UI are in scope until sus fases y datos de entrada estén habilitados. M4 no podrá respaldar afirmaciones financieras sin OHLCV autorizado y símbolos operables verificados.
+M4 builds baselines and time-aware validation. It may validate the harness on synthetic fixtures, but it must return `NEEDS_MORE_EVIDENCE` for financial claims until authorized point-in-time price history and usable instrument identifiers exist. No strategy may be promoted from synthetic data.
 
 ## Official sources
 

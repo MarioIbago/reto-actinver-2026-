@@ -6,9 +6,9 @@ Before changing production code, read `README.md`, `MASTER_PLAN.md`, `AGENTS.md`
 
 Raw evidence under `research/source_material/` must remain unchanged. M1 owns normalization of rules and the guide universe; M2 owns PIT market-data ingestion and manifests.
 
-## Current phase: M3 — Actinver Execution Simulator
+## Current phase: M4 — Baselines & Validation Engine
 
-Follow `prompts/phases/M3_EXECUTION_SIMULATOR.md`. Use only versioned rules and explicit assumptions; do not optimize strategies or build future-phase modules.
+Follow `prompts/phases/M4_BASELINES_VALIDATION.md`. Build reproducible baselines and validation gates; never use synthetic fixtures to claim financial performance or promote a strategy. The M3 simulator is available through `actinver-exec simulate` and is documented in `docs/actinver_execution.md`.
 
 Completed M1 outputs:
 
@@ -22,6 +22,8 @@ The guide's 207 symbols have not been mapped to exact authenticated simulator se
 
 M2 provides `src/actinver/data_engine.py`, `actinver-data`, and `scripts/build_bmv_calendar_dataset.py`. Its gate passes for the source-backed BMV calendar-event dataset. That calendar is the only real dataset currently available; no authorized historical OHLCV has been ingested. The calendar data and manifest remain local while redistribution rights are unknown. Do not make financial backtest claims from calendar records or synthetic fixtures.
 
+M3 provides `src/actinver/execution.py`, `src/actinver/execution_cli.py`, versioned execution schemas, and `docs/actinver_execution.md`. It passed deterministic synthetic replay and the complete CI workflow. The gate does not certify broker behavior: partial fills/queue priority, platform rounding, practice fills, market trades, and exact Actinver symbols remain unavailable or unspecified.
+
 Useful commands:
 
 ```powershell
@@ -29,12 +31,15 @@ python -m unittest discover -s tests -v
 actinver-m1 audit
 actinver-m1 eligible --as-of 2026-10-05
 actinver-m1 market-day --as-of 2026-11-02
+actinver-exec --help
 $ingestionTime = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
 $codeCommitSha = (git rev-parse HEAD).Trim()
 python scripts/build_bmv_calendar_dataset.py --ingestion-time $ingestionTime --code-commit-sha $codeCommitSha
 ```
 
 Keep the timestamp and commit SHA emitted in the phase report when repeating an exact dataset build.
+
+M4 may develop baselines and statistical methods, but all financial results must remain `NEEDS_MORE_EVIDENCE` until authorized price data, point-in-time instrument identity, and the M3 execution inputs are available.
 
 ## Completed M0 reference
 
