@@ -1,2 +1,22 @@
-# PLACEHOLDER — owned by M1_RULES_UNIVERSE
-status: not_built
+# M1 guide-annex snapshot. The guide symbols are not yet confirmed against the
+# authenticated simulator search; see docs/actinver_rules.md.
+schema_version: 1
+status: guide_annex_normalized_platform_symbols_unverified
+current_snapshot: data/metadata/actinver_universe_2026_v1.json
+snapshot_id: actinver-2026-guide-annex-v1
+effective_from: "2026-10-05"
+effective_to: "2026-11-13"
+source_id: participant_guide_2026
+expected_counts:
+  national_equity: 40
+  sic_equity: 100
+  fund: 23
+  etf: 40
+  fibra: 4
+  total: 207
+identifier_policy:
+  instrument_id: stable repository ID derived from annex category and guide symbol
+  guide_symbol: copied verbatim from source material
+  platform_symbol: null until directly verified
+  series: null until directly verified
+  issuer_id: source-local stable ID, not an external legal-entity identifier

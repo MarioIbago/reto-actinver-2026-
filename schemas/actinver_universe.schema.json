@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://retoactinver.local/schemas/actinver_universe.schema.json",
+  "title": "Point-in-time Actinver guide-annex universe snapshot",
+  "type": "object",
+  "required": ["schema_version", "snapshot_id", "status", "observed_at_utc", "effective_from", "effective_to", "source", "expected_counts", "observed_counts", "instruments"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "snapshot_id": {"type": "string"},
+    "status": {"type": "string"},
+    "observed_at_utc": {"type": "string", "format": "date-time"},
+    "effective_from": {"type": "string", "format": "date"},
+    "effective_to": {"type": ["string", "null"], "format": "date"},
+    "source": {"type": "object", "required": ["source_id", "url", "repository_guide_snapshot_sha256", "repository_symbol_list_sha256"]},
+    "expected_counts": {"type": "object"},
+    "observed_counts": {"type": "object"},
+    "instruments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["instrument_id", "issuer_key", "category", "instrument_type", "guide_symbol", "issuer_or_name", "platform_symbol", "series", "currency", "sector", "liquidity_attributes", "eligibility", "source_id"],
+        "properties": {
+          "instrument_id": {"type": "string", "minLength": 1},
+          "issuer_key": {"type": "string", "minLength": 1},
+          "guide_symbol": {"type": "string", "minLength": 1},
+          "platform_symbol": {"type": ["string", "null"]},
+          "series": {"type": ["string", "null"]},
+          "currency": {"type": ["string", "null"]},
+          "sector": {"type": ["string", "null"]},
+          "liquidity_attributes": {"type": ["object", "null"]},
+          "eligibility": {"type": "object", "required": ["listed_in_official_2026_guide_annex", "rulebook_category_conflict", "platform_search_symbol_verified", "valid_from", "valid_to"]}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

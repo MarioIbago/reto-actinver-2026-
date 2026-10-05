@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://retoactinver.local/schemas/actinver_rules.schema.json",
+  "title": "Actinver competition rules snapshot",
+  "type": "object",
+  "required": ["schema_version", "ruleset_id", "status", "verified_at_utc", "effective_period", "sources", "rules", "ambiguities"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "ruleset_id": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "minLength": 1},
+    "verified_at_utc": {"type": "string", "format": "date-time"},
+    "effective_period": {
+      "type": "object",
+      "required": ["start", "end", "timezone"],
+      "properties": {
+        "start": {"type": "string", "format": "date"},
+        "end": {"type": "string", "format": "date"},
+        "timezone": {"type": "string"},
+        "end_time_local": {"type": "string", "format": "time"}
+      },
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_id", "url", "publisher", "checked_at_utc"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "publisher": {"type": "string"},
+          "checked_at_utc": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "rules": {"type": "object", "required": ["starting_capital_actipesos", "short_selling_allowed", "allowed_order_sides", "allowed_order_types", "costs", "portfolio_constraints", "instrument_eligibility"]},
+    "ambiguities": {"type": "array", "items": {"type": "object", "required": ["ambiguity_id", "description", "resolution_policy"]}}
+  },
+  "additionalProperties": true
+}

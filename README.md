@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: arquitectura + prompts + source material. M0 es la fase activa; el código financiero todavía no debe existir.
+> Estado: M0 integrado; M1 — Rules & Eligible Universe está activa. El código de M1 valida reglas y metadatos; no hay estrategias ni backtests financieros.
 
 ## Objetivo
 
@@ -122,21 +122,19 @@ See `docs/reference_projects.md`.
 
 References are not automatic dependencies.
 
-## Current priority — M0
+## Current priority — M1
 
-El primer éxito debe ser:
+La base reproducible M0 ya está integrada. M1 verifica y versiona:
 
 ```text
-workflow_dispatch
-→ clean runner
-→ tests
-→ deterministic Python smoke
-→ JSON result
-→ uploaded artifact
-→ verified PASS/FAIL
+official 2026 rules
+→ dated, sourced ruleset
+→ 207-instrument guide annex snapshot
+→ point-in-time eligibility and constraint checks
+→ recorded source conflicts / unknowns
 ```
 
-No real data, models, signals or UI yet.
+No strategy backtests, predictive models, signal logic or trading UI are in scope yet.
 
 ## Official sources
 

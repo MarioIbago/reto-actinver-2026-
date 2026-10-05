@@ -1,3 +1,136 @@
-# PLACEHOLDER — owned by M1_RULES_UNIVERSE
-schema_version: 0
-status: not_verified
+# Versioned snapshot of publicly published Reto Actinver 2026 rules.
+schema_version: 1
+ruleset_id: actinver-2026-rules-v1
+status: verified_with_source_ambiguities
+verified_at_utc: "2026-10-05T07:57:04Z"
+effective_period:
+  start: "2026-10-05"
+  end: "2026-11-13"
+  timezone: America/Mexico_City
+  end_time_local: "15:00:00"
+  date_basis: "Official rules state competition through 2026-11-13 15:00 CDMX; guide says market close that day."
+sources:
+  - source_id: official_rules_2026
+    title_as_displayed: "Bases y mecánica del Reto Actinver 2025"
+    url: https://www.retoactinver.com/bases-y-mecanica
+    publisher: Actinver
+    source_date: "Mayo a Diciembre 2026 (body text)"
+    checked_at_utc: "2026-10-05T07:57:04Z"
+    evidence_sections:
+      - "(5) Duración del Reto"
+      - "(6) Determinación de Ganadores"
+      - "(8) Mecánica de Operación en el Simulador de Inversiones"
+      - "(11) Mecánica del Simulador"
+      - "(12) Valuación del Portafolio"
+      - "(13) Derechos Corporativos"
+    notes:
+      - "Page title says 2025, while the body is explicitly labeled Reto Actinver 2026 and rules May-December 2026."
+  - source_id: participant_guide_2026
+    title_as_displayed: "Guía editorial del participante Reto Actinver 2026"
+    url: https://www.retoactinver.com/documents/d/reto-actinver/guia-participante_reto-actinver-2026
+    publisher: Actinver
+    checked_at_utc: "2026-10-05T07:57:04Z"
+    evidence_pages: [18, 19, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+  - source_id: official_homepage_faq_2026
+    title_as_displayed: "Inicio | Reto Actinver"
+    url: https://www.retoactinver.com/
+    publisher: Actinver
+    checked_at_utc: "2026-10-05T07:57:04Z"
+    evidence_sections: ["FAQs: fechas importantes", "FAQs: categoría por rendimiento"]
+  - source_id: general_page_redirect
+    title_as_displayed: "Reto general | Reto Actinver"
+    url: https://www.retoactinver.com/es-mx/general
+    publisher: Actinver
+    checked_at_utc: "2026-10-05T07:57:04Z"
+    notes: ["Redirects to /inicio; the same homepage FAQ content was reviewed."]
+rules:
+  starting_capital_actipesos: 1000000
+  currency: MXN
+  award_metric: absolute_portfolio_gain
+  short_selling_allowed: false
+  allowed_order_sides: [buy, sell]
+  allowed_order_types: [market, limit]
+  order_receipt:
+    availability: 24x7_except_platform_maintenance
+    timezone: America/Mexico_City
+    after_market_date_value: next_bmv_business_day
+  market_execution_windows:
+    weekdays_only: true
+    exclude_bmv_holidays: true
+    holiday_calendar_source: null
+    windows:
+      - start_date: "2026-10-05"
+        end_date: "2026-11-02"
+        open: "07:30:00"
+        close: "14:00:00"
+      - start_date: "2026-11-03"
+        end_date: null
+        open: "08:30:00"
+        close: "15:00:00"
+    source_timezone: America/Mexico_City
+  order_execution:
+    market: next_bmv_trade_after_order_registration
+    limit: subsequent_bmv_trade_at_requested_price
+    fill_guaranteed: false
+    pending_order_expiration_days: 1
+    pending_order_expiration_unit: day
+    pending_order_expiration_day_basis: unspecified_by_source
+    pending_orders_may_be_cancelled: true
+    filled_orders_may_be_cancelled: false
+    order_modification_allowed: false
+  costs:
+    commission_rate: 0.001
+    iva_rate_on_commission: 0.16
+    effective_rate: 0.00116
+    charged_on: [buy, sell]
+    rounding_rule: null
+  portfolio_constraints:
+    minimum_distinct_guide_instruments: 5
+    minimum_distinct_traded_shares: 5
+    maximum_single_instrument_weight: 0.5
+    maximum_single_share_purchase_to_portfolio_value: 0.5
+    concentration_comparison: strictly_greater_than_limit_is_violation
+    concentration_status: ambiguous_between_current_weight_and_period_purchases
+    minimum_count_status: ambiguous_between_guide_instruments_and_regulation_shares
+  buying_power:
+    purchases_must_not_exceed_available_buying_power: true
+    available_buying_power_includes: [remaining_cash, completed_sale_proceeds]
+    subtracts_reserved_pending_buy_orders: true
+  selling:
+    must_not_exceed_currently_held_quantity: true
+    short_selling_allowed: false
+  instrument_eligibility:
+    source_universe_snapshot: data/metadata/actinver_universe_2026_v1.json
+    universe_snapshot_id: actinver-2026-guide-annex-v1
+    exact_simulator_search_symbols_verified: false
+    sic_series_verified: false
+    fibras_status: guide_annex_lists_them_but_rules_body_omits_them
+  portfolio_valuation:
+    intraday: continuously_during_market_hours
+    end_of_day: reconciled_after_session_close
+    dividends_and_subscriptions_reproduced: false
+    splits_reverse_splits_and_name_changes_reproduced: true
+    corporate_action_details: per_bmv_rules_and_actinver_notices
+  contest_rules:
+    minimum_share_criterion_applies_for_award_eligibility: true
+    concentration_criterion_applies_for_award_eligibility: true
+    final_rank_one_objective_is_project_objective_not_official_award_metric: true
+ambiguities:
+  - ambiguity_id: min_assets_vs_shares
+    description: "The participant guide says at least five investment instruments; the rules page says at least five distinct shares/actions."
+    resolution_policy: "Represent both constraints; award eligibility requires satisfying the stricter five-distinct-share interpretation until Actinver clarifies."
+  - ambiguity_id: concentration_basis
+    description: "The guide states no more than 50% of the portfolio in one instrument; the rules page prohibits purchases in one share above 50% of portfolio value during the period."
+    resolution_policy: "Represent both current instrument weight and cumulative single-share purchases. Do not certify award eligibility from current holdings alone."
+  - ambiguity_id: fibers_eligibility
+    description: "The 2026 participant-guide annex lists four FIBRAs. The rules body describes eligible values as shares, ETFs and investment funds without naming FIBRAs."
+    resolution_policy: "Preserve the four guide-listed FIBRAs with a source-conflict flag; do not treat guide inclusion as unambiguous rulebook eligibility."
+  - ambiguity_id: title_and_enrollment_dates
+    description: "The rules page title says 2025 and its body says 2026; the guide gives October 2 as enrollment close, while rules and homepage FAQ give October 4."
+    resolution_policy: "Use explicit 2026 competition dates from the rules and homepage; preserve the page-title/date discrepancies in provenance."
+  - ambiguity_id: platform_symbol_and_series
+    description: "The guide warns that its issuer labels may not be the exact simulator-search ticker/series; no authenticated platform export was available for this verification."
+    resolution_policy: "Store guide symbols as source labels and leave platform_symbol and series unresolved until a direct platform list is supplied or reviewed."
+  - ambiguity_id: pending_order_expiry_day
+    description: "The rules say unfilled orders expire after one day but do not say whether this means a calendar day or BMV business day."
+    resolution_policy: "Store the one-day duration without assigning a calendar/business-day interpretation."

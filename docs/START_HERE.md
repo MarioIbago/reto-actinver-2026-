@@ -1,101 +1,35 @@
-# START HERE — Cómo empezar
+# START HERE — Reto Actinver 2026
 
 Este documento es para el dueño del proyecto.
 
-## 1. Método
+## Estado actual
 
-```text
-Research
-   ↓
-dossier / evidence
-   ↓
-Codex
-   ↓
-implementation
-   ↓
-tests / GitHub Actions
-   ↓
-experiment
-   ↓
-validation
-   ↓
-REJECT / PROMOTE
+- M0 — Foundation & Research Infrastructure: integrado en `main` (`fcff0242c781661f6518e14b3d6978887d12f7f8`).
+- M1 — Rules & Eligible Universe: activa; ver `prompts/phases/M1_RULES_UNIVERSE.md` y `docs/phase_reports/M1_REPORT.md`.
+- El anexo oficial de la guía 2026 contiene 207 instrumentos. La lista normalizada conserva los símbolos de la guía y señala por separado que los símbolos/series del buscador autenticado siguen sin verificar.
+- El reglamento y la guía difieren en cómo cuentan los cinco activos y miden el límite del 50%; la elegibilidad de FIBRAs también requiere aclaración.
+
+## Documentos principales
+
+Lee `MASTER_PLAN.md`, `docs/architecture.md`, `docs/research_standard.md`, `AGENTS.md`, `docs/CODEX_START_HERE.md`, `prompts/CURRENT_PHASE.md` y el prompt completo de la fase activa.
+
+## Source material
+
+Los archivos bajo `research/source_material/` son evidencia raw y no deben modificarse silenciosamente. M1 transforma el anexo del participante en `data/metadata/`; el generador compara símbolos y categorías contra los snapshots raw y registra sus hashes.
+
+## Research y producción
+
+- Research puede verificar fuentes, estructurar evidencia, proponer hipótesis y criticar resultados.
+- Codex mantiene la implementación de producción.
+- Los cálculos, las reglas y la validación se ejecutan de forma determinista.
+- La ejecución final en el portal del Reto siempre es manual.
+
+## M1 comandos
+
+```powershell
+actinver-m1 audit
+actinver-m1 eligible --as-of 2026-10-05
+actinver-m1 diff --kind universe --previous <snapshot-anterior.json> --current data/metadata/actinver_universe_2026_v1.json
 ```
 
-No construir todo a la vez.
-
-## 2. Documentos principales
-
-Lee:
-1. `MASTER_PLAN.md`
-2. `docs/architecture.md`
-3. `docs/research_standard.md`
-
-Codex usa además:
-- `AGENTS.md`
-- `docs/CODEX_START_HERE.md`
-- `prompts/CURRENT_PHASE.md`
-- prompt de fase.
-
-## 3. Fase activa
-
-M0 — Foundation & Research Infrastructure.
-
-Todavía NO:
-- estrategias;
-- picks;
-- noticias en producción;
-- ML;
-- backtests financieros;
-- Tournament Brain;
-- UI.
-
-M0 solo prueba que el laboratorio funciona.
-
-## 4. Primer prompt a Codex
-
-Pídele:
-- leer los docs obligatorios;
-- inspeccionar repo;
-- planificar M0;
-- no implementar hasta revisar el plan.
-
-Después autoriza implementación por pasos pequeños siguiendo `docs/M0_RUNBOOK.md`.
-
-## 5. Source material
-
-Siempre disponible:
-- `research/source_material/reto-actinver-2026-guia.md`
-- `research/source_material/actinver_universe_symbols_raw.md`
-
-Ese universo raw tiene 207 instrumentos.
-
-No normalizar/editar fuera de M1.
-
-## 6. Research paralelo
-
-Mientras Codex trabaja en M0:
-- ChatGPT Research puede preparar dossiers;
-- Perplexity puede verificar universe/news/sources;
-- manual research roles can critique/synthesize.
-
-Research no modifica producción.
-
-## 7. Simulated agents
-
-Antes de construir multi-agent infrastructure:
-- `docs/manual_agent_workflow.md`
-- `prompts/manual_agents/00_MANAGER.md`
-
-Codex sigue siendo single production-code writer.
-
-## 8. Cuando M0 termine
-
-Trae:
-- `docs/phase_reports/M0_REPORT.md`;
-- commit/PR;
-- test output;
-- GitHub workflow run;
-- artifact.
-
-Solo después decidimos M1.
+La lista exacta del simulador y la confirmación de las ambigüedades oficiales son evidencia externa todavía pendiente. M1 no debe presentarse como plataforma-verificado hasta que esas fuentes estén disponibles.

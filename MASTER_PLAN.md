@@ -382,22 +382,6 @@ Optimizar por:
 
 ## 16. Prioridad inmediata
 
-La prioridad sigue siendo M0.
+M0 quedó completada e integrada. La fase activa es M1: versionar reglas oficiales y el universo elegible del Reto 2026 para responder consultas point-in-time con provenance. M1 conserva ambigüedades de las fuentes y no declara símbolos de plataforma verificados sin evidencia directa.
 
-El primer éxito debe ser aburrido:
-
-```text
-repo
- ↓
-GitHub Action
- ↓
-deterministic Python smoke experiment
- ↓
-structured JSON result
- ↓
-uploaded artifact
- ↓
-verified PASS/FAIL
-```
-
-Hasta que esto funcione, no se inicia lógica financiera real.
+No se inician estrategias ni backtests financieros hasta que las fases correspondientes los autoricen.
