@@ -38,6 +38,7 @@ Checked on 2026-10-05 at 07:57 UTC:
 - `actinver-m1 audit` — PASS; rules structure, source fingerprints and all 207 category counts verified.
 - `actinver-m1 eligible --as-of 2026-10-05` — PASS; returns 207 guide-annex records, each explicitly marked platform-symbol-unverified.
 - `python -m compileall -q src scripts tests` — PASS.
+- Initial GitHub Actions run `37281474397` (run 103) failed only the raw-source fingerprint test because Windows CRLF and Linux LF bytes hashed differently. The generator and verifier now canonicalize text line endings to LF without editing raw files; the full local suite and source audit pass after that fix. The failed run artifact is `11332970763` (SHA-256 `806477a3cdecb79963795a91394eeb21efdb1ad012b04f8901df9382b43d32be`).
 
 No broad research or financial experiments were run; none are in M1 scope.
 

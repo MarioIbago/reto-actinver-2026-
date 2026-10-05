@@ -48,7 +48,7 @@ Portfolio values are updated during market hours and reconciled after the sessio
 
 ## Universe snapshot
 
-The official 2026 participant-guide annex lists **207 records**: 40 Mexican equities, 100 SIC equities, 23 funds, 40 ETFs and 4 FIBRAs. The snapshot was normalized from the preserved guide table and compared category-by-category with the preserved 207-symbol raw list. Its source fingerprints and category counts are checked by `actinver-m1 audit`.
+The official 2026 participant-guide annex lists **207 records**: 40 Mexican equities, 100 SIC equities, 23 funds, 40 ETFs and 4 FIBRAs. The snapshot was normalized from the preserved guide table and compared category-by-category with the preserved 207-symbol raw list. Its source fingerprints and category counts are checked by `actinver-m1 audit`. Text fingerprints canonicalize line endings to LF so Windows and Linux checkouts produce the same digest; the source files themselves are not rewritten.
 
 Every row carries a stable repository instrument ID, its annex category, the guide symbol verbatim and the guide's issuer/name text. No external listing, currency, liquidity or sector facts have been invented: those fields remain `null` where the source does not provide them. The guide warns that its issuer symbol may not be the exact series in the simulator search, so `platform_symbol` and `series` also remain `null`. The data answers “listed in the official guide annex as of date X”; it does not certify that a source label is currently searchable or executable in the authenticated simulator.
 

@@ -36,8 +36,9 @@ EXPECTED_COUNTS = {
 }
 
 
-def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def canonical_source_bytes(path: Path) -> bytes:
+    """Hash text snapshots independent of Windows/Linux checkout line endings."""
+    return path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
 
 
 def slug(value: str) -> str:
@@ -83,8 +84,8 @@ def parse_compact_symbols(text: str) -> dict[str, set[str]]:
 
 
 def build(verified_at_utc: str) -> dict:
-    guide_bytes = GUIDE_PATH.read_bytes()
-    compact_bytes = SYMBOLS_PATH.read_bytes()
+    guide_bytes = canonical_source_bytes(GUIDE_PATH)
+    compact_bytes = canonical_source_bytes(SYMBOLS_PATH)
     guide = parse_guide_tables(guide_bytes.decode("utf-8-sig"))
     compact = parse_compact_symbols(compact_bytes.decode("utf-8-sig"))
     instruments = []

@@ -184,7 +184,8 @@ def verify_source_material(universe: Mapping[str, Any], repository_root: str | P
     ):
         path = root / source.get(path_field, "")
         try:
-            observed = hashlib.sha256(path.read_bytes()).hexdigest()
+            canonical_bytes = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+            observed = hashlib.sha256(canonical_bytes).hexdigest()
         except OSError as exc:
             raise M1DataError(f"Could not verify source material {path}: {exc}") from exc
         if observed != source.get(digest_field):
