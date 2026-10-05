@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/m9_context.schema.json",
+  "title": "M9 operator report context",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "context_id", "as_of_utc", "competition", "portfolio", "data_sources"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "context_id": {"type": "string", "minLength": 1},
+    "as_of_utc": {"anyOf": [{"type": "string", "format": "date-time"}, {"type": "null"}]},
+    "competition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["capital_actipesos", "rank", "gap_to_first_actipesos", "sessions_remaining"],
+      "properties": {
+        "capital_actipesos": {"anyOf": [{"type": "number", "minimum": 0}, {"type": "null"}]},
+        "rank": {"anyOf": [{"type": "integer", "minimum": 1}, {"type": "null"}]},
+        "gap_to_first_actipesos": {"anyOf": [{"type": "number"}, {"type": "null"}]},
+        "sessions_remaining": {"anyOf": [{"type": "integer", "minimum": 0}, {"type": "null"}]}
+      }
+    },
+    "portfolio": {
+      "type": "object", "additionalProperties": false,
+      "required": ["positions"],
+      "properties": {
+        "positions": {"anyOf": [{"type": "null"}, {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/position"}}]}
+      }
+    },
+    "data_sources": {"type": "array", "items": {"$ref": "#/$defs/data_source"}}
+  },
+  "$defs": {
+    "position": {
+      "type": "object", "additionalProperties": false,
+      "required": ["instrument_id", "market_value_actipesos"],
+      "properties": {"instrument_id": {"type": "string", "minLength": 1}, "market_value_actipesos": {"type": "number", "minimum": 0}}
+    },
+    "data_source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_id", "observed_at_utc", "max_age_minutes"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "observed_at_utc": {"anyOf": [{"type": "string", "format": "date-time"}, {"type": "null"}]},
+        "max_age_minutes": {"anyOf": [{"type": "integer", "minimum": 1}, {"type": "null"}]}
+      }
+    }
+  }
+}

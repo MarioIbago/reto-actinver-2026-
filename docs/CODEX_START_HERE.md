@@ -6,9 +6,20 @@ Before changing production code, read `README.md`, `MASTER_PLAN.md`, `AGENTS.md`
 
 Raw evidence under `research/source_material/` must remain unchanged. M1 owns normalization of rules and the guide universe; M2 owns PIT market-data ingestion and manifests.
 
-## Current phase: M9 — Trade Sheet & Human Execution Interface
+## Roadmap status: M0–M9 software complete
 
-Follow `prompts/phases/M9_TRADE_SHEET.md`, read `AGENTS.md`, and study its six UI references before designing. M8 is merged at `21ad31deb9a637e09e30d0cfc86e4295bb314fe1`; local software checks passed, but GitHub exposed no Actions run/status for the merge. M8's empirical gate remains `NEEDS_MORE_EVIDENCE`. M7's production registry is empty and M5 has no instrument-level forecast artifact. M9 must render `NO TRADE` when M7/M8 evidence or required inputs are missing or stale. Exact simulator symbols and SIC series remain unverified, so any symbol operational status must remain explicit. Actinver order entry is manual; do not add automated order controls.
+No development phase is active; M9 is the last phase in the current roadmap.
+Its report, report schemas, append-only audit chain, descriptive manual
+activity attribution and responsive cockpit are described in
+`docs/actinver_trade_sheet.md` and `docs/phase_reports/M9_REPORT.md`.
+`prompts/CURRENT_PHASE.md` records the stop state.
+
+The empirical gates for M6, M7 and M8 remain `NEEDS_MORE_EVIDENCE`. M7's
+production registry is empty, M8 emits simulation/no-decision outputs, and
+authenticated simulator symbols, historical OHLCV/news, practice fills and a
+complete PIT leaderboard are unavailable. M9 must remain `NO TRADE` until the
+scientific inputs/gates change. Actinver order entry stays manual; do not add
+automated order controls.
 
 M8's methodology and limitations are in `docs/actinver_tournament.md` and `docs/phase_reports/M8_REPORT.md`. It separates P1, expected return, ruin risk, and its scenario-Sharpe comparison; holds out selection scenarios; and reports leaderboard-model sensitivity. Its simulated candidate weights are not recommendations.
 
@@ -38,6 +49,8 @@ actinver-m1 audit
 actinver-m1 eligible --as-of 2026-10-05
 actinver-m1 market-day --as-of 2026-11-02
 actinver-exec --help
+actinver-cockpit --help
+actinver-cockpit verify-audit
 $ingestionTime = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
 $codeCommitSha = (git rev-parse HEAD).Trim()
 python scripts/build_bmv_calendar_dataset.py --ingestion-time $ingestionTime --code-commit-sha $codeCommitSha

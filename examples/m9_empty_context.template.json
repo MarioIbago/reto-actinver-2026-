@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "context_id": "replace-with-a-unique-operator-cut-id",
+  "as_of_utc": null,
+  "competition": {
+    "capital_actipesos": null,
+    "rank": null,
+    "gap_to_first_actipesos": null,
+    "sessions_remaining": null
+  },
+  "portfolio": {
+    "positions": null
+  },
+  "data_sources": []
+}
