@@ -65,3 +65,23 @@ Local follow-up verification:
 - `python -m pip check` — PASS.
 - `python -m compileall -q src scripts tests` — PASS.
 - Calendar follow-up CI run `37283575486` on commit `22c3aef04c2c3a2f8cfc552cf9ca93192ad61f9b` — PASS; all workflow steps completed successfully. Artifact `11333381383`, SHA-256 `0d333c11d4129aaad9b9ef82a9ea362602fc86532ed957be5790d8994d73b6a9`.
+
+## Final gate reassessment — 2026-10-05
+
+The initial `OPEN` decision treated an exact authenticated-simulator symbol export as a prerequisite for M1 completion. Rechecking the written M1 exit criterion shows it is to answer point-in-time guide-universe and rule-compliance queries. The implementation does this and returns explicit `INDETERMINATE` / `UNVERIFIED` states wherever the source evidence does not establish platform operability or official award eligibility. It does not claim that guide symbols are searchable or executable.
+
+Verification on the merged `main` tree at `475d1a4266db0f16b86a44708c57a54a4b474357`:
+
+- `python -m unittest discover -s tests -v` — PASS; 43 tests.
+- `actinver-m1 audit` — PASS; 207 records, all source fingerprints and the BMV source capture verified.
+- `actinver-m1 eligible --as-of 2026-10-05` — PASS; returns the dated 207-record guide annex and labels simulator operability unverified.
+- `actinver-m1 market-day --as-of 2026-11-02` — PASS; reports the sourced BMV holiday.
+- `python -m compileall -q src scripts tests` — PASS.
+- `python -m pip check` — PASS.
+- The final merge commit contains no file-tree changes relative to its parent; the local checkout is synchronized with `origin/main`.
+
+The exact simulator symbols/series, five-asset and concentration interpretations, FIBRA treatment, one-day expiry basis, exceptional BMV sessions, and some guide attributes remain unresolved. These are retained as explicit limitations; they do not turn a guide-membership answer into an operational-eligibility claim. The simulator mapping must be verified before market data can be joined to platform-operable instruments or before an execution/return claim is made. No login, cookies, or orders were accessed.
+
+**M1 status: PASS — READY FOR HUMAN REVIEW.** The user explicitly waived human approval gates and directed progression through all phases, so work proceeds to M2. This pass covers the published-source rules and guide-annex query contract only; it does not certify the unresolved simulator mapping.
+
+**Next phase:** M2 — Point-in-Time Data Engine. Preserve the M1 `platform_symbol`/`series` unknowns and keep vendor identifiers distinct from Actinver simulator identifiers.
