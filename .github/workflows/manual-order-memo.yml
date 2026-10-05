@@ -1,0 +1,60 @@
+name: Manual order memo (NO_TRADE only)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "reports/order_memos/**"
+      - "scripts/validate_order_memo.py"
+      - "tests/test_order_memo.py"
+      - "docs/order_memo_workflow.md"
+      - ".github/workflows/manual-order-memo.yml"
+  workflow_dispatch:
+    inputs:
+      memo_date:
+        description: "Fecha YYYY-MM-DD; vacío selecciona el memo más reciente"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    defaults:
+      run:
+        shell: bash
+    env:
+      MEMO_DATE: ${{ github.event.inputs.memo_date || '' }}
+      ARTIFACT_DIR: ${{ runner.temp }}/manual-order-memo
+    steps:
+      - name: Checkout exact workflow commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@5fda3b45b3b2fa7e2ae2f254da30abac29e9baf8 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Test memo validation
+        run: python -m unittest discover -s tests -p 'test_order_memo.py' -v
+
+      - name: Validate memo and write workflow summary
+        run: >-
+          python scripts/validate_order_memo.py
+          --memo-date "$MEMO_DATE"
+          --output-dir "$ARTIFACT_DIR"
+          --summary-file "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload reviewable memo artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: manual-order-memo-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/manual-order-memo/
+          if-no-files-found: error
+          retention-days: 30
