@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/alpha_ensemble_result.schema.json",
+  "title": "M7 deterministic alpha ensemble result",
+  "type": "object",
+  "required": ["schema_version", "software_status", "forecast_status", "empirical_gate", "input_trace", "predictions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "software_status": {"const": "PASS"},
+    "forecast_status": {"enum": ["NO_PROMOTED_SIGNALS", "CALIBRATED", "INSUFFICIENT_CALIBRATION"]},
+    "empirical_gate": {"const": "NEEDS_MORE_EVIDENCE"},
+    "input_trace": {"type": "object"},
+    "signal_count": {"type": "integer", "minimum": 0},
+    "predictions": {"type": "array", "items": {"type": "object"}},
+    "oos_metrics": {"type": "object"},
+    "correlation": {"type": "object"},
+    "regime_diagnostics": {"type": "array"},
+    "ablation": {"type": "array"},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "reason": {"type": "string"}
+  },
+  "additionalProperties": true
+}
