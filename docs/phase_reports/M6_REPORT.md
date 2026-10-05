@@ -56,8 +56,9 @@ Commands and outcomes on the local branch:
 - `actinver-news --help` — PASS; all nine subcommands registered.
 - `actinver-m1 audit` — PASS; 207 guide instruments and source fingerprints.
 - JSON schema parse and schedule timezone/disabled-state checks — PASS.
-- `git diff --check` — pending final staged-diff check before merge.
-- GitHub Actions — pending pull request run.
+- `git diff --cached --check` — PASS.
+- GitHub Actions [run #137](https://github.com/MarioIbago/reto-actinver-2026-/actions/runs/37315359219) — PASS on commit `54d527db33ed93543b2e748b798ca165d9ad02d8`; install, dependency check, all 126 tests, deterministic smoke, checkout identity, and artifact verification succeeded.
+- CI artifact ID `11347417420`, digest `sha256:2ef1b84d0d243d3b9e2543eece6b00e469a5824713b76dc76bc90bfa688d7ede`.
 
 An M2 regression test reproduced a timestamp-ordering defect where lexical
 comparison could place an exact-second timestamp after a later fractional
