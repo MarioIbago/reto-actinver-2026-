@@ -16,6 +16,7 @@ actinver-m0 = "actinver.cli:main"
 actinver-m1 = "actinver.m1_cli:main"
 actinver-data = "actinver.data_cli:main"
 actinver-exec = "actinver.execution_cli:main"
+actinver-m4 = "actinver.validation_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
