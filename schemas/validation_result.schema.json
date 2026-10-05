@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/validation_result.schema.json",
+  "title": "M4 time-aware validation result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "status", "experiment_id", "hypothesis", "dataset_version",
+    "universe_version", "status_decision", "decision_reasons", "selected_trial_id",
+    "benchmark_trial_id", "metrics", "cost_model", "cost_sensitivity", "parameter_sensitivity", "walk_forward",
+    "bootstrap", "pbo", "deflated_sharpe_ratio", "regime_splits", "sample_size_diagnostics",
+    "multiple_testing_context", "leakage_checks", "evidence_status", "evidence_gaps"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"enum": ["PASS", "FAIL"]},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "hypothesis": {"type": "string", "minLength": 1},
+    "dataset_version": {"type": "string", "minLength": 1},
+    "universe_version": {"type": "string", "minLength": 1},
+    "status_decision": {"enum": ["REJECT", "NEEDS_MORE_EVIDENCE", "PROMOTE"]},
+    "decision_reasons": {"type": "array", "items": {"type": "string"}},
+    "selected_trial_id": {"type": "string", "minLength": 1},
+    "benchmark_trial_id": {"type": "string", "minLength": 1},
+    "metrics": {"type": "object"},
+    "cost_model": {"type": "object"},
+    "cost_sensitivity": {"type": "array", "items": {"type": "object"}},
+    "parameter_sensitivity": {"type": "object"},
+    "walk_forward": {"type": "object"},
+    "bootstrap": {"type": "object"},
+    "pbo": {"type": "object"},
+    "deflated_sharpe_ratio": {"type": "object"},
+    "regime_splits": {"type": "object"},
+    "sample_size_diagnostics": {"type": "object"},
+    "multiple_testing_context": {"type": "object"},
+    "leakage_checks": {"type": "object"},
+    "evidence_status": {"enum": ["synthetic_fixture", "authorized_point_in_time", "unverified"]},
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}},
+    "run_provenance": {"type": "object"}
+  }
+}
