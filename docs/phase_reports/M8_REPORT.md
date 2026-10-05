@@ -36,27 +36,31 @@ expected return is lower than the expected-return baseline.
 
 ## Verification
 
-Local checks before CI:
+Local verification on the implementation commit `225672a22838795c955b2d771a17fb3ebdc779ed`:
 
 - `python -m unittest discover -s tests -v` — PASS, 149 tests.
 - `python -m pip install -e .` — PASS; installed editable package and command.
 - `python -m pip check` — PASS.
 - `python -m compileall -q src tests` — PASS.
 - `actinver-tournament --help` and `actinver-tournament evaluate --help` — PASS.
-- `git diff --check` — PASS (Git emitted only the configured LF-to-CRLF notice
-  for `pyproject.toml`).
+- `git diff --check` — PASS (only Git's configured LF-to-CRLF notices).
 
-CI and merge evidence will be appended in the M8 closure report after the
-implementation PR has passed its repository workflow.
+PR #24 was merged to `main` on 2026-10-05 as merge commit
+`21ad31deb9a637e09e30d0cfc86e4295bb314fe1`. GitHub exposed no Actions workflow
+run or commit status for either the PR head or merge commit. The report records
+that limitation rather than treating a missing run as a CI pass. The local
+full-suite and installed-CLI checks above are the available software-gate
+evidence.
 
 ## Gate status
 
-**M8 software gate: PASS locally; repository CI pending.** The verified package
-can parse and compare joint scenarios, enforce the conservative M1 constraints,
-compare the required baselines, and explain a higher-P1/lower-expected-return
-case. It rejects future source cutoffs, unlocked holdouts, incomplete
-leaderboards, mismatched M7 bytes, missing forecasts, invalid portfolio states,
-and excessive configured work.
+**M8 software gate: PASS; merged to `main`.** The verified package can parse
+and compare joint scenarios, enforce the conservative M1 constraints, compare
+the required baselines, and explain a higher-P1/lower-expected-return case. It
+rejects future source cutoffs, unlocked holdouts, incomplete leaderboards,
+mismatched M7 bytes, missing forecasts, invalid portfolio states, and excessive
+configured work. GitHub did not expose an Actions run for this merge; local
+verification is the recorded evidence.
 
 **M8 empirical gate: NEEDS_MORE_EVIDENCE.** The M5 promotion ledger and M7
 signal registry have no financially promoted instrument forecasts. No
@@ -86,7 +90,6 @@ software behavior only.
 
 No financial experiment was run or promoted. The synthetic comparison fixture
 is generated in `tests/test_tournament.py`; it is not recorded as market
-evidence. After implementation CI passes and the PR is merged, append the CI
-run/artifact details, activate M9, and build the human-readable, audit-traced
-NO-TRADE cockpit and trade-sheet interface. Actinver order entry remains
-manual.
+evidence. M9 is now active by the user's explicit all-phases instruction. Build
+the human-readable, audit-traced trade sheet and responsive NO-TRADE cockpit;
+Actinver order entry remains manual.

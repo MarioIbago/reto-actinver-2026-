@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: M0–M7 pasaron sus gates de software dentro del alcance documentado; M8 — Tournament Brain está activa. Los gates empíricos de M6 y M7 permanecen `NEEDS_MORE_EVIDENCE`. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV ni noticias históricas autorizadas. No hay evidencia de alpha ni backtests financieros con datos reales.
+> Estado: M0–M8 pasaron sus gates de software dentro del alcance documentado; M9 — Trade Sheet & Human Execution Interface está activa. Los gates empíricos de M6, M7 y M8 permanecen `NEEDS_MORE_EVIDENCE`. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV ni noticias históricas autorizadas. No hay evidencia de alpha ni backtests financieros con datos reales.
 
 ## Objetivo
 
@@ -123,7 +123,7 @@ See `docs/reference_projects.md`.
 
 References are not automatic dependencies.
 
-## Current priority — M8: Tournament Brain
+## Current priority — M9: Trade Sheet & Human Execution Interface
 
 M3 now provides `actinver-exec simulate`: deterministic replay, auditable cash/position/fee ledger, versioned case/result schemas, and provenance. Its synthetic tests establish software mechanics only. No real practice fills, authorized OHLCV/trades, or authenticated simulator symbols are available.
 
@@ -131,9 +131,11 @@ M4 provides eight point-in-time baseline families and a time-aware validation en
 
 M7's software gate is complete and merged at `1cc66f9082e3f38e9b00ec80ce9f5c92d22af14c`: `actinver-ensemble` validates current M5 promotions, calibrates by signal/instrument/horizon using train-only data, combines equal-weight families, and reports OOS/correlation/regime/ablation diagnostics. `research/signals/registry.json` is empty and no M5 factory ledger exists; M7's empirical gate remains `NEEDS_MORE_EVIDENCE`. The M5 result format also needs an instrument-level forecast artifact before any promotion can enter M7. No financial claims may be made from synthetic data.
 
-M8 is the decision layer, separate from alpha estimation. Study the rank-optimization references before design; use Monte Carlo/scenario comparisons under Actinver constraints, model leaderboard uncertainty, and compare rank-aware decisions with expected-return and Sharpe baselines. Preserve explicit abstention whenever M7 forecasts or required inputs are absent. Synthetic fixtures establish software mechanics only and must not be represented as Actinver evidence. See `prompts/phases/M8_TOURNAMENT_BRAIN.md` and `docs/phase_reports/M7_REPORT.md`.
+M8 is implemented and merged at `21ad31deb9a637e09e30d0cfc86e4295bb314fe1`. Its `actinver-tournament evaluate` command compares rank-aware, expected-return, and Sharpe allocations under joint scenarios and the strict M1 constraints. It always emits `decision: null`; M8's empirical gate stays `NEEDS_MORE_EVIDENCE`. The merge had no Actions run/status exposed by GitHub, so its software evidence is the 149-test local suite, editable install, dependency check, compileall, and CLI smoke documented in `docs/phase_reports/M8_REPORT.md`.
 
-Check the current promotion index with `actinver-ensemble promotions --ledger research/factory_ledger.jsonl`; see `docs/actinver_alpha_ensemble.md` for the M7 registry and case contracts.
+M9 builds human-readable morning, event, and evening reports, a versioned trade sheet, an append-only audit trail, post-trade attribution, and a responsive cockpit. It must show `NO TRADE` while M7/M8 evidence or required inputs are missing or stale. Study the six references in `prompts/phases/M9_TRADE_SHEET.md` before designing; classify reuse and licenses in the M9 report. No automated order controls are permitted, and Actinver entry remains manual.
+
+Check the current promotion index with `actinver-ensemble promotions --ledger research/factory_ledger.jsonl`; see `docs/actinver_alpha_ensemble.md` for the M7 registry and case contracts. See `docs/actinver_tournament.md` for M8 input and scenario contracts.
 
 ## Official sources
 

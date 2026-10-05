@@ -382,6 +382,6 @@ Optimizar por:
 
 ## 16. Prioridad inmediata
 
-M0–M7 quedaron completadas e integradas dentro de sus gates de software. La fase activa es M8: implementar una simulación reproducible de escenarios y decisiones rank-aware para estudiar `P(final_rank = 1)`. Los gates empíricos de M6 y M7 siguen `NEEDS_MORE_EVIDENCE`; el registro M7 está vacío. M8 no debe convertir escenarios sintéticos en evidencia financiera ni usar información futura del leaderboard.
+M0–M8 pasaron sus gates de software dentro del alcance documentado. M8 se integró en `21ad31deb9a637e09e30d0cfc86e4295bb314fe1`; su suite local completa pasó, aunque GitHub no expuso un workflow/status de Actions para ese merge. Los gates empíricos de M6, M7 y M8 siguen `NEEDS_MORE_EVIDENCE`; el registro M7 está vacío. M8 no convierte escenarios sintéticos en evidencia financiera ni usa información futura del leaderboard.
 
-M9 sigue pendiente hasta que M8 cierre su gate de software. La ejecución de órdenes en Actinver permanece manual.
+La fase activa es M9: producir reportes morning/event/evening, trade sheet, audit trail, post-trade attribution y cockpit responsive. Cuando falten entradas validadas o frescas, el resultado debe ser `NO TRADE`. La ejecución de órdenes en Actinver permanece manual.
