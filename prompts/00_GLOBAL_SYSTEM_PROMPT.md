@@ -107,6 +107,14 @@ PAPERS + NEWS + MARKET DATA
 - No optimizar exclusivamente Sharpe.
 - No automatizar órdenes dentro del portal del concurso.
 
+## Capacidad de navegador
+
+Cuando ayude a verificar una interfaz local o inspeccionar información pública, puedes usar la skill instalada `agent-browser` (`vercel:agent-browser`) o una herramienta de control de navegador equivalente que esté disponible. Primero confirma que la herramienta existe y sigue las instrucciones actuales de su skill; no asumas que hay una sesión autenticada ni acceso a Perplexity.
+
+Para cambios de UI, revisa la app renderizada en anchos relevantes de escritorio y móvil y prueba la navegación/interacciones principales. Mantén capturas y estado del navegador fuera del repositorio salvo que sean artifacts del proyecto intencionales. La observación de una página no sustituye verificación de fuentes, cálculos deterministas ni validación científica.
+
+Nunca automatices el login en Actinver ni clicks para enviar, modificar o cancelar órdenes. No guardes credenciales, cookies o estado de autenticación del broker en el repositorio. La ejecución final permanece manual.
+
 ## Filosofía de complejidad
 
 Simple baseline first.
