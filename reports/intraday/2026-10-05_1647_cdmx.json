@@ -40,7 +40,8 @@
       "Hallazgo y corrección AMXB: el registro oficial BMV fecha el evento relevante a 1-oct-2026 17:35 CDMX; PDF primario confirma cierre de 72.83% de Desktop Brasil ese día. Es un evento material publicado después del cierre bursátil del 1-oct, no noticia nueva del 5-oct. Se había omitido en reportes previos.",
       "La noticia de AMXB se separa de la nota secundaria del 5-oct que vincula el movimiento de la acción con la adquisición; causalidad y reacción independiente no se validan en esta consulta.",
       "Las páginas de IR revisadas mantienen ASUR (evento 28-sep y tráfico agosto 8-sep), GAP (líneas de crédito 11-sep y tráfico agosto 4-sep), Walmex (2T26 22-jul, siguiente reporte 27-oct), Alpek (IPC 14-sep) y Volaris (tráfico agosto 3-sep). No se verificó otra publicación primaria más reciente en los nombres monitoreados.",
-      "No se verificaron identidad exacta de Actinver, bid/ask, cuenta, costos o fills. Decisión NO_TRADE; órdenes 0; correo no enviado."
+      "No se verificaron identidad exacta de Actinver, bid/ask, cuenta, costos o fills. Decisión NO_TRADE; órdenes 0; correo no enviado.",
+      "Cobertura GAP: la página del emisor muestra línea de crédito MXN 8bn (publicada 11-sep) y tráfico de agosto +0.5% (4-sep). La nota de HSBC es secundaria; no es un comunicado nuevo de GAP."
     ]
   },
   "market_data": {
@@ -844,7 +845,7 @@
         "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
       },
       "primary_catalyst_status": "PRIMARY_CREDIT_LINES_SEP_11; AUGUST_TRAFFIC_SEP_4; SECONDARY_HSBC_NOTE_OCT_5",
-      "evidence_summary": "GAP IR registra crédito bancario de MXN 8,000 millones anunciado el 11-sep y tráfico de agosto (+0.5% YoY) publicado el 4-sep. Ambos son anteriores al 5-oct. La mejora HSBC a Buy del 5-oct es research secundario, no un evento del emisor. No se verificó septiembre. La barra de MXN 379.01 está por encima de entrada 366–370 y no-perseguir 376.",
+      "evidence_summary": "GAP IR registra crédito bancario MXN 8,000 millones anunciado el 11-sep y tráfico de agosto (+0.5% interanual) publicado el 4-sep. Ambos preceden al 5-oct. La mejora de HSBC a Buy del 5-oct es research secundario, no evento del emisor. Septiembre no está verificado. El bar retrasado marca MXN 379.01, por encima de entrada 366–370 y no-perseguir 376; Investing.com muestra MXN 371.44 sin hora exacta.",
       "watch_condition": "Do not chase above MXN 376. The previous MXN 366–370 pullback reference is not an active order; require a fresh, cross-checked quote, verified Actinver series, new primary traffic data and price/volume confirmation before reassessment.",
       "risk_flags": [
         "Price is above the prior no-chase level",
@@ -1695,6 +1696,14 @@
           "https://www.bmv.com.mx/docs-pub/eventemi/eventemi_1592736_1.pdf"
         ],
         "note": "La fila original se conserva como reporte histórico y esta enmienda registra el descubrimiento posterior."
+      },
+      {
+        "corrected_at_local": "2026-10-05T16:47:15-06:00",
+        "finding": "GAP IR lists an MXN 8bn bank credit-line disclosure dated Sep 11 and August traffic (+0.5% YoY) dated Sep 4. Both are primary but predate Oct 5. The HSBC Buy rating is secondary analyst research dated Oct 5. Earlier reports omitted the Sep 11 financing event; no trade signal follows.",
+        "primary_source_urls": [
+          "https://www.aeropuertosgap.com.mx/es/material-events.html"
+        ],
+        "note": "Historical reports receive this post-cut coverage correction."
       }
     ],
     "observation_time_semantics": "observed_at is quote/source observation time; publication_time is the date/time a release or note appeared; event_time is the underlying event/period. Do not conflate discovery time with publication time."

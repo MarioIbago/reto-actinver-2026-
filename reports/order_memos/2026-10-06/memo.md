@@ -1,6 +1,6 @@
 # Memo premercado — Reto Actinver — 6 de octubre de 2026
 
-**Corte de preparación:** 5-oct-2026, 16:04:08 CDMX
+**Corte de preparación:** 5-oct-2026, 16:47:15 CDMX
 **Decisión:** **NO_TRADE**
 **Órdenes anticipadas:** **0**
 **Universo revisado:** las 16 emisoras de la watchlist
@@ -12,8 +12,8 @@ No recomiendo dejar órdenes de compra anticipadas esta noche. Ninguna emisora
 pasó todos los filtros de catalizador, precio, riesgo/recompensa, cotización
 ejecutable, identidad exacta del simulador y estado actual de la cuenta. Los
 precios son referencias retrasadas de barras regulares, no posturas bid/ask ni
-precios Actinver. Al preparar este memo, las barras de las 14:00 tenían 124
-minutos de antigüedad. La sesión iniciada de Perplexity mostró que Investigación
+precios Actinver. Al preparar este memo, las barras regulares de las 14:00
+tenían 167 minutos de antigüedad. La sesión iniciada de Perplexity mostró que Investigación
 profunda requiere actualizar el plan; no se envió una consulta allí.
 
 El corte usa la barra final programada 13:55–14:00 CDMX. Durante el horario de
@@ -31,8 +31,8 @@ cierre regular y se excluyó.
 | NVIDIA (NVDA) | USD 239.11 | +2.19% | Esperar retroceso 232–235 y recuperación; resultados previos, no catalizador de hoy. |
 | Applied Materials (AMAT) | USD 542.28 | +0.41% | Máximo 545.814 no alcanzó ruptura >546 con volumen. |
 | Wells Fargo (WFC) | USD 81.435 | +1.22% | Tocó 80.50–81.20, pero cerró arriba. Morgan Stanley elevó EW→OW y Top Pick (fuente secundaria); no hay soporte confirmado ni R/R intradía suficiente. Resultados 13-oct. |
-| América Móvil B (AMXB.MX) | MXN 20.09 | +3.77% | Arriba de zona 19.70–19.85; cerca del tope 20.10. Autenticar serie B de Actinver. |
-| GAP B (GAPB.MX) | MXN 379.01 | +3.89% | Sobre el límite de no perseguir 376 y fuera de la entrada 366–370. No comprar arriba del límite. |
+| América Móvil B (AMXB.MX) | MXN 20.09 | +3.77% | BMV publicó el 1-oct a las 17:35 el cierre de compra del 72.83% de Desktop Brasil. Es primario pero no nuevo hoy; precio antiguo, cerca del tope 20.10, identidad y R/R sin verificar. |
+| GAP B (GAPB.MX) | MXN 379.01 | +3.89% | GAP publicó crédito MXN 8,000 millones el 11-sep y tráfico agosto +0.5% el 4-sep; ambos son primarios pero históricos. La mejora HSBC de hoy es secundaria. Precio 379.01 sobre el no-perseguir 376 y fuera de entrada 366–370. |
 | Grupo México B (GMEXICOB.MX) | MXN 235.70 | +1.25% | Cobre subió en snapshot matutino; esperar consolidación y catalizador fresco. |
 | Industrias Peñoles (PE&OLES.MX) | MXN 890.51 | +0.92% | Sin retroceso/consolidación; metales son contexto, no catalizador propio. |
 | ASUR B (ASURB.MX) | MXN 433.32 | +1.61% | Adquisición CPC reportada el 28-sep; tráfico oficial localizado sigue en agosto. Exigir septiembre y confirmación técnica. |
@@ -44,15 +44,21 @@ cierre regular y se excluyó.
 | Alpek A (ALPEKA.MX) | MXN 14.56 | -1.29% | Extensión previa de 20 sesiones y sesión débil con RVol 0.37; esperar consolidación y catalizador nuevo. |
 
 RVol es el volumen acumulado al cierre dividido por el promedio de las 19
-sesiones previas al mismo corte. La tabla completa con apertura, máximos/mínimos,
-volumen, fuentes y contexto está en el
-[reporte comparativo de cierre](../../intraday/2026-10-05_1600_cdmx.md).
+sesiones previas al mismo corte. La tabla completa de apertura, máximos/mínimos,
+volumen y contexto está en el [reporte base de 16:22](../../intraday/2026-10-05_1622_cdmx.md).
+La [actualización incremental de 16:32](../../intraday/2026-10-05_1647_cdmx.md)
+confirma que no apareció una señal nueva.
 
 Hay discrepancias entre proveedores: para BA, una instantánea posterior al
 cierre reportó máximo USD 194.15 y las barras de Yahoo USD 195.23; ninguna
 confirma sostén sobre USD 195.02–196. Para AVGO, los mínimos fueron USD 354.14
 y USD 356.14; el último cierre regular quedó cerca de USD 363 sin confirmación
 de estabilización. Ninguna referencia se trata como ejecutable.
+
+Los snapshots postmercado estadounidenses más recientes (15:33–16:28 CDMX)
+quedaron prácticamente iguales a los cierres regulares; sus horas y edad se registran por
+separado en el reporte; no sustituyen los datos regulares ni son precios de
+Actinver.
 
 ### R/R del escenario GAP que compartió el usuario
 
