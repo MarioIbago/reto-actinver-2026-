@@ -2,8 +2,8 @@
   "schema_version": 1,
   "memo_id": "ACTINVER-WATCHLIST-2026-10-06",
   "for_session_date": "2026-10-06",
-  "prepared_at_utc": "2026-10-05T21:31:36Z",
-  "prepared_at_local": "2026-10-05T15:31:36-06:00",
+  "prepared_at_utc": "2026-10-05T22:04:08Z",
+  "prepared_at_local": "2026-10-05T16:04:08-06:00",
   "market_status_at_preparation": "CLOSED",
   "next_session_status": "SCHEDULED_SESSION",
   "decision_status": "NO_TRADE",
@@ -28,8 +28,8 @@
     "order_entry": "human_manual_only"
   },
   "research": {
-    "comparison_report": "reports/intraday/2026-10-05_1531_cdmx.md",
-    "comparison_cut_local": "2026-10-05T15:31:36-06:00",
+    "comparison_report": "reports/intraday/2026-10-05_1600_cdmx.md",
+    "comparison_cut_local": "2026-10-05T16:00:09-06:00",
     "deep_research_status": "PUBLIC_WEB_RESEARCH_COMPLETE; AGENT_BROWSER_UNAVAILABLE",
     "method": "Public web research, issuer/regulator/market pages, and secondary cross-checks; material claims were checked against primary sources where available.",
     "primary_sources_verified": 16,
@@ -39,15 +39,16 @@
       "No additional issuer release was identified after the prior review. Boeing's undefinitized PAC-3 MSE action and WFC's repeated earnings-date notice are unchanged.",
       "Corrected ASUR coverage: the official Sep 28 filing documents the Sep 1 close of the CPC Aeroportos acquisition, consideration, scale, and integration/financing risks; this is not new Oct 5 news.",
       "Verified BMV summer-session hours end at 14:00 CDMX, so the vendor's 13:55–14:00 bar is the scheduled final five-minute window; Actinver identity and bid/ask remain unverified.",
-      "No candidate passed the combined catalyst, entry, risk/reward, execution-identity, fresh-quote, and portfolio-state requirements."
+      "No candidate passed the combined catalyst, entry, risk/reward, execution-identity, fresh-quote, and portfolio-state requirements.",
+      "Enmienda de las 16:00: dos fuentes secundarias reportan una mejora de Morgan Stanley para WFC de Equal Weight a Overweight (objetivo USD 102, Top Pick). Es investigación de analista, no un comunicado del emisor; WFC tocó la zona de retroceso pero cerró por encima y el R/R observado no valida una orden."
     ]
   },
   "market_data": {
     "quote_provider": "Yahoo Finance five-minute chart bars; delayed and non-executable.",
     "latest_us_regular_session_bar_local": "2026-10-05T14:00:00-06:00",
     "latest_mexico_bar_local": "2026-10-05T14:00:00-06:00",
-    "mexico_refresh_check_local": "2026-10-05T15:31:36-06:00",
-    "refresh_result": "Vendor bars cover the scheduled final 13:55–14:00 CDMX window under the BMV summer schedule. A later U.S. finance snapshot was after regular-session close and is excluded. Neither feed supplies the Actinver bid/ask or authenticated simulator series.",
+    "mexico_refresh_check_local": "2026-10-05T16:04:08-06:00",
+    "refresh_result": "Se verificó a las 16:04:08 CDMX que las barras del proveedor terminan en la ventana programada 13:55–14:00 CDMX; al preparar el memo tienen 124 minutos de antigüedad. BMV publica 07:30–14:00 durante el horario de verano estadounidense. Un snapshot estadounidense posterior al cierre regular se excluyó. Ningún feed da el bid/ask de Actinver ni autentica la serie del simulador.",
     "relative_volume_as_of_local": "2026-10-05T14:00:00-06:00",
     "relative_volume_method": "Cumulative regular-session volume through the same 5-minute cutoff divided by the mean cumulative volume at that cutoff across the prior 19 sessions.",
     "quotes_actionable": false,
@@ -96,7 +97,7 @@
       "quote": {
         "price": 192.77,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/BA/",
         "actionable": false,
         "day_low": 191.34,
@@ -121,7 +122,7 @@
         "Contract action is not definitized",
         "Price did not confirm the breakout",
         "Earnings expected Oct 27 per issuer calendar",
-        "Actinver identity unverified"
+        "Identidad exacta de Actinver sin verificar"
       ],
       "source_urls": [
         "https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-receives-seven-year-contract-to-accelerate-PAC-3-MSE-seeker-output/default.aspx",
@@ -138,7 +139,7 @@
       "quote": {
         "price": 362.875,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/AVGO/",
         "actionable": false,
         "day_low": 356.14,
@@ -179,7 +180,7 @@
       "quote": {
         "price": 239.11,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/NVDA/",
         "actionable": false,
         "day_low": 235.15,
@@ -220,7 +221,7 @@
       "quote": {
         "price": 542.28,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/AMAT/",
         "actionable": false,
         "day_low": 533.685,
@@ -261,7 +262,7 @@
       "quote": {
         "price": 81.435,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/WFC/",
         "actionable": false,
         "day_low": 80.94,
@@ -280,17 +281,22 @@
         "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
       },
       "primary_catalyst_status": "REPEATED_EARNINGS_NOTICE",
-      "evidence_summary": "The Oct 5 issuer notice repeats the previously announced Oct 13 Q3 earnings date and provides no new results or guidance. The price remains above the prior USD 80.50–81.20 pullback zone.",
-      "watch_condition": "No pre-earnings order. Reassess after fresh prices and after the Oct 13 earnings event; the old pullback band alone is not a signal.",
+      "evidence_summary": "Dos fuentes secundarias publicadas el 5-oct reportan que Morgan Stanley elevó WFC de Equal Weight a Overweight, mantuvo el objetivo en USD 102 y la designó Top Pick. Esto no es guidance ni filing del emisor. La barra marcó mínimo USD 80.94 dentro de la zona de referencia USD 80.50–81.20, pero cerró USD 81.435 por encima sin confirmar soporte. Wells Fargo reiteró que publicará Q3 el 13-oct; no hay guidance nueva. El objetivo de analista no se usa como objetivo temporal.",
+      "watch_condition": "No dejar orden anticipada. Reevaluar con precio/bid-ask frescos si vuelve a USD 80.50–81.20 y confirma estabilización/recuperación; exigir serie Actinver, stop y objetivo de tesis y R/R después de costos. No usar USD 102 como objetivo temporal ni anticipar resultados del 13-oct.",
       "risk_flags": [
-        "Binary Q3 earnings event Oct 13",
-        "Negative 5- and 20-session momentum",
+        "Upgrade de Morgan Stanley es evidencia secundaria, no guidance del emisor",
+        "Cierre por encima de la zona; no se confirmó sostén tras el mínimo",
+        "R/R diagnóstico cierre-a-máximo frente a USD 80.50: aproximadamente 0.84:1; no es R/R de tesis aprobado",
+        "Evento binario de resultados el 13-oct",
         "Actinver identity unverified"
       ],
       "source_urls": [
         "https://newsroom.wf.com/news-releases/news-details/2026/Wells-Fargo-to-Announce-Third-Quarter-2026-Earnings-on-Oct--13-2026/default.aspx",
-        "https://finance.yahoo.com/quote/WFC/"
-      ]
+        "https://finance.yahoo.com/quote/WFC/",
+        "https://www.tipranks.com/news/the-fly/wells-fargo-upgraded-to-overweight-from-equal-weight-at-morgan-stanley-thefly-news",
+        "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/10/62160112/this-wells-fargo-analyst-turns-bullish-here-are-top-5-upgrades-for-monday"
+      ],
+      "secondary_catalyst_status": "MORGAN_STANLEY_UPGRADE_REPORTED_BY_SECONDARY_SOURCES"
     },
     {
       "ticker": "AMXB",
@@ -302,7 +308,7 @@
       "quote": {
         "price": 20.09,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/AMXB.MX/",
         "actionable": false,
         "day_low": 19.9,
@@ -343,7 +349,7 @@
       "quote": {
         "price": 379.01,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/GAPB.MX/",
         "actionable": false,
         "day_low": 368.94,
@@ -387,7 +393,7 @@
       "quote": {
         "price": 235.7,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/GMEXICOB.MX/",
         "actionable": false,
         "day_low": 230.5,
@@ -428,7 +434,7 @@
       "quote": {
         "price": 890.51,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/PE%26OLES.MX/",
         "actionable": false,
         "day_low": 878.07,
@@ -471,7 +477,7 @@
       "quote": {
         "price": 433.32,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/ASURB.MX/",
         "actionable": false,
         "day_low": 422.28,
@@ -513,7 +519,7 @@
       "quote": {
         "price": 215.56,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/OMAB.MX/",
         "actionable": false,
         "day_low": 212.16,
@@ -556,7 +562,7 @@
       "quote": {
         "price": 11.77,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/VOLARA.MX/",
         "actionable": false,
         "day_low": 11.72,
@@ -598,7 +604,7 @@
       "quote": {
         "price": 187.41,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/GFNORTEO.MX/",
         "actionable": false,
         "day_low": 185.01,
@@ -639,7 +645,7 @@
       "quote": {
         "price": 46.44,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/WALMEX.MX/",
         "actionable": false,
         "day_low": 46.02,
@@ -681,7 +687,7 @@
       "quote": {
         "price": 17.36,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/CEMEXCPO.MX/",
         "actionable": false,
         "day_low": 17.07,
@@ -722,7 +728,7 @@
       "quote": {
         "price": 14.56,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 92,
+        "age_minutes_at_preparation": 124,
         "source_url": "https://finance.yahoo.com/quote/ALPEKA.MX/",
         "actionable": false,
         "day_low": 14.53,
@@ -872,6 +878,14 @@
     {
       "title": "Reuters gold snapshot",
       "url": "https://www.marketscreener.com/news/gold-edges-up-as-october-rate-hike-bets-ease-stronger-dollar-cap-gains-ce785ddbd18cf422"
+    },
+    {
+      "title": "TheFly report on Morgan Stanley WFC upgrade, via TipRanks (secondary)",
+      "url": "https://www.tipranks.com/news/the-fly/wells-fargo-upgraded-to-overweight-from-equal-weight-at-morgan-stanley-thefly-news"
+    },
+    {
+      "title": "WFC analyst-upgrade roundup for Oct 5 (secondary)",
+      "url": "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/10/62160112/this-wells-fargo-analyst-turns-bullish-here-are-top-5-upgrades-for-monday"
     }
   ]
 }
