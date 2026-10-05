@@ -20,6 +20,10 @@ identified as fixtures and make no claim about market performance.
   coverage, and CLI regression tests using synthetic data.
 - `data/README.md`, `docs/data_engine.md` — usage, data-rights, and contract
   documentation.
+- Follow-up: `.gitignore`, `README.md`, `docs/CODEX_START_HERE.md`,
+  `scripts/build_bmv_calendar_dataset.py`, and `tests/test_bmv_calendar_data.py`
+  add a reproducible source-backed calendar-event dataset while keeping its
+  generated rows and manifest local.
 
 ## Evidence and verification
 
@@ -80,7 +84,7 @@ provider rows were scraped or added.
 - Prices remain unadjusted; corporate actions are preserved separately.
 - The repository does not contain an authorized BMV/SIC/fund historical export.
 
-## Gate status
+## Initial gate status before the calendar dataset
 
 **OPEN — BLOCKERS REMAIN.** The M2 engine's software contracts pass targeted
 tests, but the written exit criterion requires a historical dataset that can
@@ -88,7 +92,7 @@ be reconstructed by version and timestamp. No licensed/authorized market
 history was available to ingest, so that criterion is not yet demonstrated.
 `prompts/CURRENT_PHASE.md` remains M2.
 
-## Exact next step
+## Initial next step before the calendar dataset
 
 Ingest a licensed BMV/SIC/fund historical export or an otherwise authorized
 provider dataset, preserving its source file locally. Run `actinver-data
@@ -97,3 +101,99 @@ modes, select and version a freshness threshold based on the provider cadence
 and intended session, check expected instrument coverage, then record the
 dataset ID and evidence here. Do not commit its raw or derived rows unless the
 data rights permit it.
+
+## Supplemental reproducible BMV calendar dataset — 2026-10-05
+
+The original official HTML capture is preserved at
+`research/source_material/bmv_2026_holidays_official.html`; its canonical-LF
+SHA-256 is `7702be0373cd46f46a3c273b5dcf02285e94206a44e073f9a8a7cf7ff8eee164`.
+The M2 builder verifies that fingerprint and creates 11 date-precision
+`calendar_event` records. Event time is local midnight in the versioned
+`America/Mexico_City` timezone; this is an explicit representation convention
+for date-only events, not an observed intraday event time. Source
+`available_time` is the capture timestamp `2026-10-05T08:15:08Z`, the earliest
+availability evidenced by the repository. The source's actual first-publication
+time is unknown. System `ingestion_time` was `2026-10-05T10:14:04Z`.
+
+The reproducible local build used:
+
+```powershell
+python scripts/build_bmv_calendar_dataset.py `
+  --ingestion-time 2026-10-05T10:14:04Z `
+  --code-commit-sha 00e1f1e10c0b1dea24e9b34918aa5a1c2f11c3b0
+```
+
+Dataset ID: `actinver-pit-v1-347fa83b3804ea2bff4ac9d125686df5b05cfc3f3d84ba72e663d06883c952bd`.
+Raw normalized-input SHA-256:
+`9bb466eef506424cbd9d9ef138b9133e39474aa79157b20a04895749edadfc55`.
+The local manifest is at
+`data/metadata/datasets/actinver-pit-v1-347fa83b3804ea2bff4ac9d125686df5b05cfc3f3d84ba72e663d06883c952bd.json`
+and has SHA-256
+`5527f7c7050fb046389b882f8aea6e2ce7274f154e31edf75113209a0ce734be`.
+Data rows and manifests are gitignored because BMV redistribution rights are
+not established; the manifest records `redistribution_status: unknown`.
+
+PIT evidence from `actinver-data verify` and `actinver-data query`:
+
+| Query | Count | Result |
+|---|---:|---|
+| `source` at `2026-10-05T08:15:07Z` | 0 | Nothing returned before the preserved capture. |
+| `source` at `2026-10-05T08:15:08Z` | 11 | All captured calendar rows became source-visible. |
+| `system` at `2026-10-05T10:14:03Z` | 0 | Nothing returned before system ingestion. |
+| `system` at `2026-10-05T10:14:04Z` | 11 | All rows became system-visible at ingestion. |
+| `system` at `2026-10-05T10:35:00-06:00` | 11 | The known future 2026-11-02 closure remains visible. |
+
+The 2026-11-02 closure row has event date `2026-11-02`, local-midnight event
+time normalized to `2026-11-02T06:00:00Z`, source availability
+`2026-10-05T08:15:08Z`, and system ingestion
+`2026-10-05T10:14:04Z`. Its date precision and unknown original publication
+time are explicit in its payload.
+
+Verification after merging PR #12:
+
+- PR #12, `feat(m2): add reproducible BMV calendar PIT dataset`, merged as
+  `00e1f1e10c0b1dea24e9b34918aa5a1c2f11c3b0`.
+- PR CI run [#119](https://github.com/MarioIbago/reto-actinver-2026-/actions/runs/37294997301)
+  — PASS. Artifact `11338146704` is the workflow's M0 smoke artifact; it does
+  not contain the local BMV data.
+- Main CI run [#120](https://github.com/MarioIbago/reto-actinver-2026-/actions/runs/37295133332)
+  — PASS on the merge commit.
+- `python -m unittest discover -s tests -v` — PASS; 63 tests.
+- `python -m compileall -q src scripts tests` — PASS.
+- `python -m pip check` — PASS.
+- `actinver-m1 audit` — PASS; 207 guide records and source fingerprints.
+- `actinver-data verify --manifest <local manifest>` — PASS; 11 records and
+  snapshot reconciliation.
+- PIT queries at the source, ingestion and competition cutoffs — PASS; counts
+  and future-known calendar behavior match the table above.
+- `git diff --check` — PASS.
+
+## Final gate reassessment
+
+The written M2 exit criterion is that a historical dataset be reconstructable
+by version and timestamp without known leakage. The source-backed, versioned
+2026 BMV calendar now meets that criterion: the original capture, revision,
+availability cutoff, ingestion cutoff, immutable raw/interim/processed
+snapshots, manifest, integrity verification, and source/system as-of queries
+are linked by hashes and a full code commit.
+
+**M2 status: PASS — READY FOR HUMAN REVIEW.** The scope of this pass is the
+actual BMV calendar-event dataset and the generic M2 data-engine contracts. It
+does not certify historical price, volume, trades, or corporate-action data.
+No OHLCV has been ingested, and the exact simulator symbol mapping remains
+unverified. M4 cannot make financial backtest claims until authorized price
+history and usable instrument identifiers exist. Data rights remain unknown;
+local derived rows and manifest are not included in Git.
+
+The user explicitly directed continuation through all phases and waived human
+approval stops. `prompts/CURRENT_PHASE.md` therefore advances to M3 only after
+this report records the M2 gate evidence. M3 can validate deterministic
+execution mechanics with synthetic cases; real-practice fill comparisons are
+unavailable in the repository.
+
+## Exact next step
+
+Implement M3's deterministic order-to-ledger simulator using only versioned
+Actinver rules and explicit unknowns. Keep real simulator behavior, market
+trades, and price history unclaimed unless a source or practice export is
+available. Preserve manual-only Actinver order entry.
