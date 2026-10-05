@@ -1,0 +1,62 @@
+{
+  "as_of": "2026-10-05T14:17:09-06:00",
+  "news_window": {
+    "start": "2026-10-04T13:46:00-06:00",
+    "end": "2026-10-05T13:46:00-06:00",
+    "timezone": "America/Mexico_City"
+  },
+  "market_status": {
+    "bmv": "OPEN",
+    "bmv_regular_close_local": "15:00",
+    "us_regular_session": "CLOSED",
+    "us_close_local": "14:00"
+  },
+  "portfolio_state_verified": false,
+  "user_supplied_baseline_only": {
+    "portfolio_value_mxn": 1000000,
+    "cash_mxn": 1000000,
+    "positions": null,
+    "rank": null,
+    "gap_to_leader_pct": null,
+    "transaction_costs": null,
+    "risk_mode": "MEDIUM"
+  },
+  "decision": "NO_TRADE",
+  "email_sent": false,
+  "reason": "No instrument satisfies the combined catalyst, timely price, identity, technical confirmation, and risk/reward gates.",
+  "quote_source": "Yahoo Finance chart bars; delayed vendor feed, not an Actinver executable quote",
+  "quote_observed_at": "2026-10-05T14:17:09-06:00",
+  "mexico_latest_bar_at": "2026-10-05T13:58:00-06:00",
+  "us_latest_bar_at": "2026-10-05T14:00:00-06:00",
+  "technical_metrics_as_of": "2026-10-05T14:07:00-06:00",
+  "technical_metric_method": "5d/20d returns and ATR14 from daily OHLC bars; RVol vs. 19 prior sessions at a comparable intraday time. RVol is not refreshed to the 14:17 quote pull.",
+  "instruments": [
+    {"name":"Boeing","market_symbol":"BA","currency":"USD","last_bar_price":192.72,"bar_time":"2026-10-05T14:00:00-06:00","day_pct_vs_oct2_close":-0.43,"day_low":191.34,"day_high":195.23,"mom_5d_pct":-2.73,"mom_20d_pct":-8.47,"rvol":0.69,"atr14":7.1779,"tactical_state":"NO_TRADE","catalyst":"New Oct 5 Boeing-Lockheed undefinitized PAC-3 MSE contract action (~$14.7B); buildout framework/ramp had prior history.","upcoming_event":"Q3 2026 results 2026-10-27","identity_verified_actinver":false,"source":"https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-receives-seven-year-contract-to-accelerate-PAC-3-MSE-seeker-output/default.aspx"},
+    {"name":"Broadcom","market_symbol":"AVGO","currency":"USD","last_bar_price":362.51,"bar_time":"2026-10-05T14:00:00-06:00","day_pct_vs_oct2_close":2.08,"day_low":356.14,"day_high":363.865,"mom_5d_pct":2.73,"mom_20d_pct":1.48,"rvol":0.84,"atr14":9.9557,"tactical_state":"WAIT_FOR_PULLBACK","catalyst":"No new issuer event verified in the 24-hour window; Sep 2 guidance is prior information.","upcoming_event":"Fiscal quarter ended Nov 1; official publication date not located","identity_verified_actinver":false,"source":"https://investors.broadcom.com/financial-information/financial-news-releases"},
+    {"name":"NVIDIA","market_symbol":"NVDA","currency":"USD","last_bar_price":238.9,"bar_time":"2026-10-05T14:00:00-06:00","day_pct_vs_oct2_close":2.12,"day_low":235.15,"day_high":240.098,"mom_5d_pct":6.12,"mom_20d_pct":4.55,"rvol":1.14,"atr14":5.15,"tactical_state":"WAIT_FOR_PULLBACK","catalyst":"No new issuer financial catalyst verified; analyst commentary is not issuer guidance.","upcoming_event":"Q3 FY2027 date not located in official sources reviewed","identity_verified_actinver":false,"source":"https://nvidianews.nvidia.com/news"},
+    {"name":"Applied Materials","market_symbol":"AMAT","currency":"USD","last_bar_price":542.28,"bar_time":"2026-10-05T14:00:00-06:00","day_pct_vs_oct2_close":0.41,"day_low":533.685,"day_high":545.814,"mom_5d_pct":11.71,"mom_20d_pct":24.29,"rvol":0.66,"atr14":17.9564,"tactical_state":"WATCH","catalyst":"No new issuer event verified; Oct 1 Besi partnership is outside the 24-hour window.","upcoming_event":"Nov 12 secondary calendar estimate; official notice not located","identity_verified_actinver":false,"source":"https://ir.appliedmaterials.com/news-releases"},
+    {"name":"Wells Fargo","market_symbol":"WFC","currency":"USD","last_bar_price":81.44,"bar_time":"2026-10-05T14:00:00-06:00","day_pct_vs_oct2_close":1.23,"day_low":80.945,"day_high":82.22,"mom_5d_pct":-1.78,"mom_20d_pct":-8.63,"rvol":0.98,"atr14":1.99,"tactical_state":"WATCH","catalyst":"Oct 5 issuer notice repeats the previously announced Oct 13 earnings date; no new results or guidance.","upcoming_event":"Q3 results Oct 13 07:00 ET; call 10:00 ET","identity_verified_actinver":false,"source":"https://newsroom.wf.com/news-releases/news-details/2026/Wells-Fargo-to-Announce-Third-Quarter-2026-Earnings-on-Oct--13-2026/default.aspx"},
+    {"name":"América Móvil B","market_symbol":"AMXB.MX","actinver_symbol":"unverified","currency":"MXN","last_bar_price":20.06,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":3.67,"day_low":19.36,"day_high":20.17,"mom_5d_pct":3.03,"mom_20d_pct":2.5,"rvol":1.74,"atr14":0.4443,"tactical_state":"WATCH","catalyst":"No new issuer event verified. Official issuer distinguishes BMV AMX B from NYSE ADR AMX.","upcoming_event":"Q3 date not located","identity_verified_actinver":false,"source":"https://www.americamovil.com/Spanish/relacion-con-inversionistas/informacion-de-acciones/grafico-de-valores/default.aspx"},
+    {"name":"GAP B","market_symbol":"GAPB.MX","actinver_symbol":"unverified","currency":"MXN","last_bar_price":379.05,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":4.05,"day_low":366.63,"day_high":382.01,"mom_5d_pct":-0.82,"mom_20d_pct":7.52,"rvol":1.49,"atr14":12.39,"tactical_state":"NO_TRADE","catalyst":"HSBC Buy upgrade reported by secondary media on Oct 5; no new issuer traffic release; August is latest official traffic.","entry_reference_mxn":[366,370],"do_not_chase_above_mxn":376,"upcoming_event":"September passenger traffic pending; exact release date not verified","identity_verified_actinver":false,"source":"https://www.aeropuertosgap.com.mx/es/material-events.html"},
+    {"name":"Grupo México B","market_symbol":"GMEXICOB.MX","currency":"MXN","last_bar_price":235.9,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":1.51,"day_low":230.5,"day_high":238.26,"mom_5d_pct":5.45,"mom_20d_pct":5.03,"rvol":1.26,"atr14":6.8279,"tactical_state":"WAIT_FOR_PULLBACK","catalyst":"No new issuer event verified; Q2 report and routine buyback disclosures are prior information.","upcoming_event":"Q3 results date not officially located","identity_verified_actinver":false,"source":"https://gmexico.com/GMDocs/ReportesFinancieros/ING/2026/RF_EN_2026_2Q.pdf"},
+    {"name":"Industrias Peñoles","market_symbol":"PE&OLES.MX","currency":"MXN","last_bar_price":890.53,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":0.85,"day_low":878.07,"day_high":903.53,"mom_5d_pct":-1.21,"mom_20d_pct":-4.92,"rvol":0.68,"atr14":29.8907,"tactical_state":"WATCH","catalyst":"No new issuer event verified; Q3 results are estimated for Oct 26, not guaranteed.","upcoming_event":"Estimated Q3 2026 results Oct 26","identity_verified_actinver":false,"source":"https://www.penoles.com.mx/inversionistas/reportes-y-presentaciones/"},
+    {"name":"ASUR B","market_symbol":"ASURB.MX","currency":"MXN","last_bar_price":432.37,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":1.64,"day_low":422.28,"day_high":436,"mom_5d_pct":0.45,"mom_20d_pct":-0.41,"rvol":1.26,"atr14":10.6193,"tactical_state":"NO_TRADE","catalyst":"No new event verified; invalid Sep traffic page's linked PDF resolves to a 2003 PDF returning 404.","upcoming_event":"September traffic pending; exact release date not verified","identity_verified_actinver":false,"source":"https://www.asur.com.mx/comunicados-1?category=42322kvd17xz14zqpr257rxtwp"},
+    {"name":"OMA B","market_symbol":"OMAB.MX","currency":"MXN","last_bar_price":215.11,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":0.68,"day_low":212.16,"day_high":216.52,"mom_5d_pct":-5.73,"mom_20d_pct":2.4,"rvol":0.61,"atr14":6.4579,"tactical_state":"WATCH","catalyst":"No new event verified; latest official traffic is August.","upcoming_event":"September traffic scheduled for Oct 8 by IR calendar","identity_verified_actinver":false,"source":"https://ir.oma.aero/en/calendario-de-eventos/"},
+    {"name":"Volaris A","market_symbol":"VOLARA.MX","currency":"MXN","last_bar_price":11.78,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":-0.93,"day_low":11.72,"day_high":12.14,"mom_5d_pct":-2.88,"mom_20d_pct":4.32,"rvol":0.78,"atr14":0.4271,"tactical_state":"NO_TRADE","catalyst":"No new event verified; August traffic is latest official report found.","upcoming_event":"September traffic date not verified","identity_verified_actinver":false,"source":"https://ir.volaris.com/news-events/press-releases/"},
+    {"name":"Banorte O","market_symbol":"GFNORTEO.MX","currency":"MXN","last_bar_price":187.67,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":-1.14,"day_low":185.01,"day_high":190.82,"mom_5d_pct":-4.88,"mom_20d_pct":-5.46,"rvol":1.82,"atr14":5.0971,"tactical_state":"NO_TRADE","catalyst":"No new issuer event verified; relative volume alone is not a reversal signal.","upcoming_event":"Q3 results call Oct 28","identity_verified_actinver":false,"source":"https://investors.banorte.com/en/news-and-events/events-and-presentations"},
+    {"name":"Walmex","market_symbol":"WALMEX.MX","currency":"MXN","last_bar_price":46.56,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":1,"day_low":45.93,"day_high":46.95,"mom_5d_pct":-0.43,"mom_20d_pct":-2.46,"rvol":0.78,"atr14":0.9721,"tactical_state":"WATCH","catalyst":"No September monthly sales release verified; 1.8% same-store growth found is 2Q26 data.","upcoming_event":"Q3 results Oct 27","identity_verified_actinver":false,"source":"https://www.walmex.mx/"},
+    {"name":"Cemex CPO","market_symbol":"CEMEXCPO.MX","currency":"MXN","last_bar_price":17.37,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":-0.29,"day_low":17.07,"day_high":17.52,"mom_5d_pct":0.23,"mom_20d_pct":-6.18,"rvol":0.74,"atr14":0.4464,"tactical_state":"WATCH","catalyst":"Vicat negotiation announced Oct 1, not a new event in the 24-hour window; terms not disclosed.","upcoming_event":"Potential close before Dec 31, subject to consultation, documentation, and competition approval","identity_verified_actinver":false,"source":"https://www.vicat.com/en/news/proposed-acquisition-vicat-group-cemex-groups-ready-mix-concrete-and-aggregates-businesses"},
+    {"name":"Alpek A","market_symbol":"ALPEKA.MX","currency":"MXN","last_bar_price":14.59,"bar_time":"2026-10-05T13:58:00-06:00","day_pct_vs_oct2_close":-1.08,"day_low":14.53,"day_high":14.82,"mom_5d_pct":-1.74,"mom_20d_pct":12.88,"rvol":0.68,"atr14":0.485,"tactical_state":"NO_TRADE","catalyst":"No new event verified; Sept 14 IPC inclusion is stale information.","upcoming_event":"Q3 results date not officially located","identity_verified_actinver":false,"source":"https://www.alpek.com/es/investor-center/news-press-releases/"}
+  ],
+  "notes": [
+    "The user-provided 13:39 snapshot is a nearby reference, not an exact prior hourly research run.",
+    "GAP's 13:58 Yahoo bar is above the user-provided 376 MXN no-chase level; another feed disagrees materially, so neither is treated as executable.",
+    "Mexican vendor bars are delayed approximately 19 minutes relative to observation time.",
+    "No order was placed and no Actinver credentials were used.",
+    "GMAB, MSFT, and ABBV from the pasted JSON are outside the fixed 16-name watchlist and are excluded."
+  ],
+  "artifacts": [
+    "reports/intraday/2026-10-05_1417_cdmx.md",
+    "reports/intraday/2026-10-05_1417_cdmx.json"
+  ]
+}
