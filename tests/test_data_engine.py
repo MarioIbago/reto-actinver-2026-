@@ -160,6 +160,41 @@ class DataEngineNormalizationTests(unittest.TestCase):
 
 
 class PointInTimeQueryTests(unittest.TestCase):
+    def test_fractional_publication_cutoffs_are_compared_as_instants(self):
+        original = price_bar(
+            event_time="2026-10-05T10:00:00Z",
+            available_time="2026-10-05T10:00:00Z",
+            ingestion_time="2026-10-05T10:00:00Z",
+            close="100",
+        )
+        revised = price_bar(
+            event_time="2026-10-05T10:00:00Z",
+            available_time="2026-10-05T10:00:00.100000Z",
+            ingestion_time="2026-10-05T10:00:00.200000Z",
+            close="101",
+        )
+        revised["source_revision"] = "2"
+        source_view = query_as_of([original, revised], "2026-10-05T10:00:00.150000Z", mode="source")
+        system_view = query_as_of([original, revised], "2026-10-05T10:00:00.150000Z", mode="system")
+        self.assertEqual(source_view[0]["payload"]["close"], "101")
+        self.assertEqual(system_view[0]["payload"]["close"], "100")
+
+    def test_fractional_price_bars_sort_by_timestamp_not_timestamp_text(self):
+        later = price_bar(
+            record_id="bar-later",
+            event_time="2026-10-05T10:00:00.100000Z",
+            available_time="2026-10-05T10:00:01.100000Z",
+            ingestion_time="2026-10-05T10:00:02.100000Z",
+        )
+        earlier = price_bar(
+            record_id="bar-earlier",
+            event_time="2026-10-05T10:00:00Z",
+            available_time="2026-10-05T10:00:01Z",
+            ingestion_time="2026-10-05T10:00:02Z",
+        )
+        normalized, _ = normalize_records([later, earlier])
+        self.assertEqual([row["record_id"] for row in normalized], ["bar-earlier", "bar-later"])
+
     def test_source_and_system_as_of_views_respect_publication_and_ingestion(self):
         original = price_bar(
             event_time="2026-10-05T10:00:00Z",

@@ -10,6 +10,8 @@ Raw evidence under `research/source_material/` must remain unchanged. M1 owns no
 
 Follow `prompts/phases/M6_NEWS_EVENTS.md`. Build point-in-time event ingestion, deduplication, structured extraction contracts, and evaluation tooling that keeps extraction separate from future-return labeling. No LLM output may directly decide BUY/SELL. No authorized historical news corpus, OHLCV history, or authenticated Actinver ticker mapping is currently available; preserve those evidence gaps and do not claim financial performance from fixtures. M5's completed research factory is available through `actinver-research`; see `docs/actinver_research_factory.md` and `docs/phase_reports/M5_REPORT.md`.
 
+M6's software path is available through `actinver-news` for source revision normalization, as-of queries, extraction payloads/snapshots, digests, alerts, separately cut PIT labels, and chronological evaluation. See `docs/actinver_news_events.md` and `docs/phase_reports/M6_REPORT.md`. All schedule specs are disabled until licensed source connectors and a runner exist. The software gate passes; M6 empirical predictive value remains `NEEDS_MORE_EVIDENCE`.
+
 Completed M1 outputs:
 
 - `config/actinver_rules.yaml` — dated rules, explicit ambiguities and the sourced 2026 BMV calendar queried by `actinver-m1 market-day`.

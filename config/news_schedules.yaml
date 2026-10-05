@@ -1,0 +1,83 @@
+schema_version: 1
+timezone: America/Mexico_City
+scheduler_enabled: false
+disabled_reason: >-
+  No licensed source connectors or authorized historical news corpus have been
+  configured. These are schedule specifications only; they do not fetch data
+  or create Codex automations.
+tasks:
+  - task_id: overnight_news
+    enabled: false
+    purpose: Collect permitted overnight news and prepare point-in-time extraction inputs.
+    schedule:
+      frequency: weekdays
+      local_time: "05:30"
+    source_categories: [issuer_releases, official_notices, secondary_news]
+    outputs: [normalized_documents, extraction_queue]
+    requires: [licensed_source_contracts, source_timestamp_and_revision_fields]
+
+  - task_id: macro_fx_commodities
+    enabled: false
+    purpose: Collect time-stamped macro, FX, and commodity releases relevant to the M1 universe.
+    schedule:
+      frequency: weekdays
+      local_time: "06:00"
+    source_categories: [macro_data, central_bank, fx, commodities]
+    outputs: [normalized_documents, extraction_queue]
+    requires: [licensed_source_contracts, point_in_time_release_calendar]
+
+  - task_id: issuer_earnings_guidance
+    enabled: false
+    purpose: Identify issuer earnings and guidance documents without creating return labels.
+    schedule:
+      frequency: weekdays
+      local_time: "06:15"
+    source_categories: [issuer_earnings, issuer_guidance]
+    outputs: [normalized_documents, extraction_queue]
+    requires: [licensed_source_contracts, verified_issuer_entity_aliases]
+
+  - task_id: issuer_communications
+    enabled: false
+    purpose: Collect permitted issuer communications and official Reto/Actinver rule notices.
+    schedule:
+      frequency: weekdays
+      local_time: "06:30"
+    source_categories: [issuer_releases, actinver_notices, bmv_notices]
+    outputs: [normalized_documents, extraction_queue]
+    requires: [licensed_source_contracts, official_notice_source_registry]
+
+  - task_id: morning_digest
+    enabled: false
+    purpose: Render an informational digest of events available before its cutoff.
+    schedule:
+      frequency: weekdays
+      local_time: "07:00"
+    source_categories: [all_enabled_sources]
+    outputs: [morning_digest]
+    requires: [normalized_documents, completed_event_extractions, explicit_as_of_cutoff]
+
+  - task_id: overnight_digest
+    enabled: false
+    purpose: Summarize overnight events within an explicit publication-time window.
+    schedule:
+      frequency: weekdays
+      local_time: "07:05"
+    source_categories: [all_enabled_sources]
+    outputs: [overnight_digest]
+    requires: [normalized_documents, completed_event_extractions, explicit_as_of_cutoff]
+
+  - task_id: material_event_alerts
+    enabled: false
+    purpose: Poll for newly available high-materiality events and advance a stable event cursor.
+    schedule:
+      frequency: interval
+      interval_minutes: 15
+    source_categories: [all_enabled_sources]
+    outputs: [breaking_event_alerts, next_cursor]
+    requires: [licensed_source_contracts, persisted_event_cursor, monitoring_runner]
+
+operating_limits:
+  market_calendar: Use the versioned M1 BMV calendar when a runner is implemented; these wall-clock times are configurable and do not assert a market open.
+  event_alert_latency: Batch schedule only; no low-latency or continuous monitoring guarantee.
+  trading: No task logs in to Actinver, clicks the portal, or submits/modifies orders.
+  extraction: No task supplies future prices, returns, ranks, or labels to the extraction prompt.

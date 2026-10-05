@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/news_event_snapshot.schema.json",
+  "title": "Point-in-time structured event snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "snapshot_id", "source_id", "publisher", "document_id", "revision_id", "source_content_sha256", "duplicate_group_id", "first_public_time", "revision_public_time", "source_ingestion_time", "source_url", "source_type", "redistribution_status", "source_quality", "extraction_version", "extraction_model", "prompt_sha256", "extraction_completed_at", "feature_available_time", "ingestion_time", "events"],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mention", "match_status", "entity_kind", "entity_id", "candidate_entity_ids", "instrument_ids", "platform_mapping_verified"],
+      "properties": {
+        "mention": {"type": "string", "minLength": 1},
+        "match_status": {"enum": ["MATCHED", "AMBIGUOUS", "UNMAPPED"]},
+        "entity_kind": {"enum": ["instrument", "issuer", "unresolved"]},
+        "entity_id": {"oneOf": [{"type": "string", "minLength": 1}, {"type": "null"}]},
+        "candidate_entity_ids": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "instrument_ids": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "platform_mapping_verified": {"type": "boolean"}
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_ordinal", "event_group_id", "event_type", "event_time", "entities", "novelty", "direction", "surprise_magnitude", "guidance_direction", "materiality", "confidence", "affected_sectors", "links"],
+      "properties": {
+        "event_ordinal": {"type": "integer", "minimum": 0},
+        "event_group_id": {"$ref": "#/$defs/sha256"},
+        "event_type": {"enum": ["earnings_release", "earnings_guidance", "revenue_guidance", "dividend", "merger_acquisition", "capital_raise", "regulatory", "litigation", "product_launch", "management_change", "macro_policy", "macro_data", "fx_commodity", "index_rebalance", "trading_halt", "actinver_rule_change", "other"]},
+        "event_time": {"oneOf": [{"$ref": "#/$defs/timestamp"}, {"type": "null"}]},
+        "entities": {"type": "array", "items": {"$ref": "#/$defs/entity"}},
+        "novelty": {"$ref": "#/$defs/probability"},
+        "direction": {"enum": ["positive", "negative", "mixed", "neutral", "unknown"]},
+        "surprise_magnitude": {"oneOf": [{"$ref": "#/$defs/probability"}, {"type": "null"}]},
+        "guidance_direction": {"enum": ["positive", "negative", "mixed", "no_guidance", "unknown"]},
+        "materiality": {"$ref": "#/$defs/probability"},
+        "confidence": {"$ref": "#/$defs/probability"},
+        "affected_sectors": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "links": {"type": "array", "items": {"type": "string", "format": "uri", "pattern": "^https?://[^?#]+$"}}
+      }
+    },
+    "probability": {"type": "string", "pattern": "^(0(\\.\\d+)?|1(\\.0+)?)$"}
+  },
+  "properties": {
+    "schema_version": {"const": 1},
+    "snapshot_id": {"$ref": "#/$defs/sha256"},
+    "source_id": {"type": "string", "minLength": 1},
+    "publisher": {"type": "string", "minLength": 1},
+    "document_id": {"type": "string", "minLength": 1},
+    "revision_id": {"type": "string", "minLength": 1},
+    "source_content_sha256": {"$ref": "#/$defs/sha256"},
+    "duplicate_group_id": {"$ref": "#/$defs/sha256"},
+    "first_public_time": {"$ref": "#/$defs/timestamp"},
+    "revision_public_time": {"$ref": "#/$defs/timestamp"},
+    "source_ingestion_time": {"$ref": "#/$defs/timestamp"},
+    "source_url": {"type": "string", "format": "uri", "pattern": "^https?://[^?#]+$"},
+    "source_type": {"type": "string", "minLength": 1},
+    "redistribution_status": {"enum": ["permitted", "restricted", "unknown"]},
+    "source_quality": {"enum": ["primary_official", "primary_issuer", "secondary_reputable", "unverified"]},
+    "extraction_version": {"type": "string", "minLength": 1},
+    "extraction_model": {"type": "string", "minLength": 1},
+    "prompt_sha256": {"$ref": "#/$defs/sha256"},
+    "extraction_completed_at": {"$ref": "#/$defs/timestamp"},
+    "feature_available_time": {"$ref": "#/$defs/timestamp"},
+    "ingestion_time": {"$ref": "#/$defs/timestamp"},
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}}
+  }
+}

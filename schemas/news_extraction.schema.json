@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/news_extraction.schema.json",
+  "title": "Source-only structured event extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["events"],
+  "$defs": {
+    "probability": {"type": "string", "pattern": "^(0(\\.\\d+)?|1(\\.0+)?)$"},
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_type", "event_time", "entity_mentions", "novelty", "direction", "surprise_magnitude", "guidance_direction", "materiality", "confidence", "affected_sectors", "links"],
+      "properties": {
+        "event_type": {"enum": ["earnings_release", "earnings_guidance", "revenue_guidance", "dividend", "merger_acquisition", "capital_raise", "regulatory", "litigation", "product_launch", "management_change", "macro_policy", "macro_data", "fx_commodity", "index_rebalance", "trading_halt", "actinver_rule_change", "other"]},
+        "event_time": {"oneOf": [{"type": "string", "format": "date-time"}, {"type": "null"}]},
+        "entity_mentions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "novelty": {"$ref": "#/$defs/probability"},
+        "direction": {"enum": ["positive", "negative", "mixed", "neutral", "unknown"]},
+        "surprise_magnitude": {"oneOf": [{"$ref": "#/$defs/probability"}, {"type": "null"}]},
+        "guidance_direction": {"enum": ["positive", "negative", "mixed", "no_guidance", "unknown"]},
+        "materiality": {"$ref": "#/$defs/probability"},
+        "confidence": {"$ref": "#/$defs/probability"},
+        "affected_sectors": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "links": {"type": "array", "items": {"type": "string", "format": "uri", "pattern": "^https?://[^?#]+$"}}
+      }
+    }
+  },
+  "properties": {
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}}
+  }
+}
