@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/research_ledger_record.schema.json",
+  "title": "M5 append-only research ledger record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sequence", "previous_record_sha256", "event_type", "batch_id", "record_sha256"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "sequence": {"type": "integer", "minimum": 1},
+    "previous_record_sha256": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{64}$"}]},
+    "event_type": {"enum": ["plan_registered", "batch_completed"]},
+    "batch_id": {"type": "string", "minLength": 3},
+    "created_at_utc": {"type": "string", "format": "date-time"},
+    "completed_at_utc": {"type": "string", "format": "date-time"},
+    "plan_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "code_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit_sha", "code_tree_sha256", "working_tree_dirty", "python_version", "platform", "package_version", "dependency_versions"],
+      "properties": {
+        "commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "code_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "working_tree_dirty": {"type": "boolean"},
+        "python_version": {"type": "string", "minLength": 1},
+        "platform": {"type": "string", "minLength": 1},
+        "package_version": {"type": "string", "minLength": 1},
+        "dependency_versions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["PyYAML"],
+          "properties": {"PyYAML": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "plan": {"$ref": "research_plan.schema.json"},
+    "registered_experiments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["hypothesis_id", "experiment_id", "hypothesis", "experiment_spec"],
+        "properties": {
+          "hypothesis_id": {"type": "string", "minLength": 1},
+          "experiment_id": {"type": "string", "minLength": 1},
+          "hypothesis": {"$ref": "research_hypothesis.schema.json"},
+          "experiment_spec": {"$ref": "research_experiment_spec.schema.json"}
+        }
+      }
+    },
+    "results": {"type": "array", "items": {"$ref": "#/$defs/experimentResult"}},
+    "record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "oneOf": [
+    {
+      "properties": {"event_type": {"const": "plan_registered"}},
+      "required": ["created_at_utc", "plan_sha256", "code_identity", "plan", "registered_experiments"],
+      "not": {"anyOf": [{"required": ["completed_at_utc"]}, {"required": ["results"]}]}
+    },
+    {
+      "properties": {"event_type": {"const": "batch_completed"}},
+      "required": ["completed_at_utc", "plan_sha256", "code_identity", "results"],
+      "not": {"anyOf": [
+        {"required": ["created_at_utc"]},
+        {"required": ["plan"]},
+        {"required": ["registered_experiments"]}
+      ]}
+    }
+  ],
+  "$defs": {
+    "experimentResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hypothesis_id", "experiment_id", "hypothesis_path", "hypothesis_sha256",
+        "validation_case_path", "validation_case_sha256", "run_status", "m4_decision",
+        "scientific_decision", "m5_gate_downgraded", "decision_reasons", "falsification_checks",
+        "validation_result", "error"
+      ],
+      "properties": {
+        "hypothesis_id": {"type": "string", "minLength": 1},
+        "experiment_id": {"type": "string", "minLength": 1},
+        "hypothesis_path": {"type": "string", "minLength": 1},
+        "hypothesis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "validation_case_path": {"type": "string", "minLength": 1},
+        "validation_case_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "run_status": {"enum": ["COMPLETED", "RUN_ERROR"]},
+        "m4_decision": {"anyOf": [{"type": "null"}, {"enum": ["REJECT", "NEEDS_MORE_EVIDENCE", "PROMOTE"]}]},
+        "scientific_decision": {"enum": ["REJECT", "NEEDS_MORE_EVIDENCE", "PROMOTE"]},
+        "m5_gate_downgraded": {"type": "boolean"},
+        "decision_reasons": {"type": "array", "items": {"type": "string"}},
+        "falsification_checks": {"type": "array", "items": {"$ref": "#/$defs/falsificationCheck"}},
+        "validation_result": {"anyOf": [{"type": "null"}, {"type": "object"}]},
+        "error": {"anyOf": [{"type": "null"}, {"type": "string"}]}
+      }
+    },
+    "falsificationCheck": {
+      "type": "object",
+      "additionalProperties": false,
+        "required": ["category", "required", "status", "approach", "reason", "details"],
+      "properties": {
+        "category": {"enum": ["leakage", "regime", "outliers", "parameter_sensitivity", "liquidity", "costs", "sample_size", "multiple_testing"]},
+        "required": {"const": true},
+        "status": {"enum": ["CHECKED", "FAILED", "NOT_AVAILABLE", "NOT_IMPLEMENTED", "INSUFFICIENT"]},
+        "approach": {"type": "string", "minLength": 1},
+        "reason": {"type": "string", "minLength": 1},
+        "details": {"type": "object"}
+      }
+    }
+  }
+}

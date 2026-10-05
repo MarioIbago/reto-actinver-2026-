@@ -8,7 +8,7 @@ Raw evidence under `research/source_material/` must remain unchanged. M1 owns no
 
 ## Current phase: M5 — Research Factory
 
-Follow `prompts/phases/M5_RESEARCH_FACTORY.md`. Preserve hypotheses, pre-registered ExperimentSpecs, attempts, falsification notes, results, and negative outcomes in a reproducible research factory. Never use synthetic fixtures to claim financial performance or promote a strategy. The M3 simulator is available through `actinver-exec simulate` and M4 validation through `actinver-m4 evaluate`.
+Follow `prompts/phases/M5_RESEARCH_FACTORY.md`. Preserve hypotheses, pre-registered ExperimentSpecs, attempts, falsification notes, results, and negative outcomes in a reproducible research factory. Never use synthetic fixtures to claim financial performance or promote a strategy. M5 commands are `actinver-research register`, `run-batch`, `verify-ledger`, and `summary`; see `docs/actinver_research_factory.md`. The M3 simulator is available through `actinver-exec simulate` and M4 validation through `actinver-m4 evaluate`.
 
 Completed M1 outputs:
 

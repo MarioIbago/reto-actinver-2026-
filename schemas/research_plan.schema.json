@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/research_plan.schema.json",
+  "title": "M5 pre-registered experiment batch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "batch_id", "experiments"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "batch_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,63}$"},
+    "experiments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["hypothesis_path", "hypothesis_sha256", "validation_case_path", "validation_case_sha256", "experiment_spec"],
+        "properties": {
+          "hypothesis_path": {"type": "string", "minLength": 1},
+          "hypothesis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "validation_case_path": {"type": "string", "minLength": 1},
+          "validation_case_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "experiment_spec": {"$ref": "research_experiment_spec.schema.json"}
+        }
+      }
+    }
+  }
+}

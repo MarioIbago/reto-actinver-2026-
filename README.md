@@ -127,7 +127,7 @@ References are not automatic dependencies.
 
 M3 now provides `actinver-exec simulate`: deterministic replay, auditable cash/position/fee ledger, versioned case/result schemas, and provenance. Its synthetic tests establish software mechanics only. No real practice fills, authorized OHLCV/trades, or authenticated simulator symbols are available.
 
-M4 now provides eight point-in-time baseline families and a time-aware validation engine with costs, walk-forward, bootstrap, PBO/DSR, sensitivity, and explicit evidence gates. Its software gate passed on synthetic fixtures only. M5 builds the research factory and permanent scientific memory; all financial claims must remain `NEEDS_MORE_EVIDENCE` until authorized point-in-time price history, usable instrument identifiers, and real M3 execution inputs exist. No strategy may be promoted from synthetic data.
+M4 provides eight point-in-time baseline families and a time-aware validation engine. M5 adds pre-registered experiment batches, tamper-evident scientific memory, falsification tracking, and decision accounting. Its software gate is exercised with synthetic cases only. All financial claims must remain `NEEDS_MORE_EVIDENCE` until authorized point-in-time price history, usable instrument identifiers, and real M3 execution inputs exist. No strategy may be promoted from synthetic data.
 
 ## Official sources
 
