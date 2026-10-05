@@ -1,8 +1,9 @@
 # GitHub Actions — manual order memo
 
 `.github/workflows/manual-order-memo.yml` validates the latest checked-in
-watchlist memo and uploads `memo.md`, `memo.json` and a short summary as a
-30-day GitHub Actions artifact. A push that changes a memo starts the workflow;
+watchlist memo and uploads `memo.md`, `memo.json`, its linked comparison report
+and a short summary as a 30-day GitHub Actions artifact. A push that changes a
+memo or an intraday comparison report starts the workflow;
 the Actions page can also run it manually with an optional `YYYY-MM-DD` memo
 date.
 

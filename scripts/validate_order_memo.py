@@ -166,6 +166,7 @@ def bundle_memo(
     memo_date: str | None,
     output_dir: Path,
     summary_file: Path | None = None,
+    repository_root: Path | None = None,
 ) -> dict[str, Any]:
     memo_dir = _memo_directory(reports_dir, memo_date)
     json_path = memo_dir / "memo.json"
@@ -188,6 +189,26 @@ def bundle_memo(
     output_dir.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(json_path, output_dir / "memo.json")
     shutil.copyfile(markdown_path, output_dir / "memo.md")
+    research_report_artifact: str | None = None
+    research = memo.get("research")
+    research_report = research.get("comparison_report") if isinstance(research, dict) else None
+    if research_report is not None:
+        if not isinstance(research_report, str) or not research_report.strip():
+            raise MemoValidationError("research.comparison_report must be a repository-relative path")
+        report_relative_path = Path(research_report)
+        if report_relative_path.is_absolute() or ".." in report_relative_path.parts:
+            raise MemoValidationError("research.comparison_report must stay inside the repository")
+        repo_root = (repository_root or Path.cwd()).resolve()
+        report_path = (repo_root / report_relative_path).resolve()
+        if not report_path.is_relative_to(repo_root):
+            raise MemoValidationError("research.comparison_report must stay inside the repository")
+        if not report_path.is_file():
+            raise MemoValidationError(f"research report not found: {research_report}")
+        report_output_path = output_dir / report_relative_path
+        report_output_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(report_path, report_output_path)
+        research_report_artifact = report_relative_path.as_posix()
+
     summary = (
         f"# Order memo — {memo['for_session_date']}\n\n"
         f"- Decision: **{memo['decision_status']}**\n"
@@ -197,6 +218,8 @@ def bundle_memo(
         f"- Portfolio state verified: **no**\n"
         f"- Memo ID: `{memo['memo_id']}`\n"
     )
+    if research_report_artifact:
+        summary += f"- Research report: `{research_report_artifact}`\n"
     (output_dir / "summary.md").write_text(summary, encoding="utf-8")
     if summary_file is not None:
         summary_file.parent.mkdir(parents=True, exist_ok=True)
@@ -208,6 +231,7 @@ def bundle_memo(
         "decision_status": memo["decision_status"],
         "watchlist_count": len(memo["watchlist"]),
         "order_count": len(memo["orders"]),
+        "research_report": research_report_artifact,
         "bundle_dir": str(output_dir),
     }
 

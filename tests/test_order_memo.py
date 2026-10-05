@@ -81,19 +81,34 @@ class OrderMemoTests(unittest.TestCase):
             root = Path(tmp)
             memo_dir = root / "reports" / "order_memos" / "2026-10-06"
             memo_dir.mkdir(parents=True)
-            (memo_dir / "memo.json").write_text(json.dumps(memo_fixture()), encoding="utf-8")
+            report_relative = Path("reports/intraday/2026-10-05_review.md")
+            research_report = root / report_relative
+            research_report.parent.mkdir(parents=True)
+            research_report.write_text("# Research report\n", encoding="utf-8")
+            memo = memo_fixture()
+            memo["research"] = {"comparison_report": report_relative.as_posix()}
+            (memo_dir / "memo.json").write_text(json.dumps(memo), encoding="utf-8")
             (memo_dir / "memo.md").write_text(
                 "# Manual memo\n\nNO_TRADE. Órdenes: 0.\n", encoding="utf-8"
             )
             output = root / "bundle"
             summary = root / "github-summary.md"
 
-            result = bundle_memo(root / "reports" / "order_memos", None, output, summary)
+            result = bundle_memo(
+                root / "reports" / "order_memos",
+                None,
+                output,
+                summary,
+                repository_root=root,
+            )
 
             self.assertEqual(result["order_count"], 0)
             self.assertEqual(result["watchlist_count"], 16)
             self.assertTrue((output / "memo.json").is_file())
             self.assertTrue((output / "memo.md").is_file())
+            self.assertTrue((output / report_relative).is_file())
+            self.assertEqual(result["research_report"], report_relative.as_posix())
+            self.assertIn(report_relative.as_posix(), (output / "summary.md").read_text(encoding="utf-8"))
             self.assertIn("Orders: **0**", (output / "summary.md").read_text(encoding="utf-8"))
             self.assertIn("MANUAL_ONLY", (output / "memo.json").read_text(encoding="utf-8"))
             self.assertTrue(summary.is_file())

@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "reports/order_memos/**"
+      - "reports/intraday/**"
       - "scripts/validate_order_memo.py"
       - "tests/test_order_memo.py"
       - "docs/order_memo_workflow.md"
