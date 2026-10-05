@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/news_evaluation_result.schema.json",
+  "title": "Descriptive out-of-sample event prediction metrics",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "evaluation_id", "target_definition", "horizon_sessions", "baseline_description", "training_baseline_probability", "baseline_fit_split", "split_periods", "train_metrics", "validation_metrics", "test_metrics", "test_holdout_accessed", "final_holdout_locked_before_evaluation", "test_used_for_selection", "evidence", "evidence_gaps", "status_decision", "decision_reason"],
+  "$defs": {
+    "period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {"start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"}}
+    },
+    "metric": {"oneOf": [{"type": "string"}, {"type": "null"}]},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_count", "positive_rate", "baseline_brier_score", "event_brier_score", "brier_improvement", "baseline_log_loss", "event_log_loss", "log_loss_improvement", "expected_calibration_error", "calibration_bins"],
+      "properties": {
+        "event_count": {"type": "integer", "minimum": 0},
+        "positive_rate": {"$ref": "#/$defs/metric"},
+        "baseline_brier_score": {"$ref": "#/$defs/metric"},
+        "event_brier_score": {"$ref": "#/$defs/metric"},
+        "brier_improvement": {"$ref": "#/$defs/metric"},
+        "baseline_log_loss": {"$ref": "#/$defs/metric"},
+        "event_log_loss": {"$ref": "#/$defs/metric"},
+        "log_loss_improvement": {"$ref": "#/$defs/metric"},
+        "expected_calibration_error": {"$ref": "#/$defs/metric"},
+        "calibration_bins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["lower_bound", "upper_bound", "count", "mean_probability", "observed_positive_rate", "absolute_calibration_error"],
+            "properties": {
+              "lower_bound": {"type": "string"},
+              "upper_bound": {"type": "string"},
+              "count": {"type": "integer", "minimum": 1},
+              "mean_probability": {"type": "string"},
+              "observed_positive_rate": {"type": "string"},
+              "absolute_calibration_error": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["data_status", "source_availability_verified", "instrument_mapping_verified", "prices_authorized", "execution_costs_verified"],
+      "properties": {
+        "data_status": {"enum": ["synthetic_fixture", "authorized_point_in_time", "unverified"]},
+        "source_availability_verified": {"type": "boolean"},
+        "instrument_mapping_verified": {"type": "boolean"},
+        "prices_authorized": {"type": "boolean"},
+        "execution_costs_verified": {"type": "boolean"}
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {"const": 1},
+    "evaluation_id": {"type": "string", "minLength": 1},
+    "target_definition": {"const": "gross_forward_return_gt_zero"},
+    "horizon_sessions": {"type": "integer", "minimum": 1},
+    "baseline_description": {"type": "string", "minLength": 1},
+    "training_baseline_probability": {"type": "string", "pattern": "^(0(\\.\\d+)?|1(\\.0+)?)$"},
+    "baseline_fit_split": {"const": "train"},
+    "split_periods": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["train", "validation", "test"],
+      "properties": {"train": {"$ref": "#/$defs/period"}, "validation": {"$ref": "#/$defs/period"}, "test": {"$ref": "#/$defs/period"}}
+    },
+    "train_metrics": {"$ref": "#/$defs/metrics"},
+    "validation_metrics": {"$ref": "#/$defs/metrics"},
+    "test_metrics": {"$ref": "#/$defs/metrics"},
+    "test_holdout_accessed": {"const": true},
+    "final_holdout_locked_before_evaluation": {"const": true},
+    "test_used_for_selection": {"const": false},
+    "evidence": {"$ref": "#/$defs/evidence"},
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}},
+    "status_decision": {"enum": ["NEEDS_MORE_EVIDENCE", "REJECT", "PROMOTE"]},
+    "decision_reason": {"type": "string", "minLength": 1}
+  }
+}

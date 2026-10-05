@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/news_forward_return_label.schema.json",
+  "title": "M2 point-in-time forward return label",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "label_id", "event_id", "event_group_id", "instrument_id", "price_dataset_id", "source_id", "entry_record_id", "entry_source_revision", "label_as_of", "decision_time", "entry_bar_time", "entry_close", "exit_record_id", "exit_source_revision", "exit_bar_time", "exit_close", "horizon_sessions", "forward_return", "target_definition", "label_available_time", "label_ingestion_time", "platform_mapping_verified", "execution_costs_applied"],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "decimal": {"type": "string", "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$"}
+  },
+  "properties": {
+    "schema_version": {"const": 1},
+    "label_id": {"$ref": "#/$defs/sha256"},
+    "event_id": {"$ref": "#/$defs/sha256"},
+    "event_group_id": {"$ref": "#/$defs/sha256"},
+    "instrument_id": {"type": "string", "minLength": 1},
+    "price_dataset_id": {"type": "string", "minLength": 1},
+    "source_id": {"type": "string", "minLength": 1},
+    "entry_record_id": {"type": "string", "minLength": 1},
+    "entry_source_revision": {"type": "string", "minLength": 1},
+    "label_as_of": {"$ref": "#/$defs/timestamp"},
+    "decision_time": {"$ref": "#/$defs/timestamp"},
+    "entry_bar_time": {"$ref": "#/$defs/timestamp"},
+    "entry_close": {"$ref": "#/$defs/decimal"},
+    "exit_record_id": {"type": "string", "minLength": 1},
+    "exit_source_revision": {"type": "string", "minLength": 1},
+    "exit_bar_time": {"$ref": "#/$defs/timestamp"},
+    "exit_close": {"$ref": "#/$defs/decimal"},
+    "horizon_sessions": {"type": "integer", "minimum": 1},
+    "forward_return": {"$ref": "#/$defs/decimal"},
+    "target_definition": {"const": "gross_forward_close_to_close"},
+    "label_available_time": {"$ref": "#/$defs/timestamp"},
+    "label_ingestion_time": {"$ref": "#/$defs/timestamp"},
+    "platform_mapping_verified": {"type": "boolean"},
+    "execution_costs_applied": {"const": false}
+  }
+}

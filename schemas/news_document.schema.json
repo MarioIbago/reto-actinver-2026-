@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/news_document.schema.json",
+  "title": "Raw point-in-time news document revision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "document_id", "revision_id", "source_id", "publisher", "first_public_time", "revision_public_time", "ingestion_time", "event_time", "source_url", "source_type", "redistribution_status", "source_quality", "title", "body"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "document_id": {"type": "string", "minLength": 1},
+    "revision_id": {"type": "string", "minLength": 1},
+    "source_id": {"type": "string", "minLength": 1},
+    "publisher": {"type": "string", "minLength": 1},
+    "first_public_time": {"type": "string", "format": "date-time"},
+    "revision_public_time": {"type": "string", "format": "date-time"},
+    "ingestion_time": {"type": "string", "format": "date-time"},
+    "event_time": {"oneOf": [{"type": "string", "format": "date-time"}, {"type": "null"}]},
+    "source_url": {"type": "string", "format": "uri", "pattern": "^https?://[^?#]+$"},
+    "source_type": {"type": "string", "minLength": 1},
+    "redistribution_status": {"enum": ["permitted", "restricted", "unknown"]},
+    "source_quality": {"enum": ["primary_official", "primary_issuer", "secondary_reputable", "unverified"]},
+    "title": {"type": "string", "minLength": 1},
+    "body": {"type": "string", "minLength": 1, "maxLength": 2000000}
+  }
+}

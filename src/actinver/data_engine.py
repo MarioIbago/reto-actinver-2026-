@@ -232,7 +232,9 @@ def normalize_records(
             raise DataEngineError(
                 "Conflicting values share source_id, record_id, source_revision and available_time"
             )
-        if row["ingestion_time"] < existing["ingestion_time"]:
+        if _parse_time(row["ingestion_time"], "ingestion_time") < _parse_time(
+            existing["ingestion_time"], "ingestion_time"
+        ):
             versions[key] = row
         duplicate_count += 1
 
@@ -264,8 +266,8 @@ def normalize_records(
         key=lambda item: (
             item["instrument_id"],
             item["record_type"],
-            item["event_time"],
-            item["available_time"],
+            _parse_time(item["event_time"], "event_time"),
+            _parse_time(item["available_time"], "available_time"),
             item["source_id"],
             item["record_id"],
             item["source_revision"],
@@ -304,17 +306,17 @@ def query_as_of(
             continue
         key = (row["source_id"], row["record_id"])
         previous = latest.get(key)
-        if previous is None or row["available_time"] > previous["available_time"]:
+        if previous is None or available > _parse_time(previous["available_time"], "available_time"):
             latest[key] = row
         elif (
-            row["available_time"] == previous["available_time"]
+            available == _parse_time(previous["available_time"], "available_time")
             and row["payload"] != previous["payload"]
         ):
             raise DataEngineError("Ambiguous same-time source revisions in point-in-time query")
     return sorted(
         latest.values(),
         key=lambda item: (
-            item["event_time"],
+            _parse_time(item["event_time"], "event_time"),
             item["instrument_id"],
             item["record_type"],
             item["source_id"],
