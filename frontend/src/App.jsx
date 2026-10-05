@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 
 const NAV = [
   { id: "overview", label: "Vista general", icon: "home" },
@@ -38,6 +38,14 @@ const REPORT_TYPES = {
   event_update: "Actualización de evento",
   evening_review: "Revisión de cierre",
 };
+
+const FLOW_STEPS = [
+  { code: "01 / INPUT", title: "PIT DATA", status: "NO SNAPSHOT" },
+  { code: "02 / ALPHA", title: "M7 SIGNAL", status: "0 PROMOTED" },
+  { code: "03 / MODEL", title: "M8 RANK", status: "SIMULATION" },
+  { code: "04 / GATE", title: "M9 REPORT", status: "NO_TRADE" },
+  { code: "05 / USER", title: "ACTINVER", status: "MANUAL ONLY" },
+];
 
 function Icon({ name, size = 20 }) {
   const paths = {
@@ -170,6 +178,26 @@ function EmptyState({ icon, title, detail }) {
   return <div className="empty-state"><div className="empty-icon"><Icon name={icon} size={35} /></div><strong>{title}</strong><p>{detail}</p></div>;
 }
 
+function TradingFlowDiagram() {
+  return <article className="card flow-card" aria-labelledby="flow-title">
+    <div className="flow-heading">
+      <div><span className="flow-kicker">SYSTEM MAP / 01</span><h2 id="flow-title">Cadena de decisión</h2></div>
+      <span className="flow-disclaimer">ESQUEMA · SIN DATOS DE MERCADO</span>
+    </div>
+    <div className="flow-track" role="list" aria-label="Flujo desde datos PIT hasta ejecución manual">
+      {FLOW_STEPS.map((step, index) => <Fragment key={step.code}>
+        <div className={`flow-node ${index === 3 ? "flow-node-stop" : ""}`} role="listitem">
+          <span className="flow-node-code">{step.code}</span>
+          <strong>{step.title}</strong>
+          <span className="flow-node-status">{step.status}</span>
+        </div>
+        {index < FLOW_STEPS.length - 1 && <span className="flow-arrow" aria-hidden="true">→</span>}
+      </Fragment>)}
+    </div>
+    <div className="flow-output"><span>$ route --status</span><strong>HALT / NO_TRADE</strong><span>ORDEN: SOLO MANUAL</span></div>
+  </article>;
+}
+
 function App() {
   const [activeView, setActiveView] = useState("overview");
   const [report, setReport] = useState(null);
@@ -243,8 +271,8 @@ function App() {
     <main className="main-shell">
       <header className="topbar">
         <div className="topbar-heading">
-          <div className="eyebrow">RETO ACTINVER 2026 <span className="eyebrow-dot" /></div>
-          <h1>Competition cockpit</h1>
+          <div className="eyebrow">ACTINVER 2026 <span className="eyebrow-separator">//</span> READ ONLY</div>
+          <h1>Terminal de investigación</h1>
           <p>Fecha de corte: <strong>{formatDate(report?.as_of_utc)}</strong></p>
         </div>
         <div className="topbar-actions">
@@ -255,6 +283,9 @@ function App() {
       </header>
 
       <div className="content-wrap">
+        <div className="terminal-command" role="note" aria-label="Cockpit M9 en modo de solo lectura">
+          <span className="command-host">actinver@m9</span><span className="command-path">:~/research</span><span className="command-prompt">$</span><span>cockpit --read-only</span><span className="command-state">NO_TRADE</span>
+        </div>
         {error && <div className="error-banner" role="alert"><Icon name="warning" size={17} /><span>{error}</span><button type="button" onClick={() => setError("")} aria-label="Cerrar mensaje">×</button></div>}
         <div className="view-heading"><div><span className="view-kicker">PANEL DEL OPERADOR</span><h2>{activeView === "overview" ? "Competencia" : navTitle}</h2></div>{report && <div className="report-meta"><span className="meta-dot" />{REPORT_TYPES[report.report_type]}<span className="meta-separator">·</span>{formatDate(report.created_at_utc)}</div>}</div>
 
@@ -276,6 +307,8 @@ function App() {
                 </div>
                 <div className="action-foot"><Icon name="clock" size={15} /><span>{report ? `Reporte ${report.report_id}` : "Sin reporte M9 importado"}</span><span className="foot-lock">Ejecución manual</span></div>
               </article>
+
+              <TradingFlowDiagram />
 
               <div className="lower-cards">
                 <article className="card lower-card">
