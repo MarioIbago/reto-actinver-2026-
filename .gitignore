@@ -6,3 +6,8 @@ build/
 dist/
 *.egg-info/
 experiments/results/m0/
+
+# Licensed/provider data and derived rows are local-only by default.
+/data/raw/
+/data/interim/
+/data/processed/
