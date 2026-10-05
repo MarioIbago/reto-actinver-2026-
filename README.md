@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: M0–M4 pasaron sus gates técnicos de software/datos acotados. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV histórico autorizado. M5 es la fase activa. No hay evidencia de alpha ni backtests financieros con datos reales.
+> Estado: M0–M5 pasaron sus gates de software/datos acotados. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV ni noticias históricas autorizadas. M6 es la fase activa. No hay evidencia de alpha ni backtests financieros con datos reales.
 
 ## Objetivo
 
@@ -123,11 +123,11 @@ See `docs/reference_projects.md`.
 
 References are not automatic dependencies.
 
-## Current priority — M5
+## Current priority — M6
 
 M3 now provides `actinver-exec simulate`: deterministic replay, auditable cash/position/fee ledger, versioned case/result schemas, and provenance. Its synthetic tests establish software mechanics only. No real practice fills, authorized OHLCV/trades, or authenticated simulator symbols are available.
 
-M4 provides eight point-in-time baseline families and a time-aware validation engine. M5 adds pre-registered experiment batches, tamper-evident scientific memory, falsification tracking, and decision accounting. Its software gate is exercised with synthetic cases only. All financial claims must remain `NEEDS_MORE_EVIDENCE` until authorized point-in-time price history, usable instrument identifiers, and real M3 execution inputs exist. No strategy may be promoted from synthetic data.
+M4 provides eight point-in-time baseline families and a time-aware validation engine. M5 adds pre-registered experiment batches, tamper-evident scientific memory, falsification tracking, and decision accounting; its software gate passed with synthetic cases only. M6 is scoped to point-in-time news/event structuring and incremental predictive evaluation. No authorized historical news corpus, price history, authenticated instrument mapping, or real M3 execution inputs are available, so financial claims remain `NEEDS_MORE_EVIDENCE` and synthetic data cannot promote a strategy.
 
 ## Official sources
 

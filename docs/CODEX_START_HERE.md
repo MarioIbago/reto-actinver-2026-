@@ -6,9 +6,9 @@ Before changing production code, read `README.md`, `MASTER_PLAN.md`, `AGENTS.md`
 
 Raw evidence under `research/source_material/` must remain unchanged. M1 owns normalization of rules and the guide universe; M2 owns PIT market-data ingestion and manifests.
 
-## Current phase: M5 — Research Factory
+## Current phase: M6 — News/Event Engine
 
-Follow `prompts/phases/M5_RESEARCH_FACTORY.md`. Preserve hypotheses, pre-registered ExperimentSpecs, attempts, falsification notes, results, and negative outcomes in a reproducible research factory. Never use synthetic fixtures to claim financial performance or promote a strategy. M5 commands are `actinver-research register`, `run-batch`, `verify-ledger`, and `summary`; see `docs/actinver_research_factory.md`. The M3 simulator is available through `actinver-exec simulate` and M4 validation through `actinver-m4 evaluate`.
+Follow `prompts/phases/M6_NEWS_EVENTS.md`. Build point-in-time event ingestion, deduplication, structured extraction contracts, and evaluation tooling that keeps extraction separate from future-return labeling. No LLM output may directly decide BUY/SELL. No authorized historical news corpus, OHLCV history, or authenticated Actinver ticker mapping is currently available; preserve those evidence gaps and do not claim financial performance from fixtures. M5's completed research factory is available through `actinver-research`; see `docs/actinver_research_factory.md` and `docs/phase_reports/M5_REPORT.md`.
 
 Completed M1 outputs:
 
@@ -39,7 +39,7 @@ python scripts/build_bmv_calendar_dataset.py --ingestion-time $ingestionTime --c
 
 Keep the timestamp and commit SHA emitted in the phase report when repeating an exact dataset build.
 
-M4's software gate passed with synthetic fixtures only. All financial results must remain `NEEDS_MORE_EVIDENCE` until authorized price data, point-in-time instrument identity, and the M3 execution inputs are available. M5 must not advance into news extraction, alpha production, tournament optimization, or a trade interface before their phases.
+M4 and M5's software gates passed with synthetic fixtures only. All financial results must remain `NEEDS_MORE_EVIDENCE` until authorized point-in-time news and price data, instrument identity, and M3 execution inputs are available. M6's technical outputs do not establish incremental predictive value without a historical out-of-sample evaluation.
 
 ## Completed M0 reference
 
