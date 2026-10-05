@@ -1,6 +1,6 @@
 # Memo premercado — Reto Actinver — 6 de octubre de 2026
 
-**Corte de preparación:** 5-oct-2026, 16:47:15 CDMX
+**Corte de preparación:** 5-oct-2026, 17:16:00 CDMX
 **Decisión:** **NO_TRADE**
 **Órdenes anticipadas:** **0**
 **Universo revisado:** las 16 emisoras de la watchlist
@@ -13,14 +13,13 @@ pasó todos los filtros de catalizador, precio, riesgo/recompensa, cotización
 ejecutable, identidad exacta del simulador y estado actual de la cuenta. Los
 precios son referencias retrasadas de barras regulares, no posturas bid/ask ni
 precios Actinver. Al preparar este memo, las barras regulares de las 14:00
-tenían 167 minutos de antigüedad. La sesión iniciada de Perplexity mostró que Investigación
+tenían 196 minutos de antigüedad. La sesión iniciada de Perplexity mostró que Investigación
 profunda requiere actualizar el plan; no se envió una consulta allí.
 
 El corte usa la barra final programada 13:55–14:00 CDMX. Durante el horario de
 verano estadounidense, el horario continuo publicado por BMV es 07:30–14:00
 CDMX. La barra coincide con esa ventana, pero no autentica su precio de cierre
-ni la serie del simulador. Una cotización posterior de EE. UU. fue posterior al
-cierre regular y se excluyó.
+ni la serie del simulador. Las cotizaciones posteriores al cierre regular se muestran en el reporte por separado y no se usan para emitir una orden.
 
 ## Lista de vigilancia
 
@@ -45,8 +44,8 @@ cierre regular y se excluyó.
 
 RVol es el volumen acumulado al cierre dividido por el promedio de las 19
 sesiones previas al mismo corte. La tabla completa de apertura, máximos/mínimos,
-volumen y contexto está en el [reporte base de 16:22](../../intraday/2026-10-05_1622_cdmx.md).
-La [actualización incremental de 16:32](../../intraday/2026-10-05_1647_cdmx.md)
+volumen y contexto está en el [reporte comparativo de 17:16](../../intraday/2026-10-05_1716_cdmx.md).
+La [actualización incremental de 17:16](../../intraday/2026-10-05_1716_cdmx.md)
 confirma que no apareció una señal nueva.
 
 Hay discrepancias entre proveedores: para BA, una instantánea posterior al
@@ -55,7 +54,7 @@ confirma sostén sobre USD 195.02–196. Para AVGO, los mínimos fueron USD 354.
 y USD 356.14; el último cierre regular quedó cerca de USD 363 sin confirmación
 de estabilización. Ninguna referencia se trata como ejecutable.
 
-Los snapshots postmercado estadounidenses más recientes (15:33–16:28 CDMX)
+Los snapshots postmercado estadounidenses más recientes (16:55–17:00 CDMX)
 quedaron prácticamente iguales a los cierres regulares; sus horas y edad se registran por
 separado en el reporte; no sustituyen los datos regulares ni son precios de
 Actinver.
@@ -83,6 +82,14 @@ temporal de operación. WFC sigue en WATCH: no dejar orden anticipada.
 [TheFly vía TipRanks](https://www.tipranks.com/news/the-fly/wells-fargo-upgraded-to-overweight-from-equal-weight-at-morgan-stanley-thefly-news) ·
 [Benzinga](https://www.benzinga.com/analyst-stock-ratings/upgrades/26/10/62160112/this-wells-fargo-analyst-turns-bullish-here-are-top-5-upgrades-for-monday) ·
 [Wells Fargo: fecha oficial de resultados](https://newsroom.wf.com/news-releases/news-details/2026/Wells-Fargo-to-Announce-Third-Quarter-2026-Earnings-on-Oct--13-2026/default.aspx)
+
+
+
+### Corte incremental de 17:16 CDMX
+
+Frente al informe de 16:47, los precios visibles postmercado de BA, AVGO, NVDA, AMAT y WFC no cambiaron; los últimos trades quedaron entre 16:45 y 16:50 CDMX, con venue no expuesto. La barra BMV/regular continúa en 14:00 y tiene 196 minutos.
+
+En AMAT se identificó un Form 4 con fecha de filing 5-oct y transacción 1-oct: 2,644 acciones se retuvieron al vestirse RSU para cubrir impuestos (código F). No es venta discrecional ni catalizador operativo. El filing no muestra hora intradía, así que no se afirma que haya sido publicado después del corte de 16:47. ASUR mantiene como última publicación relevante el evento del 28-sep; la adquisición de CPC cerró el 1-sep. OMA publicó tráfico de agosto el 4-sep y Grupo México fechó su reporte 2T26 el 21-jul. Peñoles lista un aviso del 3-ago sobre renuncia de un consejero propietario, pero el PDF vinculado devuelve 404 y los detalles no se verifican. No se verificó una señal que habilite orden anticipada. Consulta el [informe completo de 17:16](../../intraday/2026-10-05_1716_cdmx.md).
 
 ## Estado de cuenta y costos
 
