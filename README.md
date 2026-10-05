@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: M0 y la implementación inicial M1 están integrados; M1 — Rules & Eligible Universe sigue abierta por la falta de mapeo verificable a símbolos/series del simulador y por ambigüedades oficiales no resueltas. No hay estrategias ni backtests financieros.
+> Estado: M0 y M1 pasaron sus gates técnicos. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 está activa; el motor PIT pasa pruebas de software y aún no hay OHLCV histórico autorizado. No hay estrategias ni backtests financieros.
 
 ## Objetivo
 
@@ -90,7 +90,7 @@ Actualmente incluye:
 - raw 207-instrument universe list;
 - official Grupo BMV 2026 holiday-calendar capture.
 
-M1 normalizará/verificará símbolos y reglas. No usar raw material como configuración ejecutable.
+M1 normalizó/verificó reglas y el anexo de instrumentos sin afirmar que las etiquetas de la guía sean símbolos ejecutables del simulador. No usar raw material como configuración ejecutable.
 
 ## Scientific rule
 
@@ -123,19 +123,11 @@ See `docs/reference_projects.md`.
 
 References are not automatic dependencies.
 
-## Current priority — M1
+## Current priority — M2
 
-La base reproducible M0 ya está integrada. M1 verifica y versiona:
+El motor M2 ofrece ingestión, manifests, consultas PIT y controles de frescura. La fuente BMV versionada permite construir el calendario 2026 como eventos date-level y consultar qué cierres se conocían en un timestamp. El dataset se mantiene local con derechos de redistribución desconocidos. Aún no hay precios OHLCV autorizados; no se deben producir afirmaciones de backtest.
 
-```text
-official 2026 rules
-→ dated, sourced ruleset
-→ 207-instrument guide annex snapshot
-→ point-in-time eligibility and constraint checks
-→ recorded source conflicts / unknowns
-```
-
-No strategy backtests, predictive models, signal logic or trading UI are in scope yet.
+No strategy backtests, predictive models, signal logic or trading UI are in scope until sus fases y datos de entrada estén habilitados.
 
 ## Official sources
 
