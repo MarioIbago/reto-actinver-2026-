@@ -10,7 +10,7 @@ import tempfile
 import unittest
 
 from actinver.ensemble import EnsembleError, evaluate_ensemble, forecast_artifact_sha256
-from actinver.ensemble_cli import main as ensemble_main
+from actinver.ensemble_cli import _repository_root, main as ensemble_main
 from actinver.m1 import load_universe
 
 
@@ -205,6 +205,23 @@ def ensemble_case():
 
 
 class EnsembleTests(unittest.TestCase):
+    def test_cli_discovers_checkout_root_from_nested_working_directory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "pyproject.toml").write_text("[project]\n", encoding="utf-8")
+            (root / "prompts").mkdir()
+            (root / "prompts" / "CURRENT_PHASE.md").write_text("M7\n", encoding="utf-8")
+            nested = root / "research" / "signals"
+            nested.mkdir(parents=True)
+
+            self.assertEqual(
+                _repository_root(
+                    nested,
+                    Path("/installed/site-packages/actinver/ensemble_cli.py"),
+                ),
+                root,
+            )
+
     def test_synthetic_fixture_exercises_calibration_oos_regimes_ablation_and_live_output(self):
         case = ensemble_case()
         result = evaluate_ensemble(registry(), case, promotion_index())

@@ -13,7 +13,25 @@ from .m1 import M1DataError, load_universe, verify_source_material
 from .research_factory import ResearchFactoryError, list_promoted_experiments
 
 
-ROOT = Path(__file__).resolve().parents[2]
+def _repository_root(cwd: Path, module_path: Path) -> Path:
+    """Find checked-out repository assets when the CLI itself is installed.
+
+    Wheel installs place ``__file__`` under site-packages, so walking upward
+    from the module does not locate the repository's data and research files.
+    Prefer the current directory (including nested directories) when it is in
+    a checkout, then fall back to a source-tree install.
+    """
+    resolved_cwd = cwd.resolve()
+    candidates = [resolved_cwd, *resolved_cwd.parents, *module_path.resolve().parents]
+    for candidate in candidates:
+        if (candidate / "pyproject.toml").is_file() and (
+            candidate / "prompts" / "CURRENT_PHASE.md"
+        ).is_file():
+            return candidate
+    return cwd.resolve()
+
+
+ROOT = _repository_root(Path.cwd(), Path(__file__))
 
 
 def _path(value: Path) -> Path:
