@@ -8,6 +8,7 @@ import unittest
 from pathlib import Path
 
 from actinver.execution import ExecutionError, simulate_execution
+from actinver.execution_cli import _find_project_root
 from actinver.m1 import load_rules, load_universe
 
 
@@ -90,6 +91,9 @@ def simulate(value):
 
 
 class ExecutionSimulationTests(unittest.TestCase):
+    def test_cli_finds_repository_assets_from_nested_working_directory(self):
+        self.assertEqual(_find_project_root(ROOT / "tests"), ROOT)
+
     def test_market_and_limit_orders_create_exact_auditable_ledger(self):
         value = case(
             orders=[

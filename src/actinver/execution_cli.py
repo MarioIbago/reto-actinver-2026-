@@ -20,7 +20,20 @@ from .m1 import (
 )
 
 
-ROOT = Path(__file__).resolve().parents[2]
+def _find_project_root(start: Path) -> Path:
+    markers = (
+        Path("config/actinver_rules.yaml"),
+        Path("data/metadata/actinver_universe_2026_v1.json"),
+        Path("research/source_material/actinver_universe_symbols_raw.md"),
+    )
+    resolved_start = start.resolve()
+    for candidate in (resolved_start, *resolved_start.parents):
+        if all((candidate / marker).is_file() for marker in markers):
+            return candidate
+    return Path(__file__).resolve().parents[2]
+
+
+ROOT = _find_project_root(Path.cwd())
 RULES_PATH = ROOT / "config/actinver_rules.yaml"
 UNIVERSE_PATH = ROOT / "data/metadata/actinver_universe_2026_v1.json"
 
