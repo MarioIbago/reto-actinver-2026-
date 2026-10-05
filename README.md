@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: M0–M7 pasaron sus gates de software dentro del alcance documentado. Los gates empíricos de M6 y M7 permanecen `NEEDS_MORE_EVIDENCE`. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV ni noticias históricas autorizadas. No hay evidencia de alpha ni backtests financieros con datos reales.
+> Estado: M0–M7 pasaron sus gates de software dentro del alcance documentado; M8 — Tournament Brain está activa. Los gates empíricos de M6 y M7 permanecen `NEEDS_MORE_EVIDENCE`. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV ni noticias históricas autorizadas. No hay evidencia de alpha ni backtests financieros con datos reales.
 
 ## Objetivo
 
@@ -123,13 +123,15 @@ See `docs/reference_projects.md`.
 
 References are not automatic dependencies.
 
-## Current priority — M7
+## Current priority — M8: Tournament Brain
 
 M3 now provides `actinver-exec simulate`: deterministic replay, auditable cash/position/fee ledger, versioned case/result schemas, and provenance. Its synthetic tests establish software mechanics only. No real practice fills, authorized OHLCV/trades, or authenticated simulator symbols are available.
 
 M4 provides eight point-in-time baseline families and a time-aware validation engine. M5 adds pre-registered experiment batches, tamper-evident scientific memory, falsification tracking, and decision accounting; its software gate passed with synthetic cases only. M6 adds a point-in-time news/event software pipeline and PIT labeling/evaluation tools, but no authorized news corpus, price history, authenticated instrument mapping, or real M3 execution inputs are available. Its empirical gate remains `NEEDS_MORE_EVIDENCE`.
 
-M7's software gate is complete: `actinver-ensemble` validates current M5 promotions, calibrates by signal/instrument/horizon using train-only data, combines equal-weight families, and reports OOS/correlation/regime/ablation diagnostics. `research/signals/registry.json` is empty and no M5 factory ledger exists; M7's empirical gate remains `NEEDS_MORE_EVIDENCE`. The M5 result format also needs an instrument-level forecast artifact before any promotion can enter M7. No financial claims may be made from synthetic data.
+M7's software gate is complete and merged at `1cc66f9082e3f38e9b00ec80ce9f5c92d22af14c`: `actinver-ensemble` validates current M5 promotions, calibrates by signal/instrument/horizon using train-only data, combines equal-weight families, and reports OOS/correlation/regime/ablation diagnostics. `research/signals/registry.json` is empty and no M5 factory ledger exists; M7's empirical gate remains `NEEDS_MORE_EVIDENCE`. The M5 result format also needs an instrument-level forecast artifact before any promotion can enter M7. No financial claims may be made from synthetic data.
+
+M8 is the decision layer, separate from alpha estimation. Study the rank-optimization references before design; use Monte Carlo/scenario comparisons under Actinver constraints, model leaderboard uncertainty, and compare rank-aware decisions with expected-return and Sharpe baselines. Preserve explicit abstention whenever M7 forecasts or required inputs are absent. Synthetic fixtures establish software mechanics only and must not be represented as Actinver evidence. See `prompts/phases/M8_TOURNAMENT_BRAIN.md` and `docs/phase_reports/M7_REPORT.md`.
 
 Check the current promotion index with `actinver-ensemble promotions --ledger research/factory_ledger.jsonl`; see `docs/actinver_alpha_ensemble.md` for the M7 registry and case contracts.
 
