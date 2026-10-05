@@ -77,7 +77,19 @@ there is no universal safe default.
 
 ## Data rights and current evidence
 
-No historical market-data rows are bundled. The [BMV database catalog](https://www.bmv.com.mx/es/Grupo_BMV/Bases_de_datos)
+No historical OHLCV or trade rows are bundled. The official BMV holiday calendar is captured and normalized by `scripts/build_bmv_calendar_dataset.py`; this produces 11 date-precision `calendar_event` records from the M1 ruleset and preserves the source capture SHA in each record. The source capture timestamp is used as the earliest evidenced availability time; it is not asserted to be the calendar's original publication time. The dataset builder records redistribution terms as unknown and writes outputs under ignored local data paths. Rebuild with a fixed `--ingestion-time` and the same code commit to reproduce the dataset ID. For example:
+
+```powershell
+$ingestionTime = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+$codeCommitSha = (git rev-parse HEAD).Trim()
+python scripts/build_bmv_calendar_dataset.py --ingestion-time $ingestionTime --code-commit-sha $codeCommitSha
+```
+
+The first command records an actual ingestion timestamp. For an exact rebuild, pass the original timestamp and code SHA stored in the phase report.
+
+The 2026-11-02 closure should be visible in a 2026-10-05 10:35 Mexico City query because the source capture precedes that cutoff. A query before the capture time must return no calendar rows, and `system` mode must also wait until the explicit ingestion time. This validates calendar-event availability only; it is not a price feed or backtest dataset.
+
+The [BMV database catalog](https://www.bmv.com.mx/es/Grupo_BMV/Bases_de_datos)
 lists closing-price products for the local market, SIC, and investment funds,
 and says historical/custom data must be requested from sales. The BMV's
 [2026 market-data price list](https://www.bmv.com.mx/work/models/Grupo_BMV/Resource/1192/10/images/LISTA%20DE%20PRECIOS%20BASES%20DE%20DATOS%202026.pdf)
@@ -96,7 +108,8 @@ rights for local provenance, but that field does not create a license.
 ## Phase status
 
 The ingestion, manifest, as-of query, and freshness contracts are implemented
-and covered with explicitly synthetic test fixtures. Those fixtures verify
-software behavior only; they are not market evidence. M2 cannot be marked
-complete until an authorized historical dataset is ingested and its exact
-version can be reconstructed at a documented timestamp without leakage.
+and covered with explicitly synthetic test fixtures. The official BMV holiday
+calendar also has a reproducible point-in-time dataset. Neither source provides
+historical OHLCV for contest instruments. No price backtest or financial
+validation is supported until authorized price history and the unresolved M1
+platform-symbol mapping are supplied.

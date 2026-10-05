@@ -4,13 +4,13 @@
 
 Before changing production code, read `README.md`, `MASTER_PLAN.md`, `AGENTS.md`, `docs/CODEX_START_HERE.md`, `docs/architecture.md`, `docs/research_standard.md`, `prompts/00_GLOBAL_SYSTEM_PROMPT.md`, `prompts/CURRENT_PHASE.md`, and the complete active-phase prompt. Inspect the actual Git and repository state before editing.
 
-Raw evidence under `research/source_material/` must remain unchanged. M1 owns its normalization into versioned data under `data/metadata/`.
+Raw evidence under `research/source_material/` must remain unchanged. M1 owns normalization of rules and the guide universe; M2 owns PIT market-data ingestion and manifests.
 
-## Current phase: M1 — Rules & Eligible Universe
+## Current phase: M2 — Point-in-Time Data Engine
 
-Follow `prompts/phases/M1_RULES_UNIVERSE.md`. Verify current official sources, record checked times and differences, and keep the constraints machine-readable. Do not backtest strategies or build future-phase modules.
+Follow `prompts/phases/M2_DATA_ENGINE.md`. Preserve point-in-time availability and source revisions. Do not backtest strategies or build future-phase modules.
 
-Current outputs:
+Completed M1 outputs:
 
 - `config/actinver_rules.yaml` — dated rules, explicit ambiguities and the sourced 2026 BMV calendar queried by `actinver-m1 market-day`.
 - `data/metadata/actinver_universe_2026_v1.json` — guide-annex instruments with stable repository IDs and source hashes.
@@ -20,6 +20,8 @@ Current outputs:
 
 The guide's 207 symbols have not been mapped to exact authenticated simulator search symbols/series. Preserve them as guide labels and report platform operability as unverified. Source wording also conflicts on the minimum qualifying assets, 50% concentration measurement and FIBRA eligibility. Return `INDETERMINATE` when the supplied evidence cannot resolve a rule. Scheduled 2026 holidays are captured from the official BMV page; exceptional closures and shortened sessions are not represented.
 
+M2 additionally provides `src/actinver/data_engine.py`, `actinver-data`, and `scripts/build_bmv_calendar_dataset.py`. The BMV calendar is the only real dataset currently available; no authorized historical OHLCV has been ingested. Keep outputs local while redistribution rights are unknown. Do not make financial backtest claims from calendar records or synthetic fixtures.
+
 Useful commands:
 
 ```powershell
@@ -27,7 +29,12 @@ python -m unittest discover -s tests -v
 actinver-m1 audit
 actinver-m1 eligible --as-of 2026-10-05
 actinver-m1 market-day --as-of 2026-11-02
+$ingestionTime = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+$codeCommitSha = (git rev-parse HEAD).Trim()
+python scripts/build_bmv_calendar_dataset.py --ingestion-time $ingestionTime --code-commit-sha $codeCommitSha
 ```
+
+Keep the timestamp and commit SHA emitted in the phase report when repeating an exact dataset build.
 
 ## Completed M0 reference
 
