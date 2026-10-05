@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/pit_data_record.schema.json",
+  "title": "Reto Actinver point-in-time observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "instrument_id",
+    "record_type",
+    "event_time",
+    "available_time",
+    "ingestion_time",
+    "source_id",
+    "source_revision",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "record_id": {"type": "string", "minLength": 1},
+    "instrument_id": {"type": "string", "minLength": 1},
+    "record_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{0,63}$"
+    },
+    "event_time": {"$ref": "#/$defs/zonedTimestamp"},
+    "available_time": {"$ref": "#/$defs/zonedTimestamp"},
+    "ingestion_time": {"$ref": "#/$defs/zonedTimestamp"},
+    "source_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,95}$"
+    },
+    "source_revision": {"type": "string", "minLength": 1},
+    "provider_symbol": {"type": "string", "minLength": 1},
+    "payload": {"type": "object"}
+  },
+  "$defs": {
+    "zonedTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+    }
+  }
+}
