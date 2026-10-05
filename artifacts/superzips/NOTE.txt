@@ -1,0 +1,1 @@
+The two exact Super ZIP binaries are stored in the connected Google Drive locations listed in README.md; SHA-256 and byte size are recorded for integrity verification.
