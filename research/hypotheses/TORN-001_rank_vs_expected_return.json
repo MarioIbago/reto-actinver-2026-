@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "hypothesis_id": "TORN-001",
+  "statement": "Across preregistered short-horizon, long-only contest scenarios, a feasible policy selected to maximize simulated P(final_rank = 1) achieves a higher first-place probability than a policy selected only to maximize expected terminal return.",
+  "rationale": "The project objective is rank-based. Existing competition research motivates testing whether terminal-rank objectives differ from expected-return objectives, but transfer to Actinver is unproven.",
+  "source_references": [
+    "research/dossiers/001_TOURNAMENT_RANK_OPTIMIZATION.md",
+    "https://ssrn.com/abstract=4527154"
+  ],
+  "falsification_plan": [
+    {
+      "category": "leakage",
+      "approach": "Lock opponent/state generation, evaluation paths, and final contest scenarios before policy selection; audit every information timestamp.",
+      "required": true
+    },
+    {
+      "category": "regime",
+      "approach": "Compare rank outcomes across distinct market and opponent regimes; reject gains concentrated in one regime.",
+      "required": true
+    },
+    {
+      "category": "outliers",
+      "approach": "Remove or block-resample dominant contest periods and test whether the difference survives without a single lucky path.",
+      "required": true
+    },
+    {
+      "category": "parameter_sensitivity",
+      "approach": "Vary nearby risk, concentration, time-remaining, and opponent-mixture settings without choosing on the final scenario set.",
+      "required": true
+    },
+    {
+      "category": "liquidity",
+      "approach": "Apply only verified eligible identifiers, instrument-level liquidity, M3 fill constraints, and no-short/concentration rules.",
+      "required": true
+    },
+    {
+      "category": "costs",
+      "approach": "Use versioned Actinver fees plus calibrated slippage and execution/no-fill scenarios; include sensitivity ranges.",
+      "required": true
+    },
+    {
+      "category": "sample_size",
+      "approach": "Report uncertainty intervals over independent contest paths and opponent populations; do not infer precision from Monte Carlo count alone.",
+      "required": true
+    },
+    {
+      "category": "multiple_testing",
+      "approach": "Record all policy and opponent-generator variants; use a locked final scenario set and adjust for search over variants.",
+      "required": true
+    }
+  ]
+}
