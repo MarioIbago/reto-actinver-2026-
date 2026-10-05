@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/trade_sheet.schema.json",
+  "title": "M9 versioned human execution report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "report_version", "revision", "report_id", "report_type", "created_at_utc", "as_of_utc", "decision_status", "decision", "competition", "portfolio", "evidence", "material_events", "provenance", "operator_note"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "report_version": {"const": "1.0.0"},
+    "revision": {"const": 1},
+    "report_id": {"type": "string", "format": "uuid"},
+    "report_type": {"enum": ["morning", "event_update", "evening_review"]},
+    "created_at_utc": {"type": "string", "format": "date-time"},
+    "as_of_utc": {"anyOf": [{"type": "string", "format": "date-time"}, {"type": "null"}]},
+    "decision_status": {"const": "NO_TRADE"},
+    "decision": {"$ref": "#/$defs/decision"},
+    "competition": {"$ref": "#/$defs/competition"},
+    "portfolio": {"$ref": "#/$defs/portfolio"},
+    "evidence": {"$ref": "#/$defs/evidence"},
+    "material_events": {"type": "array", "items": {"type": "object"}},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "operator_note": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "nullableNumber": {"anyOf": [{"type": "number"}, {"type": "null"}]},
+    "nullableString": {"anyOf": [{"type": "string"}, {"type": "null"}]},
+    "decision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["action", "symbol", "target_size_actipesos", "entry_range_actipesos", "no_pursue_above_actipesos", "stop_or_invalidation", "targets_actipesos", "exit_logic", "horizon_sessions", "catalyst", "probability_estimate", "confidence", "estimated_contribution_to_p1", "summary_reason", "risks", "execution_mode"],
+      "properties": {
+        "action": {"const": "NO_TRADE"},
+        "symbol": {"type": "null"},
+        "target_size_actipesos": {"type": "null"},
+        "entry_range_actipesos": {"type": "null"},
+        "no_pursue_above_actipesos": {"type": "null"},
+        "stop_or_invalidation": {"type": "null"},
+        "targets_actipesos": {"type": "null"},
+        "exit_logic": {"type": "null"},
+        "horizon_sessions": {"type": "null"},
+        "catalyst": {"type": "null"},
+        "probability_estimate": {"type": "null"},
+        "confidence": {"type": "null"},
+        "estimated_contribution_to_p1": {"type": "null"},
+        "summary_reason": {"type": "string", "minLength": 1},
+        "risks": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "execution_mode": {"const": "MANUAL_ONLY"}
+      }
+    },
+    "competition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["capital_actipesos", "rank", "gap_to_first_actipesos", "sessions_remaining"],
+      "properties": {
+        "capital_actipesos": {"$ref": "#/$defs/nullableNumber"},
+        "rank": {"anyOf": [{"type": "integer", "minimum": 1}, {"type": "null"}]},
+        "gap_to_first_actipesos": {"$ref": "#/$defs/nullableNumber"},
+        "sessions_remaining": {"anyOf": [{"type": "integer", "minimum": 0}, {"type": "null"}]}
+      }
+    },
+    "portfolio": {
+      "type": "object", "additionalProperties": false,
+      "required": ["positions"],
+      "properties": {
+        "positions": {"anyOf": [{"type": "null"}, {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["instrument_id", "market_value_actipesos"], "properties": {"instrument_id": {"type": "string"}, "market_value_actipesos": {"type": "number", "minimum": 0}}}}]}
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["m1_symbol_mapping", "m7", "m8", "freshness", "events", "event_snapshot_digests"],
+      "properties": {
+        "m1_symbol_mapping": {"type": "object", "additionalProperties": false, "required": ["status", "detail"], "properties": {"status": {"const": "UNVERIFIED"}, "detail": {"type": "string"}}},
+        "m7": {"$ref": "#/$defs/evidence_item"},
+        "m8": {"$ref": "#/$defs/evidence_item"},
+        "freshness": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["source_id", "observed_at_utc", "max_age_minutes", "age_minutes_at_as_of", "status"], "properties": {"source_id": {"type": "string"}, "observed_at_utc": {"$ref": "#/$defs/nullableString"}, "max_age_minutes": {"anyOf": [{"type": "integer", "minimum": 1}, {"type": "null"}]}, "age_minutes_at_as_of": {"anyOf": [{"type": "integer", "minimum": 0}, {"type": "null"}]}, "status": {"enum": ["CURRENT", "STALE", "UNKNOWN"]}}}},
+        "events": {"enum": ["AVAILABLE", "NOT_SUPPLIED"]},
+        "event_snapshot_digests": {"type": "array", "items": {"type": "object", "required": ["snapshot_id", "sha256", "file_sha256"], "properties": {"snapshot_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "file_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}
+      }
+    },
+    "evidence_item": {"type": "object", "additionalProperties": false, "required": ["status", "detail", "sha256"], "properties": {"status": {"type": "string", "minLength": 1}, "detail": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/nullableString"}}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["context_id", "context_sha256", "source_files", "m7_result_sha256", "m8_result_sha256", "event_snapshot_sha256"],
+      "properties": {
+        "context_id": {"type": "string", "minLength": 1},
+        "context_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_files": {"type": "array", "items": {"type": "object", "required": ["source_id", "sha256"], "properties": {"source_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+        "m7_result_sha256": {"$ref": "#/$defs/nullableString"},
+        "m8_result_sha256": {"$ref": "#/$defs/nullableString"},
+        "event_snapshot_sha256": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+      }
+    }
+  }
+}

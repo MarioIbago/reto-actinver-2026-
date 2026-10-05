@@ -5,6 +5,11 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+frontend/node_modules/
+frontend/dist/
+/reports/trade_sheets/
+/reports/audit_trail/
+/reports/post_trade/
 experiments/results/m0/
 
 # Licensed/provider data and derived rows are local-only by default.

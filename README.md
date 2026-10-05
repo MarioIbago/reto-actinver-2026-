@@ -2,7 +2,7 @@
 
 Repositorio maestro para construir un sistema cuantitativo reproducible orientado al **Reto Actinver 2026**.
 
-> Estado: M0–M8 pasaron sus gates de software dentro del alcance documentado; M9 — Trade Sheet & Human Execution Interface está activa. Los gates empíricos de M6, M7 y M8 permanecen `NEEDS_MORE_EVIDENCE`. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV ni noticias históricas autorizadas. No hay evidencia de alpha ni backtests financieros con datos reales.
+> Estado: M0–M9 pasaron sus gates de software dentro del alcance documentado. El trabajo por fases está cerrado; los gates empíricos de M6, M7 y M8 siguen `NEEDS_MORE_EVIDENCE`. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV ni noticias históricas autorizadas. No hay evidencia de alpha ni backtests financieros con datos reales.
 
 ## Objetivo
 
@@ -123,7 +123,7 @@ See `docs/reference_projects.md`.
 
 References are not automatic dependencies.
 
-## Current priority — M9: Trade Sheet & Human Execution Interface
+## M9 completed — Trade Sheet & Human Execution Interface
 
 M3 now provides `actinver-exec simulate`: deterministic replay, auditable cash/position/fee ledger, versioned case/result schemas, and provenance. Its synthetic tests establish software mechanics only. No real practice fills, authorized OHLCV/trades, or authenticated simulator symbols are available.
 
@@ -133,7 +133,25 @@ M7's software gate is complete and merged at `1cc66f9082e3f38e9b00ec80ce9f5c92d2
 
 M8 is implemented and merged at `21ad31deb9a637e09e30d0cfc86e4295bb314fe1`. Its `actinver-tournament evaluate` command compares rank-aware, expected-return, and Sharpe allocations under joint scenarios and the strict M1 constraints. It always emits `decision: null`; M8's empirical gate stays `NEEDS_MORE_EVIDENCE`. The merge had no Actions run/status exposed by GitHub, so its software evidence is the 149-test local suite, editable install, dependency check, compileall, and CLI smoke documented in `docs/phase_reports/M8_REPORT.md`.
 
-M9 builds human-readable morning, event, and evening reports, a versioned trade sheet, an append-only audit trail, post-trade attribution, and a responsive cockpit. It must show `NO TRADE` while M7/M8 evidence or required inputs are missing or stale. Study the six references in `prompts/phases/M9_TRADE_SHEET.md` before designing; classify reuse and licenses in the M9 report. No automated order controls are permitted, and Actinver entry remains manual.
+M9 provides `actinver-cockpit` for morning/event/evening reports, a versioned trade sheet, a hash-linked append-only audit trail, descriptive post-activity attribution, and a responsive local cockpit. It rejects future/stale inputs and remains `NO TRADE` because M7/M8 empirical gates are not passed and the authenticated platform symbol map is unavailable. See `docs/actinver_trade_sheet.md`, `docs/m9_reference_research.md`, and `docs/phase_reports/M9_REPORT.md`. No automated order controls are present; Actinver entry remains manual.
+
+The 21-sheet [`reports/ACTINVER_CONTROL_TOWER.xlsx`](reports/ACTINVER_CONTROL_TOWER.xlsx)
+captures the repository's current evidence, software gates, missing inputs and
+manual-review state. It is a versioned snapshot, not a live market or account
+feed; unsupplied values remain `UNKNOWN`.
+
+Quick local workflow:
+
+```powershell
+python -m pip install -e .
+actinver-cockpit report --type morning --context examples/m9_empty_context.template.json
+actinver-cockpit verify-audit
+cd frontend
+npm ci
+npm run dev
+```
+
+The checked-in context is an intentionally empty template; it contains no contest metrics or market data. Fill only with authorized, timestamped source records before using a report operationally. M9 is the last roadmap phase; do not add a new phase without an explicit request.
 
 Check the current promotion index with `actinver-ensemble promotions --ledger research/factory_ledger.jsonl`; see `docs/actinver_alpha_ensemble.md` for the M7 registry and case contracts. See `docs/actinver_tournament.md` for M8 input and scenario contracts.
 

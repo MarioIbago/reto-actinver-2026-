@@ -4,14 +4,15 @@ Este documento es para el dueño del proyecto.
 
 ## Estado actual
 
-- M0 — Foundation & Research Infrastructure: integrado en `main` (`fcff0242c781661f6518e14b3d6978887d12f7f8`).
-- M1 — Rules & Eligible Universe: activa; ver `prompts/phases/M1_RULES_UNIVERSE.md` y `docs/phase_reports/M1_REPORT.md`.
+- M0–M9 — gates de software completados dentro del alcance documentado. M9 es la última fase; no hay fase activa. Ver `prompts/CURRENT_PHASE.md` y `docs/phase_reports/M9_REPORT.md`.
+- Los gates empíricos de M6, M7 y M8 siguen `NEEDS_MORE_EVIDENCE`; no hay promoción financiera ni recomendación de operación.
 - El anexo oficial de la guía 2026 contiene 207 instrumentos. La lista normalizada conserva los símbolos de la guía y señala por separado que los símbolos/series del buscador autenticado siguen sin verificar.
 - El reglamento y la guía difieren en cómo cuentan los cinco activos y miden el límite del 50%; la elegibilidad de FIBRAs también requiere aclaración.
+- No hay OHLCV/trades ni noticias históricas autorizadas, fills de práctica autenticados o leaderboard PIT completo. M9 muestra `NO_TRADE` hasta que esos datos externos puedan verificarse.
 
 ## Documentos principales
 
-Lee `MASTER_PLAN.md`, `docs/architecture.md`, `docs/research_standard.md`, `AGENTS.md`, `docs/CODEX_START_HERE.md`, `prompts/CURRENT_PHASE.md` y el prompt completo de la fase activa.
+Lee `MASTER_PLAN.md`, `docs/architecture.md`, `docs/research_standard.md`, `AGENTS.md`, `docs/CODEX_START_HERE.md` y `prompts/CURRENT_PHASE.md`. Solo lee un prompt de fase cuando una fase nueva haya sido autorizada explícitamente.
 
 ## Source material
 

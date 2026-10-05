@@ -380,8 +380,21 @@ Optimizar por:
 - fast research iteration;
 - useful tournament decisions.
 
-## 16. Prioridad inmediata
+## 16. Estado final del roadmap
 
-M0–M8 pasaron sus gates de software dentro del alcance documentado. M8 se integró en `21ad31deb9a637e09e30d0cfc86e4295bb314fe1`; su suite local completa pasó, aunque GitHub no expuso un workflow/status de Actions para ese merge. Los gates empíricos de M6, M7 y M8 siguen `NEEDS_MORE_EVIDENCE`; el registro M7 está vacío. M8 no convierte escenarios sintéticos en evidencia financiera ni usa información futura del leaderboard.
+M0–M9 pasaron sus gates de software dentro del alcance documentado. M9 entrega
+reportes morning/event/evening,
+trade sheet versionada, audit trail, post-trade attribution descriptiva y
+cockpit responsive. El detalle está en `docs/phase_reports/M9_REPORT.md`.
 
-La fase activa es M9: producir reportes morning/event/evening, trade sheet, audit trail, post-trade attribution y cockpit responsive. Cuando falten entradas validadas o frescas, el resultado debe ser `NO TRADE`. La ejecución de órdenes en Actinver permanece manual.
+**No queda una fase activa en el roadmap M0–M9. Detener el trabajo por fases.**
+Los gates empíricos de M6, M7 y M8 siguen `NEEDS_MORE_EVIDENCE`; M7 no tiene
+señales financieras promovidas, M8 solo produce simulaciones/sin decisión, y
+no hay mapping de símbolos del simulador, noticias/precios históricos
+autorizados, fills de práctica autenticados ni leaderboard PIT completo. M9
+por eso emite `NO_TRADE` y no se habilita el registro de órdenes.
+
+El siguiente paso depende de evidencia externa autorizada: capturar/versionar
+datos PIT, mapeo de instrumentos, fills de práctica y leaderboard completo. No
+se debe relajar `NO_TRADE` ni atribuir alpha hasta que esos artefactos superen
+los gates científicos existentes. La entrada en Actinver permanece manual.

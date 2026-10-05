@@ -21,6 +21,7 @@ actinver-research = "actinver.research_cli:main"
 actinver-news = "actinver.news_cli:main"
 actinver-ensemble = "actinver.ensemble_cli:main"
 actinver-tournament = "actinver.tournament_cli:main"
+actinver-cockpit = "actinver.trade_sheet_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
