@@ -184,8 +184,10 @@ Python/package versions, timestamp, run ID and working-tree state.
 `config_sha256` hashes the complete, default-resolved canonical spec excluding
 only `commit_sha`; key order and formatting do not affect it. `code_sha256`
 hashes the canonical map of SHA-256 digests for the five installed package source
-files. This identifies code even before a local commit is created. With identical
-code/config/seed, `payload.json` is byte-for-byte identical across executions;
+files after normalizing Python source line endings to LF, so Windows checkout
+settings do not change code identity. This identifies code even before a local
+commit is created. With identical code/config/seed, `payload.json` is byte-for-byte
+identical across executions;
 the complete envelope is not expected to be identical.
 
 The verifier compares the bundle with a trusted input spec, checks identities,

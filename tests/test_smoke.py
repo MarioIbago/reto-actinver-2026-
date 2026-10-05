@@ -4,7 +4,13 @@ import unittest
 from unittest.mock import patch
 
 from actinver.contracts import canonical_json
-from actinver.smoke import arithmetic_values, code_sha256, run_smoke, verify_result
+from actinver.smoke import (
+    _canonical_source_bytes,
+    arithmetic_values,
+    code_sha256,
+    run_smoke,
+    verify_result,
+)
 from test_contracts import make_spec, metadata
 
 
@@ -20,6 +26,12 @@ class SmokeTests(unittest.TestCase):
     def test_explicit_arithmetic(self):
         self.assertEqual(arithmetic_values(0, 4, 7), [1, 4, 2, 2])
         self.assertEqual(arithmetic_values(1, 4, 7), [2, 5, 3, 3])
+
+    def test_code_fingerprint_normalizes_line_endings(self):
+        source = b"first line\nsecond line\n"
+        self.assertEqual(_canonical_source_bytes(source), source)
+        self.assertEqual(_canonical_source_bytes(source.replace(b"\n", b"\r\n")), source)
+        self.assertEqual(_canonical_source_bytes(source.replace(b"\n", b"\r")), source)
 
     def test_runtime_and_commit_are_outside_deterministic_payload(self):
         spec = make_spec()

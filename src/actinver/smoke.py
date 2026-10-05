@@ -11,10 +11,15 @@ def arithmetic_values(seed: int, sample_count: int, modulus: int) -> list[int]:
     return [(seed + (index + 1) ** 2) % modulus for index in range(sample_count)]
 
 
+def _canonical_source_bytes(source: bytes) -> bytes:
+    """Normalize Python source line endings for cross-platform identity."""
+    return source.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+
+
 def code_sha256() -> str:
-    """Identify the five packaged source files, independent of installation path."""
+    """Identify packaged source files, independent of path and line endings."""
     directory = Path(__file__).parent
-    sources = {name: hashlib.sha256((directory / name).read_bytes()).hexdigest()
+    sources = {name: hashlib.sha256(_canonical_source_bytes((directory / name).read_bytes())).hexdigest()
                for name in ("__init__.py", "contracts.py", "smoke.py", "ledger.py", "cli.py")}
     return hashlib.sha256(canonical_json(sources)).hexdigest()
 
