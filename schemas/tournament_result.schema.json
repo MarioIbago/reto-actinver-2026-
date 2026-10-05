@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://reto-actinver-2026.local/schemas/tournament_result.schema.json",
+  "title": "M8 rank-aware tournament scenario result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "software_status", "decision_status", "empirical_gate", "forecast_status", "input_trace", "decision", "mode", "candidate_search", "comparisons", "leaderboard_sensitivity", "limitations"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "software_status": {"const": "PASS"},
+    "decision_status": {"enum": ["NO_DECISION", "SIMULATION_ONLY"]},
+    "empirical_gate": {"const": "NEEDS_MORE_EVIDENCE"},
+    "forecast_status": {"type": "string", "minLength": 1},
+    "input_trace": {"type": "object", "additionalProperties": true, "required": ["case_id", "case_sha256", "verified_universe_version", "ruleset_id"], "properties": {"case_id": {"type": "string"}, "case_sha256": {"$ref": "#/$defs/sha256"}, "m7_result_sha256": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]}, "verified_universe_version": {"type": "string"}, "ruleset_id": {"type": "string"}}},
+    "decision": {"type": "null"},
+    "mode": {"type": "object", "additionalProperties": true, "required": ["value", "reason"], "properties": {"value": {"enum": ["NO_DECISION", "NOT_EVALUATED", "DEFEND", "NEUTRAL", "CATCH_UP"]}, "reason": {"type": "string"}}},
+    "candidate_search": {"type": "object", "additionalProperties": true, "required": ["requested_random_candidates", "feasible_count", "rejected_count"], "properties": {"requested_random_candidates": {"type": "integer", "minimum": 1}, "generated_candidate_count": {"type": "integer", "minimum": 0}, "feasible_count": {"type": "integer", "minimum": 0}, "rejected_count": {"type": "integer", "minimum": 0}}},
+    "selection": {"type": "object"},
+    "comparisons": {"type": "array", "items": {"type": "object"}},
+    "rank_aware_vs_expected_return": {"type": "object"},
+    "leaderboard_sensitivity": {"type": "array", "items": {"type": "object"}},
+    "scenario_assumptions": {"type": "object"},
+    "operational_limits": {"type": "object"},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"decision_status": {"const": "SIMULATION_ONLY"}}}, "then": {"required": ["selection", "rank_aware_vs_expected_return", "scenario_assumptions", "operational_limits"], "properties": {"comparisons": {"minItems": 3}, "leaderboard_sensitivity": {"minItems": 1}}}},
+    {"if": {"properties": {"decision_status": {"const": "NO_DECISION"}}}, "then": {"properties": {"decision": {"const": null}, "comparisons": {"maxItems": 0}}}}
+  ],
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

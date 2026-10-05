@@ -20,6 +20,7 @@ actinver-m4 = "actinver.validation_cli:main"
 actinver-research = "actinver.research_cli:main"
 actinver-news = "actinver.news_cli:main"
 actinver-ensemble = "actinver.ensemble_cli:main"
+actinver-tournament = "actinver.tournament_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
