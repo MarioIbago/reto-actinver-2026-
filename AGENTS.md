@@ -147,6 +147,14 @@ M1 owns normalization of rules/universe.
 - no automated clicks/orders in Actinver;
 - final order entry is manual.
 
+## Browser tooling
+
+- When browser interaction helps with local UI verification or read-only web research, Codex may use the installed `agent-browser` skill (`vercel:agent-browser`) or an equivalent available browser-control tool.
+- Confirm the skill/tool is available and follow its current `SKILL.md`; never assume an authenticated browser session or Perplexity access.
+- For UI changes, inspect the rendered app at relevant desktop/mobile widths and exercise key navigation and interactions. Keep screenshots and browser state outside the repository unless they are intentionally added as project artifacts.
+- Browser observations do not replace source provenance, deterministic calculations, or scientific validation.
+- Never use browser automation to log into Actinver or submit, modify, or cancel orders. Do not store credentials, cookies, or broker authentication state in the repository.
+
 ## Engineering rules
 
 - `pyproject.toml` for Python project config;

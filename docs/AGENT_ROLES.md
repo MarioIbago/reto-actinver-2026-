@@ -52,7 +52,9 @@ If Projects are available, keep a dedicated Actinver project with:
 - recurring research threads;
 - source documents.
 
-Do NOT depend on Perplexity Computer, browser automation, or scheduled tasks unless they are actually visible in the user's account.
+Do NOT assume Perplexity Computer, an authenticated browser session, or scheduled tasks are available unless they are visible in the current account/environment.
+
+Codex may use an installed `agent-browser` skill (`vercel:agent-browser`) or an equivalent available browser-control tool for local UI verification and read-only web inspection. Check that the tool is available and follow its current skill instructions. For UI changes, verify relevant desktop/mobile layouts and key navigation. Browser output is not a substitute for source verification or quantitative evidence. Never automate Actinver login or order entry; execution remains manual.
 
 Perplexity Pro must NOT become the source of truth for:
 - statistical alpha validation;
