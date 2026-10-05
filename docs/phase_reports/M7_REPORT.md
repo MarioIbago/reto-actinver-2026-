@@ -21,7 +21,7 @@ fixtures verify calculations and safeguards. They are not financial evidence.
 
 ## Gate status
 
-**M7 software gate: PASS — READY FOR HUMAN REVIEW.** The interface rejects
+**M7 software gate: PASS — MERGED AND VERIFIED.** The interface rejects
 unpromoted/stale signals, non-instrument targets, mismatched provenance,
 look-ahead timestamps, overlapping label windows, and LLM-only alpha. The CLI
 verifies instrument identifiers against the sourced M1 universe.
@@ -81,26 +81,46 @@ not change the empirical status or represent M7 alpha approval.
 
 ## Verification
 
-Local targeted checks run during implementation:
+Local checks after the installed-CLI path fix:
 
-- `python -m unittest discover -s tests -p test_ensemble.py -v` — PASS; 10
-  tests.
+- `python -m pip install .` — PASS; built and installed the wheel, matching the
+  CI install mode.
+- `python -m unittest discover -s tests -p test_ensemble.py -v` — PASS; 11
+  tests, including installed-root discovery and empty-registry evaluation.
 - `python -m unittest discover -s tests -p test_research_factory.py -v` — PASS;
   10 tests.
-- `python -m unittest discover -s tests -v` — PASS; 137 tests.
-- `python -m compileall -q src tests` — PASS.
-- `python -m pip install -e .`, `actinver-ensemble --help`,
-  `actinver-ensemble promotions --ledger research/factory_ledger.jsonl`,
-  `python -m pip check`, and `actinver-m1 audit` — PASS; current M5 promotion
-  count is zero and the M1 snapshot contains 207 source-verified guide IDs.
+- `python -m unittest discover -s tests -v` — PASS; 138 tests.
+- `python -m compileall -q src tests`, `python -m pip check`,
+  `actinver-ensemble --help`, and `git diff --check` — PASS.
+- `actinver-ensemble promotions --ledger research/factory_ledger.jsonl` —
+  PASS; zero promotions. `actinver-m1 audit` — PASS; 207 source-verified guide
+  IDs.
 
-Full-suite, GitHub Actions, and artifact details will be recorded after the
-implementation PR completes CI.
+The first PR workflow attempt (run 142, ID `37320795201`) failed in the M7 CLI
+test because an installed wheel treated `site-packages` as the repository
+root. The CLI now discovers the checkout from its working directory, including
+nested directories, and has a regression test. The failed run is retained in
+Actions history.
+
+GitHub Actions verification:
+
+- PR run 143, ID `37321595507`, tested head
+  `7da677569dc1273a273b7659b471b9cfe639fc69`: PASS, including all 138 tests,
+  deterministic smoke, artifact verification, and upload. Artifact
+  `11350836113`, SHA-256
+  `0f7821e00bf9a997ba9e2000c1eb1e93d880b47ec27f6d54641b34495a5527ed`.
+- Post-merge run 144, ID `37321693938`, tested main merge
+  `1cc66f9082e3f38e9b00ec80ce9f5c92d22af14c`: PASS. Artifact
+  `11349708686`, SHA-256
+  `620bc4a6ef70dbe01d0e155124d4b04e9b04de142ea11c1ae75d789f1a0b16ea`.
+
+PR #22 was merged into `main` as `1cc66f9082e3f38e9b00ec80ce9f5c92d22af14c`.
 
 ## Exact next step
 
-After M7's implementation PR and CI artifact are verified, merge the M7
-software-gate report and explicit M8 activation. M8 must use the M7 interface
-without assuming any real forecast exists; it must preserve the empirical
-blockers and produce no portfolio recommendation from empty or synthetic
-inputs.
+M7 is complete for software and integrated into `main`. M8 is activated by
+the user's instruction to continue. Its implementation must study the
+rank-optimization references, treat the M7 registry as empty, and preserve
+the unresolved empirical gate. Synthetic scenarios may verify math and
+software mechanics, but must not be presented as Actinver forecasts or
+financial evidence.

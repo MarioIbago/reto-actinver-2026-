@@ -382,6 +382,6 @@ Optimizar por:
 
 ## 16. Prioridad inmediata
 
-M0 quedó completada e integrada. La fase activa es M1: versionar reglas oficiales y el universo elegible del Reto 2026 para responder consultas point-in-time con provenance. M1 conserva ambigüedades de las fuentes y no declara símbolos de plataforma verificados sin evidencia directa.
+M0–M7 quedaron completadas e integradas dentro de sus gates de software. La fase activa es M8: implementar una simulación reproducible de escenarios y decisiones rank-aware para estudiar `P(final_rank = 1)`. Los gates empíricos de M6 y M7 siguen `NEEDS_MORE_EVIDENCE`; el registro M7 está vacío. M8 no debe convertir escenarios sintéticos en evidencia financiera ni usar información futura del leaderboard.
 
-No se inician estrategias ni backtests financieros hasta que las fases correspondientes los autoricen.
+M9 sigue pendiente hasta que M8 cierre su gate de software. La ejecución de órdenes en Actinver permanece manual.
