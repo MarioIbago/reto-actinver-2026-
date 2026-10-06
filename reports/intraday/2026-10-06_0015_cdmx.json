@@ -1,0 +1,3851 @@
+{
+  "schema_version": 1,
+  "memo_id": "ACTINVER-WATCHLIST-2026-10-06",
+  "for_session_date": "2026-10-06",
+  "prepared_at_utc": "2026-10-06T06:15:28Z",
+  "prepared_at_local": "2026-10-06T00:15:28-06:00",
+  "market_status_at_preparation": "CLOSED",
+  "market_status_detail_at_preparation": "BMV y sesiones regular/extendida de EE. UU. cerradas. Las 16 barras positivas siguen fechadas el 5-oct, con 615–616 min de antigüedad. Sin bid/ask Actinver ni identidad de ejecución verificados.",
+  "next_session_status": "SCHEDULED_SESSION",
+  "decision_status": "NO_TRADE",
+  "execution_policy": "MANUAL_ONLY",
+  "actinver_order_entry_enabled": false,
+  "portfolio_state_verified": false,
+  "orders": [],
+  "account_assessment": {
+    "current_value": null,
+    "cash": null,
+    "positions": null,
+    "rank": null,
+    "leader_gap": null,
+    "user_snapshot_used_for_sizing": false,
+    "reason": "The pasted 13:39 snapshot explicitly marked the portfolio unverified and is not a current account capture."
+  },
+  "execution_assumptions": {
+    "exact_actinver_series_verified": false,
+    "simulator_bid_ask_verified": false,
+    "cost_rate_one_side": 0.00116,
+    "cost_rate_status": "The consulted rules page indicates 0.10% commission plus 16% IVA on commission, but the listed document identifies the 2025 contest; applicability to the 2026 simulator is unverified. No cost is calculated because the order list is empty.",
+    "order_entry": "human_manual_only"
+  },
+  "research": {
+    "comparison_report": "reports/intraday/2026-10-05_2208_cdmx.md",
+    "comparison_cut_local": "2026-10-05T22:08:16-06:00",
+    "deep_research_status": "INCREMENTAL_PUBLIC_SOURCE_CHECK_COMPLETE; PERPLEXITY_DEEP_RESEARCH_NOT_USED",
+    "method": "Corte incremental frente al informe de 21:34 CDMX. Se consultaron de nuevo fuentes oficiales de los 16 emisores/BMV y calendarios relevantes; se refrescaron las 16 series de 1 minuto. Se separan observed_at, publication_time y event_time. Sin acceso a Actinver ni órdenes.",
+    "primary_sources_verified": 16,
+    "perplexity_used": false,
+    "changes_since_prior_review": [
+      "Comparación con el corte de 21:34 CDMX: no se identificó publicación primaria accionable nueva entre los 16 emisores desde el último informe.",
+      "Refresco de las 16 series Yahoo Finance a 2026-10-05T22:08:16-06:00: barras regulares positivas siguen en 5-oct, USD/MXN según listado, con 488–489 minutos de edad y sin demora nominal publicada.",
+      "Las cinco marcas extendidas de BA, AVGO, NVDA, AMAT y WFC continúan con volumen reportado 0; se excluyen de precio de referencia y no confirman operaciones.",
+      "Cobertura AVGO: el centro oficial muestra una nota AST fechada 29-sep sobre la terminación de una instalación; publicación anterior al corte previo, se registra solo como contexto histórico.",
+      "Fuentes oficiales: OMA mantiene tráfico de septiembre para 8-oct; ASUR lista su aviso del 28-sep y tráfico de agosto del 8-sep; las páginas accesibles de Walmex y Volaris no exponen reporte de septiembre y no se afirma ausencia definitiva.",
+      "Cuenta, rango, P&L, identidad exacta de Actinver y costos siguen sin verificar. NO_TRADE, cero órdenes y sin correo."
+    ],
+    "primary_watchlist_issuers_checked": 16,
+    "source_scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+    "intraday_source_scan": [
+      {
+        "ticker": "BA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Boeing announced an undefinitized PAC-3 MSE contract action; execution/revenue timing not disclosed."
+        },
+        "classification": "Primary issuer announcement, already known before 16:22.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "AVGO",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-02",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer earnings release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "period_only",
+          "description": "Q3 FY2026 results and Q4 guidance; period-end time not captured."
+        },
+        "classification": "Historical issuer results; no new event verified.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "NVDA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-08-26",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer earnings release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "period_only",
+          "description": "Q2 FY2027 results and Q3 guidance; period-end time not captured."
+        },
+        "classification": "Historical issuer results; no new financial catalyst verified.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "AMAT",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Besi advanced-packaging and AI infrastructure partnership announcement."
+        },
+        "classification": "Recent issuer event, not new Oct 5; price did not confirm >USD 546.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "WFC",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer notice"
+        },
+        "event_time": {
+          "date": "2026-10-13",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Repeated notice of scheduled Q3 earnings; no new guidance. Morgan Stanley upgrade reported by secondary sources on Oct 5."
+        },
+        "classification": "Repeated issuer date plus secondary analyst research; already present in prior cut.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "AMXB",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": "17:35",
+          "timezone": "America/Mexico_City",
+          "precision": "minute",
+          "source_type": "BMV official issuer event listing and filing"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "A Brazilian subsidiary of América Móvil closed the acquisition of 72.83% of Desktop S.A.; the issuer had announced the agreement on March 22."
+        },
+        "classification": "Material primary transaction closure, published after the Oct 1 BMV close; not new on Oct 5. It was omitted in earlier reports and is corrected here.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "GAPB",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "GAP issuer release: MXN 8bn bank credit lines"
+        },
+        "event_time": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "GAP announced contracting bank credit lines totaling MXN 8bn."
+        },
+        "classification": "Primary financing disclosure and August traffic report predate Oct 5. HSBC upgrade is secondary analyst research on Oct 5; no fresh September traffic.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "GMEXICOB",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-07-21",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer Q2 2026 results release; report cover dated July 21"
+        },
+        "event_time": {
+          "date": "2026-06-30",
+          "time_local": null,
+          "precision": "period_end",
+          "description": "Second quarter 2026 reporting period ended; the official results report is dated July 21. Sector copper snapshot is not an issuer event."
+        },
+        "classification": "Historical issuer results published July 21; no new issuer event verified.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "PE&OLES",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-08-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Peñoles official material-event listing; linked PDF unavailable"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_captured",
+          "description": "Issuer listing title identifies resignation of a proprietary director; effective date/details not verified because the linked PDF returns 404."
+        },
+        "classification": "Historical governance notice listed Aug 3; title verified, PDF and event details not accessible; not a new Oct 5 catalyst.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "ASURB",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer material filing"
+        },
+        "event_time": {
+          "date": "2026-09-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Cancún airport completed purchase of 100% of CPC Aeroportos; disclosed consideration R$5.1bn. August traffic was published Sep 8."
+        },
+        "classification": "Historical material primary disclosure, not new Oct 5.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "OMAB",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-04",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer passenger traffic report"
+        },
+        "event_time": {
+          "date": "2026-08",
+          "time_local": null,
+          "precision": "month_only",
+          "description": "August 2026 passenger traffic; September traffic is scheduled for October 8."
+        },
+        "classification": "Historical August traffic report published Sep 4; next September traffic report scheduled Oct 8.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "VOLARA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer traffic release"
+        },
+        "event_time": {
+          "date": "2026-08",
+          "time_local": null,
+          "precision": "month_only",
+          "description": "August traffic/load factor; September traffic not verified."
+        },
+        "classification": "Historical primary traffic report; no September update verified.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "GFNORTEO",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Banorte issuer material-event listing; linked official PDF dated Oct 5"
+        },
+        "event_time": {
+          "date": "2026-10-04",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Banco Mercantil del Norte fully prepaid USD 74.009 million of 5.750% Tier 2 subordinated preferred non-convertible obligations, identifier BNR1031 575C (formerly BANOC36), on the optional call date."
+        },
+        "classification": "Primary issuer event previously identified at the 18:08 cut; no new item since then. Posting hour is absent; not a standalone equity buy signal.",
+        "since_previous_cut": false,
+        "source_url": "https://investors.banorte.com/~/media/Files/B/Banorte-IR/press-release/es/2026/ER_Amortizacion_Anticipada_Notas_Tier2_04oct26.pdf"
+      },
+      {
+        "ticker": "WALMEX",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-07-22",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer Q2 results"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "period_only",
+          "description": "Q2 2026 results; September monthly sales not verified. Issuer calendar lists Q3 results Oct 27."
+        },
+        "classification": "No new monthly sales release verified.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "CEMEXCPO",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Vicat corporate announcement; no new Cemex filing verified"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Conditional exclusive negotiations to acquire ready-mix concrete and aggregates assets in France; terms/price not disclosed."
+        },
+        "classification": "Historical conditional process; not a new Oct 5 event.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "ALPEKA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-14",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "date_not_captured",
+          "description": "Announced return to S&P/BMV IPC; effective index date not captured."
+        },
+        "classification": "Historical issuer event; no new announcement found.",
+        "since_previous_cut": false,
+        "source_url": null
+      },
+      {
+        "ticker": "AMAT",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Applied Materials SEC filing page; no intraday filing time shown"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "2,644 common shares withheld upon RSU vesting to cover tax obligations; transaction code F."
+        },
+        "classification": "Form 4 dated Oct 5; the underlying Oct 1 RSU tax withholding remains non-discretionary, and this filing was already in the prior report.",
+        "since_previous_cut": false,
+        "source_url": "https://ir.appliedmaterials.com/node/29691/html"
+      },
+      {
+        "ticker": "AVGO",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-29",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Broadcom issuer news list and linked release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_separately_stated",
+          "description": "AST completed a high-end FC-BGA substrate facility; release does not separately state the underlying completion date."
+        },
+        "classification": "Primary issuer release; historic before previous cut and logged as a coverage note, not a new catalyst.",
+        "since_previous_cut": false,
+        "source_url": "https://investors.broadcom.com/news-releases/news-release-details/ast-completes-singapores-first-high-end-fc-bga-substrate"
+      },
+      {
+        "ticker": "NVDA",
+        "issuer": "NVIDIA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Expansión de capacidad de infraestructura IA con socios de centros de datos de Australia."
+        },
+        "classification": "Corrección histórica descubierta en este corte; publicación anterior al comparativo.",
+        "new_publication_since_previous_cut": false,
+        "newly_verified_this_cut": true,
+        "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Expands-AI-Infrastructure-Capacity-in-Partnership-With-Australias-Data-Center-Ecosystem/default.aspx"
+      }
+    ],
+    "publication_event_ledger": [
+      {
+        "ticker": "BA",
+        "issuer": "Boeing",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Boeing announced an undefinitized PAC-3 MSE contract action; execution/revenue timing not disclosed."
+        },
+        "classification": "Primary issuer announcement, already known before 16:22.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "AVGO",
+        "issuer": "Broadcom",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-02",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer earnings release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "period_only",
+          "description": "Q3 FY2026 results and Q4 guidance; period-end time not captured."
+        },
+        "classification": "Historical issuer results; no new event verified.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "NVDA",
+        "issuer": "NVIDIA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-08-26",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer earnings release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "period_only",
+          "description": "Q2 FY2027 results and Q3 guidance; period-end time not captured."
+        },
+        "classification": "Historical issuer results; no new financial catalyst verified.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "AMAT",
+        "issuer": "Applied Materials",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Besi advanced-packaging and AI infrastructure partnership announcement."
+        },
+        "classification": "Recent issuer event, not new Oct 5; price did not confirm >USD 546.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "WFC",
+        "issuer": "Wells Fargo",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer notice"
+        },
+        "event_time": {
+          "date": "2026-10-13",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Repeated notice of scheduled Q3 earnings; no new guidance. Morgan Stanley upgrade reported by secondary sources on Oct 5."
+        },
+        "classification": "Repeated issuer date plus secondary analyst research; already present in prior cut.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "AMXB",
+        "issuer": "América Móvil B",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": "17:35",
+          "timezone": "America/Mexico_City",
+          "precision": "minute",
+          "source_type": "BMV official issuer event listing and filing"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "A Brazilian subsidiary of América Móvil closed the acquisition of 72.83% of Desktop S.A.; the issuer had announced the agreement on March 22."
+        },
+        "classification": "Material primary transaction closure, published after the Oct 1 BMV close; not new on Oct 5. It was omitted in earlier reports and is corrected here.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "GAPB",
+        "issuer": "GAP B",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "GAP issuer release: MXN 8bn bank credit lines"
+        },
+        "event_time": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "GAP announced contracting bank credit lines totaling MXN 8bn."
+        },
+        "classification": "Primary financing disclosure and August traffic report predate Oct 5. HSBC upgrade is secondary analyst research on Oct 5; no fresh September traffic.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "GMEXICOB",
+        "issuer": "Grupo México B",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-07-21",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer Q2 2026 results release; report cover dated July 21"
+        },
+        "event_time": {
+          "date": "2026-06-30",
+          "time_local": null,
+          "precision": "period_end",
+          "description": "Second quarter 2026 reporting period ended; the official results report is dated July 21. Sector copper snapshot is not an issuer event."
+        },
+        "classification": "Historical issuer results published July 21; no new issuer event verified.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "PE&OLES",
+        "issuer": "Industrias Peñoles",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-08-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Peñoles official material-event listing; linked PDF unavailable"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_captured",
+          "description": "Issuer listing title identifies resignation of a proprietary director; effective date/details not verified because the linked PDF returns 404."
+        },
+        "classification": "Historical governance notice listed Aug 3; title verified, PDF and event details not accessible; not a new Oct 5 catalyst.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "ASURB",
+        "issuer": "ASUR B",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer material filing"
+        },
+        "event_time": {
+          "date": "2026-09-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Cancún airport completed purchase of 100% of CPC Aeroportos; disclosed consideration R$5.1bn. August traffic was published Sep 8."
+        },
+        "classification": "Historical material primary disclosure, not new Oct 5.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "OMAB",
+        "issuer": "OMA B",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-04",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer passenger traffic report"
+        },
+        "event_time": {
+          "date": "2026-08",
+          "time_local": null,
+          "precision": "month_only",
+          "description": "August 2026 passenger traffic; September traffic is scheduled for October 8."
+        },
+        "classification": "Historical August traffic report published Sep 4; next September traffic report scheduled Oct 8.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "VOLARA",
+        "issuer": "Volaris A",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer traffic release"
+        },
+        "event_time": {
+          "date": "2026-08",
+          "time_local": null,
+          "precision": "month_only",
+          "description": "August traffic/load factor; September traffic not verified."
+        },
+        "classification": "Historical primary traffic report; no September update verified.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "GFNORTEO",
+        "issuer": "Banorte O",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Banorte issuer material-event listing; linked official PDF dated Oct 5"
+        },
+        "event_time": {
+          "date": "2026-10-04",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Banco Mercantil del Norte fully prepaid USD 74.009 million of 5.750% Tier 2 subordinated preferred non-convertible obligations, identifier BNR1031 575C (formerly BANOC36), on the optional call date."
+        },
+        "classification": "Primary issuer event previously identified at the 18:08 cut; no new item since then. Posting hour is absent; not a standalone equity buy signal.",
+        "new_publication_since_previous_cut": false,
+        "discovered_in_current_cut": true,
+        "source_url": "https://investors.banorte.com/~/media/Files/B/Banorte-IR/press-release/es/2026/ER_Amortizacion_Anticipada_Notas_Tier2_04oct26.pdf"
+      },
+      {
+        "ticker": "WALMEX",
+        "issuer": "Walmex",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-07-22",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer Q2 results"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "period_only",
+          "description": "Q2 2026 results; September monthly sales not verified. Issuer calendar lists Q3 results Oct 27."
+        },
+        "classification": "No new monthly sales release verified.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "CEMEXCPO",
+        "issuer": "Cemex CPO",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Vicat corporate announcement; no new Cemex filing verified"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Conditional exclusive negotiations to acquire ready-mix concrete and aggregates assets in France; terms/price not disclosed."
+        },
+        "classification": "Historical conditional process; not a new Oct 5 event.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "ALPEKA",
+        "issuer": "Alpek A",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-14",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "date_not_captured",
+          "description": "Announced return to S&P/BMV IPC; effective index date not captured."
+        },
+        "classification": "Historical issuer event; no new announcement found.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "AMAT",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Applied Materials SEC filing page; no intraday filing time shown"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "2,644 common shares withheld upon RSU vesting to cover tax obligations; transaction code F."
+        },
+        "classification": "Form 4 dated Oct 5; the underlying Oct 1 RSU tax withholding remains non-discretionary, and this filing was already in the prior report.",
+        "since_previous_cut": false,
+        "source_url": "https://ir.appliedmaterials.com/node/29691/html",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "GMEXICOB",
+        "issuer": "Grupo México",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-08",
+          "time_local": "10:27",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV event listing"
+        },
+        "event_time": {
+          "date": "2026-09-08",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "BMV listing records closing of the Grupo México–Saavi energy-assets combination; financial contribution not quantified."
+        },
+        "classification": "Historical primary disclosure, before prior cut; not a fresh Oct 5/6 event.",
+        "new_publication_since_previous_cut": false,
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GMEXICO-6008-CGEN_CAPIT"
+      },
+      {
+        "ticker": "OMAB",
+        "issuer": "OMA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-28",
+          "time_local": "20:16",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV event listing"
+        },
+        "event_time": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "OMA announced an Investor Relations management change; effective date not verified."
+        },
+        "classification": "Administrative, historical issuer update.",
+        "new_publication_since_previous_cut": false,
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/OMA-6707-CGEN_CAPIT"
+      },
+      {
+        "ticker": "OMAB",
+        "issuer": "OMA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-18",
+          "time_local": "17:15",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV event listing"
+        },
+        "event_time": {
+          "date": "2026-09-18",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "OMA response to BMV request about trading volume that day."
+        },
+        "classification": "Historical market-surveillance response.",
+        "new_publication_since_previous_cut": false,
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/OMA-6707-CGEN_CAPIT"
+      },
+      {
+        "ticker": "GAPB",
+        "issuer": "GAP",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-18",
+          "time_local": "14:30",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV event listing"
+        },
+        "event_time": {
+          "date": "2026-09-18",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "BMV listing shows notice about unusual trading in GAP B."
+        },
+        "classification": "Historical market-surveillance notice.",
+        "new_publication_since_previous_cut": false,
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GAP-6579-CGEN_CAPIT"
+      },
+      {
+        "ticker": "GFNORTEO",
+        "issuer": "Banorte",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-18",
+          "time_local": "17:22",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV event listing"
+        },
+        "event_time": {
+          "date": "2026-09-18",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "BMV listing shows volume variation; Oct 5 Tier 2 redemption for Oct 4 remains the latest issuer event."
+        },
+        "classification": "Historical volume notice; Oct 5 event already captured.",
+        "new_publication_since_previous_cut": false,
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GFNORTE-5433-CGEN_CAPIT"
+      },
+      {
+        "ticker": "ALPEKA",
+        "issuer": "Alpek",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-18",
+          "time_local": "17:36",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV event listing"
+        },
+        "event_time": {
+          "date": "2026-09-18",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "BMV listing shows a volume-variation event for Alpek A."
+        },
+        "classification": "Historical market-volume notice.",
+        "new_publication_since_previous_cut": false,
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/ALPEK-5057-CGEN_CAPIT"
+      },
+      {
+        "ticker": "CEMEXCPO",
+        "issuer": "Cemex",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-18",
+          "time_local": "16:40",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV event listing"
+        },
+        "event_time": {
+          "date": "2026-09-18",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "BMV listing shows unusual trading volume; Vicat Oct 1 process remains latest fundamental item."
+        },
+        "classification": "Historical market-surveillance notice.",
+        "new_publication_since_previous_cut": false,
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/CEMEX-5203-CGEN_C"
+      },
+      {
+        "ticker": "AVGO",
+        "issuer": "Broadcom",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-29",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer news list and linked release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_separately_stated",
+          "description": "AST facility completion; underlying event date not separately stated."
+        },
+        "classification": "Historical pre-cut issuer release, coverage note only.",
+        "new_publication_since_previous_cut": false
+      },
+      {
+        "ticker": "NVDA",
+        "issuer": "NVIDIA",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Expansión de capacidad de infraestructura IA con socios de centros de datos de Australia."
+        },
+        "classification": "Corrección histórica descubierta en este corte; publicación anterior al comparativo.",
+        "new_publication_since_previous_cut": false,
+        "newly_verified_this_cut": true,
+        "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Expands-AI-Infrastructure-Capacity-in-Partnership-With-Australias-Data-Center-Ecosystem/default.aspx"
+      }
+    ],
+    "primary_source_count_definition": "Distinct issuer, exchange, or filing URLs for the 16-name watchlist; excludes quote pages, secondary analyst notes, and operational market-hours references.",
+    "source_scan_warnings": [
+      "Páginas dinámicas limitan la evidencia; ausencia en el archivo accesible no prueba inexistencia de una publicación.",
+      "Peñoles: PDF del aviso 3-ago sigue inaccesible.",
+      "Walmex: enlace mensual de septiembre conduce a PDF de 2019; ventas septiembre 2026 no verificadas.",
+      "Volaris: archivo accesible no expone una nueva ficha de tráfico de septiembre.",
+      "Yahoo no publica demora nominal ni venue; marcas extendidas con volumen cero excluidas."
+    ],
+    "comparison_input_report": "reports/intraday/2026-10-05_2208_cdmx.json",
+    "current_cut_watchlist_checked": [
+      "BA",
+      "AVGO",
+      "NVDA",
+      "AMAT",
+      "WFC",
+      "AMXB",
+      "GAPB",
+      "GMEXICOB",
+      "PE&OLES",
+      "ASURB",
+      "OMAB",
+      "VOLARA",
+      "GFNORTEO",
+      "WALMEX",
+      "CEMEXCPO",
+      "ALPEKA"
+    ],
+    "current_cut_summary": "Sin publicación primaria accionable posterior al informe de 22:08. Se añadió cobertura histórica del comunicado NVIDIA del 9-sep, anterior al corte. Las 16 barras regulares positivas siguen en el cierre del 5-oct con 615–616 min; cinco marcas extendidas tienen volumen cero. NO_TRADE.",
+    "quote_capture_observed_at": "2026-10-06T00:15:23-06:00",
+    "current_cut_source_checks": [
+      {
+        "ticker": "BA",
+        "issuer_source": "Boeing issuer newsroom",
+        "source_url": "https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-receives-seven-year-contract-to-accelerate-PAC-3-MSE-seeker-output/default.aspx",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Boeing issuer release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_disclosed",
+          "description": "Fecha de otorgamiento y ejecución del contrato no separada del anuncio."
+        },
+        "finding": "Anuncio PAC-3 MSE del 5-oct ya estaba capturado; sin comunicado posterior.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "AVGO",
+        "issuer_source": "Broadcom investor center",
+        "source_url": "https://investors.broadcom.com/",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-29",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Broadcom issuer news list"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_separately_stated",
+          "description": "AST completó una planta de sustratos FC-BGA; el comunicado no fecha por separado la finalización."
+        },
+        "finding": "La lista oficial mantiene AST del 29-sep como nota más reciente visible; sin publicación nueva.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "NVDA",
+        "issuer_source": "NVIDIA official Sep 9 release",
+        "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Expands-AI-Infrastructure-Capacity-in-Partnership-With-Australias-Data-Center-Ecosystem/default.aspx",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "NVIDIA issuer release"
+        },
+        "event_time": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Anuncio de ampliación de capacidad de infraestructura IA con socios australianos."
+        },
+        "finding": "Corrección histórica: comunicado del 9-sep sobre capacidad de IA en Australia, anterior al comparativo; resultados Q2 del 26-ago siguen siendo los más recientes. Sin publicación nueva.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "AMAT",
+        "issuer_source": "Applied Materials issuer news and Form 4",
+        "source_url": "https://ir.appliedmaterials.com/node/29691/html",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "SEC Form 4 filing"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Retención de 2,644 acciones al vestirse RSU para impuestos; Form 4 con código F. Alianza Besi anunciada 1-oct."
+        },
+        "finding": "Alianza Besi del 1-oct es noticia de negocio más reciente; Form 4 rutinario del 5-oct ya constaba. Sin publicación posterior.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "WFC",
+        "issuer_source": "Wells Fargo Oct 5 earnings notice",
+        "source_url": "https://newsroom.wf.com/news-releases/news-details/2026/Wells-Fargo-to-Announce-Third-Quarter-2026-Earnings-on-Oct--13-2026/default.aspx",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer notice"
+        },
+        "event_time": {
+          "date": "2026-10-13",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Repeated notice of scheduled Q3 earnings; no new guidance. Morgan Stanley upgrade reported by secondary sources on Oct 5."
+        },
+        "finding": "Aviso repetido de resultados programados para 13-oct. Mejora Morgan Stanley es research, no guidance. Sin novedad.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "AMXB",
+        "issuer_source": "BMV América Móvil events",
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/AMX-6024-CGEN_CAPIT",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": "17:35",
+          "timezone": "America/Mexico_City",
+          "precision": "minute",
+          "source_type": "BMV official issuer event listing and filing"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "A Brazilian subsidiary of América Móvil closed the acquisition of 72.83% of Desktop S.A.; the issuer had announced the agreement on March 22."
+        },
+        "finding": "Cierre de Desktop, 1-oct 17:35 CDMX, sigue como última fila visible.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "GAPB",
+        "issuer_source": "GAP official releases",
+        "source_url": "https://www.aeropuertosgap.com.mx/es/material-events.html",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "GAP issuer release: MXN 8bn bank credit lines"
+        },
+        "event_time": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "GAP announced contracting bank credit lines totaling MXN 8bn."
+        },
+        "finding": "Página oficial mantiene líneas de crédito del 11-sep y tráfico de agosto del 4-sep; sin septiembre ni nueva publicación.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "GMEXICOB",
+        "issuer_source": "BMV Grupo México events",
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GMEXICO-6008-CGEN_CAPIT",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-08",
+          "time_local": "10:27",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV issuer event"
+        },
+        "event_time": {
+          "date": "2026-09-08",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Cierre de la combinación de activos de generación con Saavi."
+        },
+        "finding": "Último evento visible: cierre con Saavi del 8-sep; sin posterior al corte.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "PE&OLES",
+        "issuer_source": "Peñoles issuer communications",
+        "source_url": "https://www.penoles.com.mx/inversionistas/comunicados.html",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-08-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Peñoles official material-event listing; linked PDF unavailable"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_captured",
+          "description": "Issuer listing title identifies resignation of a proprietary director; effective date/details not verified because the linked PDF returns 404."
+        },
+        "finding": "Último aviso visible 3-ago; PDF enlazado sigue sin verificarse. Sin nuevo aviso.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "ASURB",
+        "issuer_source": "ASUR issuer releases",
+        "source_url": "https://www.asur.com.mx/comunicados-1",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer material filing"
+        },
+        "event_time": {
+          "date": "2026-09-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Cancún airport completed purchase of 100% of CPC Aeroportos; disclosed consideration R$5.1bn. August traffic was published Sep 8."
+        },
+        "finding": "Evento de compra de CPC del 28-sep y tráfico de agosto del 8-sep siguen visibles; sin tráfico de septiembre.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "OMAB",
+        "issuer_source": "OMA BMV events and issuer traffic reports",
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/OMA-6707-CGEN_CAPIT",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "BMV/issuer event; management change"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_separately_stated",
+          "description": "Cambio de gestión de RI reportado 28-sep; fecha efectiva no indicada. Último dato de tráfico cubre agosto."
+        },
+        "finding": "Último tráfico oficial agosto, publicado 4-sep; reporte septiembre calendarizado para 8-oct. Cambio IR 28-sep ya capturado.",
+        "new_since_previous_cut": false,
+        "traffic_source_url": "https://ir.oma.aero/en/traffic-reports/"
+      },
+      {
+        "ticker": "VOLARA",
+        "issuer_source": "Volaris IR press releases",
+        "source_url": "https://ir.volaris.com/news-events/press-releases/",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer traffic release"
+        },
+        "event_time": {
+          "date": "2026-08",
+          "time_local": null,
+          "precision": "month_only",
+          "description": "August traffic/load factor; September traffic not verified."
+        },
+        "finding": "Archivo accesible no expone reporte de septiembre; tráfico de agosto del 3-sep es último verificado.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "GFNORTEO",
+        "issuer_source": "Banorte 2026 events",
+        "source_url": "https://investors.banorte.com/es/news-and-events/press-releases/2026",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Banorte issuer material-event page; official PDF dated Oct 5"
+        },
+        "event_time": {
+          "date": "2026-10-04",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Banorte fully prepaid USD 74.009m of 5.750% Tier 2 subordinated preferred non-convertible obligations, BNR1031 575C (formerly BANOC36), on the Optional Call Date."
+        },
+        "finding": "Aviso Tier 2 fechado 5-oct, amortización 4-oct, ya capturado; sin evento posterior.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "WALMEX",
+        "issuer_source": "Walmex monthly sales page",
+        "source_url": "https://www.walmex.mx/informacion-financiera/mensual.html",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-07-22",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer Q2 results"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "period_only",
+          "description": "Q2 2026 results; September monthly sales not verified. Issuer calendar lists Q3 results Oct 27."
+        },
+        "finding": "No se verificó ventas septiembre 2026; el enlace de septiembre conduce a PDF de 2019; resultados 3T26 calendarizados para 27-oct.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "CEMEXCPO",
+        "issuer_source": "Vicat official notice on Cemex talks",
+        "source_url": "https://www.vicat.com/actualites/projet-dacquisition-par-le-groupe-vicat-des-filiales-de-beton-pret-lemploi-et-granulats",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Vicat corporate announcement; no new Cemex filing verified"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Conditional exclusive negotiations to acquire ready-mix concrete and aggregates assets in France; terms/price not disclosed."
+        },
+        "finding": "Negociaciones condicionales del 1-oct siguen como actualización fundamental; términos sujetos a condiciones. BMV SD 25-sep es anterior.",
+        "new_since_previous_cut": false
+      },
+      {
+        "ticker": "ALPEKA",
+        "issuer_source": "Alpek/BMV event list",
+        "source_url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/ALPEK-5057-CGEN_CAPIT",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-14",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "date_not_captured",
+          "description": "Announced return to S&P/BMV IPC; effective index date not captured."
+        },
+        "finding": "Aviso de volumen del 18-sep e inclusión IPC del 14-sep; sin publicación posterior.",
+        "new_since_previous_cut": false
+      }
+    ],
+    "latest_event_discovered": {
+      "ticker": null,
+      "publication_date": null,
+      "publication_time_local": null,
+      "event_date": null,
+      "newly_verified_this_cut": false,
+      "publication_after_comparison_cut": false,
+      "decision_effect": "NO_TRADE",
+      "note": "No se verificó publicación nueva posterior al corte comparativo; NVIDIA 9-sep se añade solo como corrección histórica."
+    },
+    "primary_sources_checked_this_cut": 16
+  },
+  "market_data": {
+    "quote_provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+    "latest_us_regular_session_bar_local": "2026-10-05T14:00:00-06:00",
+    "latest_mexico_bar_local": "2026-10-05T13:59:00-06:00",
+    "mexico_refresh_check_local": "2026-10-06T00:15:23-06:00",
+    "refresh_result": "16/16 series refrescadas; las últimas barras regulares positivas siguen en el cierre del 5-oct. Cinco marcas extendidas de EE. UU. reportan volumen cero y se excluyen.",
+    "relative_volume_as_of_local": "2026-10-05T14:00:00-06:00",
+    "relative_volume_method": "Cumulative regular-session volume through the same 5-minute cutoff divided by the mean cumulative volume at that cutoff across the prior 19 sessions.",
+    "quotes_actionable": false,
+    "known_vendor_conflict": {
+      "ticker": "GAPB",
+      "yahoo_reference_mxn": 379.01,
+      "yahoo_bar_local": "2026-10-05T14:00:00-06:00",
+      "investing_reference_mxn": 371.44,
+      "investing_page_date": "2026-10-05",
+      "investing_timestamp": null,
+      "note": "Secondary quote has no precise observation time and differs by about 2.0%; neither is treated as executable.",
+      "last_checked_at_local": "2026-10-05T18:08:44-06:00"
+    },
+    "macro_context": "No se refrescó en este corte; la decisión usa únicamente la watchlist solicitada.",
+    "additional_provider_conflicts": [
+      {
+        "ticker": "BA",
+        "chart_price": 193.0001,
+        "chart_time_local": "2026-10-05T17:56:36-06:00",
+        "reported_volume": 0,
+        "note": "Extended-hours row excluded; regular close 192.72 USD."
+      },
+      {
+        "ticker": "AVGO",
+        "chart_price": 362.99,
+        "chart_time_local": "2026-10-05T17:59:54-06:00",
+        "reported_volume": 0,
+        "note": "Extended-hours row excluded; regular close 362.51 USD."
+      },
+      {
+        "ticker": "NVDA",
+        "chart_price": 240.1954,
+        "chart_time_local": "2026-10-05T17:59:59-06:00",
+        "reported_volume": 0,
+        "note": "Extended-hours row excluded; regular close 238.9 USD."
+      },
+      {
+        "ticker": "AMAT",
+        "chart_price": 543.44,
+        "chart_time_local": "2026-10-05T17:59:35-06:00",
+        "reported_volume": 0,
+        "note": "Extended-hours row excluded; regular close 542.28 USD."
+      },
+      {
+        "ticker": "WFC",
+        "chart_price": 81.72,
+        "chart_time_local": "2026-10-05T17:47:50-06:00",
+        "reported_volume": 0,
+        "note": "Extended-hours row excluded; regular close 81.44 USD."
+      },
+      {
+        "ticker": "VOLARA",
+        "yahoo_reference_mxn": 11.77,
+        "issuer_ir_widget_reference_mxn": 11.88,
+        "issuer_widget_time_local": "2026-10-05T07:31:00-06:00",
+        "note": "Historical pre-open widget conflict; neither quote executable."
+      }
+    ],
+    "latest_us_after_hours_snapshot_local": "2026-10-05T17:59:00-06:00",
+    "after_hours_snapshot_provider": "Yahoo Finance chart API, query2.finance.yahoo.com, 1-minute interval, includePrePost=true; reported volume 0, venue and nominal delay undisclosed",
+    "quote_delay_note": "Yahoo no publica demora nominal ni venue; las 16 barras tienen más de 10 horas al corte y no son ejecutables. No hay bid/ask Actinver verificado.",
+    "quote_refreshes": [
+      {
+        "ticker": "BA",
+        "currency": "USD",
+        "regular_bar_price": 192.72,
+        "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T14:00:00-06:00",
+        "regular_bar_age_minutes_at_cut": 615,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "BA",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/BA?range=5d&interval=1m&includePrePost=true",
+        "listing": "NYQ",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 615,
+        "after_hours_observation": {
+          "price": 193.0001,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:56:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 379,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NYQ",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 639370
+      },
+      {
+        "ticker": "AVGO",
+        "currency": "USD",
+        "regular_bar_price": 362.51,
+        "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T14:00:00-06:00",
+        "regular_bar_age_minutes_at_cut": 615,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "AVGO",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AVGO?range=5d&interval=1m&includePrePost=true",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 615,
+        "after_hours_observation": {
+          "price": 362.99,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 2888160
+      },
+      {
+        "ticker": "NVDA",
+        "currency": "USD",
+        "regular_bar_price": 238.87,
+        "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T14:00:00-06:00",
+        "regular_bar_age_minutes_at_cut": 615,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "NVDA",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=5d&interval=1m&includePrePost=true",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 615,
+        "after_hours_observation": {
+          "price": 240.1954,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 13995407
+      },
+      {
+        "ticker": "AMAT",
+        "currency": "USD",
+        "regular_bar_price": 542.28,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "AMAT",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AMAT?range=5d&interval=1m&includePrePost=true",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": {
+          "price": 543.44,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 1393101
+      },
+      {
+        "ticker": "WFC",
+        "currency": "USD",
+        "regular_bar_price": 81.44,
+        "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T14:00:00-06:00",
+        "regular_bar_age_minutes_at_cut": 615,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "WFC",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/WFC?range=5d&interval=1m&includePrePost=true",
+        "listing": "NYQ",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 615,
+        "after_hours_observation": {
+          "price": 81.72,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:47:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 388,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NYQ",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 1991068
+      },
+      {
+        "ticker": "AMXB",
+        "currency": "MXN",
+        "regular_bar_price": 20.09,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "AMXB.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AMXB.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 7936013
+      },
+      {
+        "ticker": "GAPB",
+        "currency": "MXN",
+        "regular_bar_price": 379.01,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "GAPB.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GAPB.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 275860
+      },
+      {
+        "ticker": "GMEXICOB",
+        "currency": "MXN",
+        "regular_bar_price": 235.7,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "GMEXICOB.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GMEXICOB.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 1863744
+      },
+      {
+        "ticker": "PE&OLES",
+        "currency": "MXN",
+        "regular_bar_price": 890.51,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "PE&OLES.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/PE%26OLES.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 2609
+      },
+      {
+        "ticker": "ASURB",
+        "currency": "MXN",
+        "regular_bar_price": 433.32,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "ASURB.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/ASURB.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 5468
+      },
+      {
+        "ticker": "OMAB",
+        "currency": "MXN",
+        "regular_bar_price": 215.56,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "OMAB.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/OMAB.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 102308
+      },
+      {
+        "ticker": "VOLARA",
+        "currency": "MXN",
+        "regular_bar_price": 11.77,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "VOLARA.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/VOLARA.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 9572
+      },
+      {
+        "ticker": "GFNORTEO",
+        "currency": "MXN",
+        "regular_bar_price": 187.41,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "GFNORTEO.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GFNORTEO.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 70843
+      },
+      {
+        "ticker": "WALMEX",
+        "currency": "MXN",
+        "regular_bar_price": 46.44,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "WALMEX.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/WALMEX.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 3028998
+      },
+      {
+        "ticker": "CEMEXCPO",
+        "currency": "MXN",
+        "regular_bar_price": 17.36,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "CEMEXCPO.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/CEMEXCPO.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 6866776
+      },
+      {
+        "ticker": "ALPEKA",
+        "currency": "MXN",
+        "regular_bar_price": 14.56,
+        "regular_bar_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "regular_bar_age_minutes_at_cut": 616,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "source_symbol": "ALPEKA.MX",
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/ALPEKA.MX?range=5d&interval=1m&includePrePost=true",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "actionable": false,
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "age_minutes_at_cut": 616,
+        "after_hours_observation": null,
+        "regular_bar_volume": 27635
+      }
+    ],
+    "all_market_quotes_actionable": false,
+    "quote_capture_observed_at": "2026-10-06T00:15:23-06:00",
+    "current_cut_provider_conflicts": [
+      {
+        "ticker": "BA",
+        "yahoo_chart": {
+          "price": 193.0001,
+          "time_local": "2026-10-05T17:56:00-06:00",
+          "reported_volume": 0,
+          "observed_at": "2026-10-06T00:15:23-06:00"
+        },
+        "note": "Marca extendida de volumen cero; excluida. No es precio ejecutable."
+      },
+      {
+        "ticker": "AVGO",
+        "yahoo_chart": {
+          "price": 362.99,
+          "time_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "observed_at": "2026-10-06T00:15:23-06:00"
+        },
+        "note": "Marca extendida de volumen cero; excluida. No es precio ejecutable."
+      },
+      {
+        "ticker": "NVDA",
+        "yahoo_chart": {
+          "price": 240.1954,
+          "time_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "observed_at": "2026-10-06T00:15:23-06:00"
+        },
+        "note": "Marca extendida de volumen cero; excluida. No es precio ejecutable."
+      },
+      {
+        "ticker": "AMAT",
+        "yahoo_chart": {
+          "price": 543.44,
+          "time_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "observed_at": "2026-10-06T00:15:23-06:00"
+        },
+        "note": "Marca extendida de volumen cero; excluida. No es precio ejecutable."
+      },
+      {
+        "ticker": "WFC",
+        "yahoo_chart": {
+          "price": 81.72,
+          "time_local": "2026-10-05T17:47:00-06:00",
+          "reported_volume": 0,
+          "observed_at": "2026-10-06T00:15:23-06:00"
+        },
+        "note": "Marca extendida de volumen cero; excluida. No es precio ejecutable."
+      }
+    ],
+    "source_scan_observed_at_local": "2026-10-06T00:15:28-06:00"
+  },
+  "why_no_orders": "NO_TRADE: las 16 barras regulares son referencias históricas del 5-oct y no son ejecutables. Portafolio, efectivo, posiciones, P&L, rango, identidad exacta Actinver, bid/ask, costos, confirmación técnica y riesgo/recompensa neto permanecen sin verificar. No enviar órdenes overnight.",
+  "watchlist": [
+    {
+      "ticker": "BA",
+      "name": "Boeing",
+      "market_symbol": "BA",
+      "currency": "USD",
+      "status": "NO_TRADE",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 192.72,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "age_minutes_at_preparation": 615,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/BA?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T14:00:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NYQ",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": {
+          "price": 193.0001,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:56:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 379,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NYQ",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 639370
+      },
+      "technical": {
+        "mom_5d_pct": -2.73,
+        "mom_20d_pct": -8.47,
+        "rvol": 0.75,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 7.1779,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "NEW_PRIMARY_BUT_UNDEFINITIZED",
+      "evidence_summary": "Boeing announced an approximately USD 14.7B undefinitized contract action with Lockheed Martin to scale PAC-3 MSE seeker output under a previously announced seven-year framework. No near-term revenue timing was disclosed. The regular-session close remained below the 195.02–196 breakout band.",
+      "watch_condition": "Recheck only after a fresh quote; require a hold above USD 195.02–196 with volume. The existing thesis invalidates below USD 190. Do not place an overnight limit from this stale snapshot.",
+      "risk_flags": [
+        "Contract action is not definitized",
+        "Price did not confirm the breakout",
+        "Earnings expected Oct 27 per issuer calendar",
+        "Identidad exacta de Actinver sin verificar"
+      ],
+      "source_urls": [
+        "https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-receives-seven-year-contract-to-accelerate-PAC-3-MSE-seeker-output/default.aspx",
+        "https://finance.yahoo.com/quote/BA/",
+        "https://query2.finance.yahoo.com/v8/finance/chart/BA?range=1d&interval=1m&includePrePost=true"
+      ],
+      "after_hours_snapshot": {
+        "price": 193.0001,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T17:56:00-06:00",
+        "reported_volume": 0,
+        "age_minutes_at_cut": 379,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NYQ",
+        "venue": "not exposed",
+        "nominal_provider_delay": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "actionable": false,
+        "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+      },
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Boeing issuer release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_disclosed",
+          "description": "Fecha de otorgamiento y ejecución del contrato no separada del anuncio."
+        },
+        "classification": "Primary issuer announcement, already known before 16:22; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Boeing issuer release"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T14:00:00-06:00",
+        "currency": "USD",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NYQ",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 615,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/BA?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": {
+          "price": 193.0001,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:56:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 379,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NYQ",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 639370
+      },
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom",
+      "market_symbol": "AVGO",
+      "currency": "USD",
+      "status": "WAIT_FOR_PULLBACK",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 362.51,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "age_minutes_at_preparation": 615,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AVGO?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T14:00:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": {
+          "price": 362.99,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 2888160
+      },
+      "technical": {
+        "mom_5d_pct": 2.73,
+        "mom_20d_pct": 1.48,
+        "rvol": 0.9,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 9.9557,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "NO_NEW_ISSUER_EVENT_VERIFIED",
+      "evidence_summary": "The latest issuer earnings release is Sep 2, with strong Q3 AI revenue and Q4 guidance; no new issuer earnings update was found for the 24-hour scan. The quote is near the existing no-chase level.",
+      "watch_condition": "Re-evaluate only on a verified pullback to USD 353–357 followed by stabilization; do not chase above USD 363.",
+      "risk_flags": [
+        "Strong day already extended toward the no-chase level",
+        "No fresh issuer catalyst",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+        "https://finance.yahoo.com/quote/AVGO/",
+        "https://query2.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m&includePrePost=true"
+      ],
+      "after_hours_snapshot": {
+        "price": 362.99,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T17:59:00-06:00",
+        "reported_volume": 0,
+        "age_minutes_at_cut": 376,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "nominal_provider_delay": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "actionable": false,
+        "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+      },
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-09-29",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Broadcom issuer news list"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_separately_stated",
+          "description": "AST completó una planta de sustratos FC-BGA; el comunicado no fecha por separado la finalización."
+        },
+        "classification": "Historical issuer results; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-29",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Broadcom issuer news list"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T14:00:00-06:00",
+        "currency": "USD",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 615,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AVGO?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": {
+          "price": 362.99,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 2888160
+      },
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "market_symbol": "NVDA",
+      "currency": "USD",
+      "status": "WAIT_FOR_PULLBACK",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 238.87,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "age_minutes_at_preparation": 615,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T14:00:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": {
+          "price": 240.1954,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 13995407
+      },
+      "technical": {
+        "mom_5d_pct": 6.12,
+        "mom_20d_pct": 4.55,
+        "rvol": 1.21,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 5.15,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "NO_NEW_ISSUER_FINANCIAL_CATALYST_VERIFIED",
+      "evidence_summary": "Los resultados Q2 FY2027 siguen fechados el 26-ago. Se añadió comunicado oficial del 9-sep sobre infraestructura de IA en Australia; anterior al comparativo, sin cambio en WAIT_FOR_PULLBACK.",
+      "watch_condition": "Wait for a fresh quote and a pullback into USD 232–235 followed by recovery; do not treat the current rise as a new entry signal.",
+      "risk_flags": [
+        "Momentum is already positive over five sessions",
+        "No new issuer catalyst",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/",
+        "https://finance.yahoo.com/quote/NVDA/",
+        "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m&includePrePost=true",
+        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Expands-AI-Infrastructure-Capacity-in-Partnership-With-Australias-Data-Center-Ecosystem/default.aspx"
+      ],
+      "after_hours_snapshot": {
+        "price": 240.1954,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T17:59:00-06:00",
+        "reported_volume": 0,
+        "age_minutes_at_cut": 376,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "nominal_provider_delay": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "actionable": false,
+        "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+      },
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "NVIDIA issuer release"
+        },
+        "event_time": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Anuncio de ampliación de capacidad de infraestructura IA con socios australianos."
+        },
+        "classification": "Historical issuer results; no new financial catalyst verified; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-09",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "NVIDIA issuer release"
+        },
+        "historical_coverage_correction": true
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T14:00:00-06:00",
+        "currency": "USD",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 615,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": {
+          "price": 240.1954,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 13995407
+      },
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "AMAT",
+      "name": "Applied Materials",
+      "market_symbol": "AMAT",
+      "currency": "USD",
+      "status": "WATCH",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 542.28,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AMAT?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": {
+          "price": 543.44,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 1393101
+      },
+      "technical": {
+        "mom_5d_pct": 11.71,
+        "mom_20d_pct": 24.29,
+        "rvol": 1.0,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 17.9564,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "RECENT_BUT_NOT_TODAY",
+      "evidence_summary": "The Oct 1 Besi partnership expands advanced packaging and AI infrastructure collaboration, but it is not a new Oct 5 event. The regular-session reference remained below the USD 546 breakout trigger; relative volume at 14:07 was below its comparison average.",
+      "watch_condition": "Require a fresh, confirmed break and hold above USD 546 with volume; do not use a delayed quote to infer the trigger.",
+      "risk_flags": [
+        "Large 5- and 20-session advance",
+        "Volume confirmation absent in the 14:07 snapshot",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-and-besi-expand-strategic-partnership-advance/",
+        "https://finance.yahoo.com/quote/AMAT/",
+        "https://query2.finance.yahoo.com/v8/finance/chart/AMAT?range=1d&interval=1m&includePrePost=true"
+      ],
+      "after_hours_snapshot": {
+        "price": 543.44,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T17:59:00-06:00",
+        "reported_volume": 0,
+        "age_minutes_at_cut": 376,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "nominal_provider_delay": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "actionable": false,
+        "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+      },
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "SEC Form 4 filing"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Retención de 2,644 acciones al vestirse RSU para impuestos; Form 4 con código F. Alianza Besi anunciada 1-oct."
+        },
+        "classification": "Recent issuer event, not new Oct 5; price did not confirm >USD 546; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "SEC Form 4 filing"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "USD",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NMS",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AMAT?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": {
+          "price": 543.44,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:59:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 376,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NMS",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 1393101
+      },
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "WFC",
+      "name": "Wells Fargo",
+      "market_symbol": "WFC",
+      "currency": "USD",
+      "status": "WATCH",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 81.44,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "age_minutes_at_preparation": 615,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/WFC?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T14:00:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NYQ",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": {
+          "price": 81.72,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:47:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 388,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NYQ",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 1991068
+      },
+      "technical": {
+        "mom_5d_pct": -1.78,
+        "mom_20d_pct": -8.63,
+        "rvol": 1.06,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 1.99,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "REPEATED_EARNINGS_NOTICE",
+      "evidence_summary": "Dos fuentes secundarias publicadas el 5-oct reportan que Morgan Stanley elevó WFC de Equal Weight a Overweight, mantuvo el objetivo en USD 102 y la designó Top Pick. Esto no es guidance ni filing del emisor. La barra marcó mínimo USD 80.94 dentro de la zona de referencia USD 80.50–81.20, pero cerró USD 81.435 por encima sin confirmar soporte. Wells Fargo reiteró que publicará Q3 el 13-oct; no hay guidance nueva. El objetivo de analista no se usa como objetivo temporal.",
+      "watch_condition": "No dejar orden anticipada. Reevaluar con precio/bid-ask frescos si vuelve a USD 80.50–81.20 y confirma estabilización/recuperación; exigir serie Actinver, stop y objetivo de tesis y R/R después de costos. No usar USD 102 como objetivo temporal ni anticipar resultados del 13-oct.",
+      "risk_flags": [
+        "Upgrade de Morgan Stanley es evidencia secundaria, no guidance del emisor",
+        "Cierre por encima de la zona; no se confirmó sostén tras el mínimo",
+        "R/R diagnóstico cierre-a-máximo frente a USD 80.50: aproximadamente 0.84:1; no es R/R de tesis aprobado",
+        "Evento binario de resultados el 13-oct",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://newsroom.wf.com/news-releases/news-details/2026/Wells-Fargo-to-Announce-Third-Quarter-2026-Earnings-on-Oct--13-2026/default.aspx",
+        "https://finance.yahoo.com/quote/WFC/",
+        "https://www.tipranks.com/news/the-fly/wells-fargo-upgraded-to-overweight-from-equal-weight-at-morgan-stanley-thefly-news",
+        "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/10/62160112/this-wells-fargo-analyst-turns-bullish-here-are-top-5-upgrades-for-monday",
+        "https://query2.finance.yahoo.com/v8/finance/chart/WFC?range=1d&interval=1m&includePrePost=true"
+      ],
+      "secondary_catalyst_status": "MORGAN_STANLEY_UPGRADE_REPORTED_BY_SECONDARY_SOURCES",
+      "after_hours_snapshot": {
+        "price": 81.72,
+        "currency": "USD",
+        "observed_at_local": "2026-10-05T17:47:00-06:00",
+        "reported_volume": 0,
+        "age_minutes_at_cut": 388,
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NYQ",
+        "venue": "not exposed",
+        "nominal_provider_delay": "not disclosed",
+        "observed_at": "2026-10-06T00:15:23-06:00",
+        "actionable": false,
+        "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+      },
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer notice"
+        },
+        "event_time": {
+          "date": "2026-10-13",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Repeated notice of scheduled Q3 earnings; no new guidance. Morgan Stanley upgrade reported by secondary sources on Oct 5."
+        },
+        "classification": "Repeated issuer date plus secondary analyst research; already present in prior cut; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer notice"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T14:00:00-06:00",
+        "currency": "USD",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "NYQ",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 615,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/WFC?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": {
+          "price": 81.72,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:47:00-06:00",
+          "reported_volume": 0,
+          "age_minutes_at_cut": 388,
+          "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+          "listing": "NYQ",
+          "venue": "not exposed",
+          "nominal_provider_delay": "not disclosed",
+          "observed_at": "2026-10-06T00:15:23-06:00",
+          "actionable": false,
+          "classification": "Marca extendida con volumen reportado cero; excluida del precio de referencia y no confirmada como operación."
+        },
+        "regular_bar_volume": 1991068
+      },
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "AMXB",
+      "name": "América Móvil B",
+      "market_symbol": "AMXB.MX",
+      "currency": "MXN",
+      "status": "WATCH",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 20.09,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AMXB.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 7936013
+      },
+      "technical": {
+        "mom_5d_pct": 3.03,
+        "mom_20d_pct": 2.5,
+        "rvol": 1.55,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 0.4443,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "MATERIAL_PRIMARY_EVENT_CLOSED_OCT_1; NOT_NEW_OCT_5",
+      "evidence_summary": "Corrección de cobertura: el listado oficial de Eventos Relevantes de BMV registra publicación el 1-oct-2026 a las 17:35 CDMX, y el PDF adjunto confirma que una subsidiaria brasileña de América Móvil cerró ese día la adquisición del 72.83% de Desktop S.A. El acuerdo inicial se anunció el 22-mar. La operación es un evento primario material, pero no es una noticia publicada el 5-oct. El artículo de mercado de El CEO del 5-oct lo cita como contexto de la subida; esa atribución causal es secundaria. El último bar disponible fue MXN 20.09 (+3.77%), observado a las 14:00 y con 167 minutos de antigüedad; está cerca del límite previo 20.10. Faltan bid/ask, identidad exacta de la serie Actinver, stop/objetivo y R/R.",
+      "watch_condition": "Conservar WATCH/NO_TRADE. Reconsiderar solo con cotización y bid/ask frescos, confirmación de que la ficha del simulador es la serie B correcta, sostén/recuperación verificados sin perseguir sobre MXN 20.10, stop y objetivo de tesis con R/R después de costos, y portafolio actual verificado. No hay orden anticipada.",
+      "risk_flags": [
+        "Series identity ambiguity between BMV share and NYSE ADR",
+        "Stale feed and no new issuer catalyst",
+        "Current price already beyond the prior pullback zone"
+      ],
+      "source_urls": [
+        "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/AMX-6024-CGEN_CAPIT",
+        "https://www.bmv.com.mx/docs-pub/eventemi/eventemi_1592736_1.pdf",
+        "https://www.americamovil.com/Spanish/relacion-con-inversionistas/informacion-de-acciones/grafico-de-valores/default.aspx",
+        "https://finance.yahoo.com/quote/AMXB.MX/",
+        "https://elceo.com/mercados/bmv-ipc-wall-street-hoy-5-de-octubre-de-2026-apertura/",
+        "https://query2.finance.yahoo.com/v8/finance/chart/AMXB.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "latest_relevant_publication": {
+          "date": "2026-10-01",
+          "time_local": "17:35",
+          "timezone": "America/Mexico_City",
+          "precision": "minute",
+          "source_type": "BMV official issuer event listing and filing"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "A Brazilian subsidiary of América Móvil closed the acquisition of 72.83% of Desktop S.A.; the issuer had announced the agreement on March 22."
+        },
+        "secondary_publication": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "El CEO market article; secondary context, exact publication time not captured"
+        },
+        "secondary_event_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Article attributed AMX share strength to the recently closed transaction; that causal attribution is secondary and was not independently established."
+        },
+        "classification": "Material primary transaction closure, published after the Oct 1 BMV close; not new on Oct 5. It was omitted in earlier reports and is corrected here; no new publication verified after 22:08.",
+        "new_relevant_publication_since_previous_review": false,
+        "newly_identified_in_this_review": true,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": "17:35",
+          "timezone": "America/Mexico_City",
+          "precision": "minute",
+          "source_type": "BMV official issuer event listing and filing"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/AMXB.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 7936013
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "GAPB",
+      "name": "GAP B",
+      "market_symbol": "GAPB.MX",
+      "currency": "MXN",
+      "status": "NO_TRADE",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 379.01,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GAPB.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 275860
+      },
+      "technical": {
+        "mom_5d_pct": -0.82,
+        "mom_20d_pct": 7.52,
+        "rvol": 1.33,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 12.39,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "PRIMARY_CREDIT_LINES_SEP_11; AUGUST_TRAFFIC_SEP_4; SECONDARY_HSBC_NOTE_OCT_5",
+      "evidence_summary": "BMV lists a Sep 18 unusual-trading notice; Sep 11 credit lines and August traffic already known. HSBC upgrade is secondary research.",
+      "watch_condition": "Do not chase above MXN 376. The previous MXN 366–370 pullback reference is not an active order; require a fresh, cross-checked quote, verified Actinver series, new primary traffic data and price/volume confirmation before reassessment.",
+      "risk_flags": [
+        "Price is above the prior no-chase level",
+        "Vendor prices conflict by about 2.05%",
+        "Traffic catalyst is not new primary information",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://www.aeropuertosgap.com.mx/es/material-events.html",
+        "https://es.investing.com/news/analyst-ratings/hsbc-mejora-la-calificacion-de-las-acciones-de-grupo-aeroportuario-del-pacifico-93CH-3860000",
+        "https://finance.yahoo.com/quote/GAPB.MX/",
+        "https://www.investing.com/equities/grupo-aeroportuario-del-pacifico-b",
+        "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GAP-6579-CGEN_CAPIT",
+        "https://query2.finance.yahoo.com/v8/finance/chart/GAPB.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "latest_relevant_publication": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "GAP issuer release: MXN 8bn bank credit lines"
+        },
+        "event_time": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "GAP announced contracting bank credit lines totaling MXN 8bn."
+        },
+        "other_primary_publication": {
+          "date": "2026-09-04",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "GAP August passenger-traffic report"
+        },
+        "other_event_time": {
+          "date": "2026-08",
+          "time_local": null,
+          "precision": "month_only",
+          "description": "August passenger traffic +0.5% YoY; September traffic not verified."
+        },
+        "secondary_publication": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "HSBC Buy rating reported by Investing.com"
+        },
+        "secondary_event_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Analyst rating action; not issuer guidance or an issuer event."
+        },
+        "classification": "Primary financing disclosure and August traffic report predate Oct 5. HSBC upgrade is secondary analyst research on Oct 5; no fresh September traffic; no new publication verified after 22:08.",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-11",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "GAP issuer release: MXN 8bn bank credit lines"
+        },
+        "new_relevant_publication_since_previous_review": false
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GAPB.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 275860
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "GMEXICOB",
+      "name": "Grupo México B",
+      "market_symbol": "GMEXICOB.MX",
+      "currency": "MXN",
+      "status": "WAIT_FOR_PULLBACK",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 235.7,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GMEXICOB.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 1863744
+      },
+      "technical": {
+        "mom_5d_pct": 5.45,
+        "mom_20d_pct": 5.03,
+        "rvol": 1.31,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 6.8279,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "NO_NEW_ISSUER_EVENT_VERIFIED",
+      "evidence_summary": "BMV lists the Sep 8 close of the Grupo México–Saavi energy-assets combination. Historical; impact not quantified. WAIT_FOR_PULLBACK remains.",
+      "watch_condition": "Wait for consolidation or a pullback plus a fresh issuer catalyst and verified copper context. No numeric entry is validated for tomorrow.",
+      "risk_flags": [
+        "Five-session momentum is already +5.45%",
+        "Commodity-price context unavailable at a verified cutoff",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://gmexico.com/GMDocs/ReportesFinancieros/ING/2026/RF_EN_2026_2Q.pdf",
+        "https://finance.yahoo.com/quote/GMEXICOB.MX/",
+        "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GMEXICO-6008-CGEN_CAPIT",
+        "https://query2.finance.yahoo.com/v8/finance/chart/GMEXICOB.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-09-08",
+          "time_local": "10:27",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV issuer event"
+        },
+        "event_time": {
+          "date": "2026-09-08",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Cierre de la combinación de activos de generación con Saavi."
+        },
+        "classification": "Historical issuer results published July 21; no new issuer event verified; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-08",
+          "time_local": "10:27",
+          "precision": "minute",
+          "timezone": "America/Mexico_City",
+          "source_type": "BMV issuer event"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GMEXICOB.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 1863744
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "PE&OLES",
+      "name": "Industrias Peñoles",
+      "market_symbol": "PE&OLES.MX",
+      "currency": "MXN",
+      "status": "WATCH",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 890.51,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/PE%26OLES.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 2609
+      },
+      "technical": {
+        "mom_5d_pct": -1.21,
+        "mom_20d_pct": -4.92,
+        "rvol": 0.56,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 29.8907,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "NO_NEW_ISSUER_EVENT_VERIFIED",
+      "evidence_summary": "Peñoles' official communications page lists an Aug 3 material-event notice titled 'Resignation of a proprietary director'; the linked PDF currently returns 404, so effective date and details are unverified. Q2 2026 remains the latest located financial report. Gold is sector context, not an issuer catalyst.",
+      "watch_condition": "Wait for a price consolidation or pullback, verified gold/silver context and an official Q3 date. No numeric entry is validated for tomorrow.",
+      "risk_flags": [
+        "Five- and 20-session momentum are negative",
+        "Commodity-price context unavailable",
+        "Q3 date is not official",
+        "Actinver identity unverified",
+        "Issuer's Aug 3 governance-notice PDF link returns 404; details unverified"
+      ],
+      "source_urls": [
+        "https://www.penoles.com.mx/?wcnav.model=%2Foracle%2Fwebcenter%2Fportalapp%2Fnavigations%2Fdefault-navigation-model",
+        "https://www.penoles.com.mx/inversionistas/data-center/",
+        "https://finance.yahoo.com/quote/PE%26OLES.MX/",
+        "https://query2.finance.yahoo.com/v8/finance/chart/PE&OLES.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-08-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Peñoles official material-event listing; linked PDF unavailable"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_captured",
+          "description": "Issuer listing title identifies resignation of a proprietary director; effective date/details not verified because the linked PDF returns 404."
+        },
+        "classification": "Historical governance notice listed Aug 3; title verified, PDF and event details not accessible; not a new Oct 5 catalyst; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-08-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Peñoles official material-event listing; linked PDF unavailable"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/PE%26OLES.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 2609
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "ASURB",
+      "name": "ASUR B",
+      "market_symbol": "ASURB.MX",
+      "currency": "MXN",
+      "status": "NO_TRADE",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 433.32,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/ASURB.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 5468
+      },
+      "technical": {
+        "mom_5d_pct": 0.45,
+        "mom_20d_pct": -0.41,
+        "rvol": 1.04,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 10.6193,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "MATERIAL_CPC_ACQUISITION_REPORTED_SEPT_28; AUGUST_TRAFFIC_LATEST",
+      "evidence_summary": "The official Sep 28 material filing reports Aeropuerto de Cancún closed the purchase of 100% of CPC Aeroportos on Sep 1 for R$5.1 billion (about USD 992.2 million). CPC operates 20 airports and handled about 24 million passengers in H1 2026. This is already disclosed, not fresh Oct 5 news; integration, financing and provisional purchase-accounting risks remain. Latest traffic located is August: Colombia +4.0%, Mexico -4.0%, Puerto Rico -5.1%; September traffic was not verified.",
+      "watch_condition": "Do not buy only on the daily rise. Require September traffic or another fresh primary catalyst plus price/volume confirmation. No validated numeric entry, stop or target for tomorrow.",
+      "risk_flags": [
+        "CPC acquisition integration/financing and provisional purchase accounting",
+        "Latest passenger traffic is August; no September data verified",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://www.asur.com.mx/media/Comunicados%20de%20prensa/Comunicados%20a%20Bolsa/2026/9/ASUR-Aeropuerto-Cancun-Mexico-Evento-Relevante-Sep-2026.pdf",
+        "https://www.asur.com.mx/comunicados-1?category=42322kvd17xz14zqpr257rxtwp&offset=0&year=",
+        "https://finance.yahoo.com/quote/ASURB.MX/",
+        "https://query2.finance.yahoo.com/v8/finance/chart/ASURB.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer material filing"
+        },
+        "event_time": {
+          "date": "2026-09-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Cancún airport completed purchase of 100% of CPC Aeroportos; disclosed consideration R$5.1bn. August traffic was published Sep 8."
+        },
+        "classification": "Historical material primary disclosure, not new Oct 5; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer material filing"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/ASURB.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 5468
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "OMAB",
+      "name": "OMA B",
+      "market_symbol": "OMAB.MX",
+      "currency": "MXN",
+      "status": "WATCH",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 215.56,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/OMAB.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 102308
+      },
+      "technical": {
+        "mom_5d_pct": -5.73,
+        "mom_20d_pct": 2.4,
+        "rvol": 0.7,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 6.4579,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "UPCOMING_PRIMARY_DATA_OCT_8",
+      "evidence_summary": "OMA announced an IR management change Sep 28 and answered a BMV volume inquiry Sep 18. August traffic remains latest operating data.",
+      "watch_condition": "Wait for the Oct 8 September-traffic release and re-evaluate the price afterward; tomorrow has no confirmed operating catalyst.",
+      "risk_flags": [
+        "Five-session momentum -5.73%",
+        "Relative volume was 0.61 at 14:07",
+        "Upcoming event is two sessions away",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://ir.oma.aero/en/traffic-reports/",
+        "https://ir.oma.aero/en/calendario-de-eventos/",
+        "https://finance.yahoo.com/quote/OMAB.MX/",
+        "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/OMA-6707-CGEN_CAPIT",
+        "https://query2.finance.yahoo.com/v8/finance/chart/OMAB.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "BMV/issuer event; management change"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "not_separately_stated",
+          "description": "Cambio de gestión de RI reportado 28-sep; fecha efectiva no indicada. Último dato de tráfico cubre agosto."
+        },
+        "classification": "Historical August traffic report published Sep 4; next September traffic report scheduled Oct 8; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-28",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "BMV/issuer event; management change"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/OMAB.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 102308
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "VOLARA",
+      "name": "Volaris A",
+      "market_symbol": "VOLARA.MX",
+      "currency": "MXN",
+      "status": "NO_TRADE",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 11.77,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/VOLARA.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 9572
+      },
+      "technical": {
+        "mom_5d_pct": -2.88,
+        "mom_20d_pct": 4.32,
+        "rvol": 0.72,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 0.4271,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "AUGUST_TRAFFIC_LATEST",
+      "evidence_summary": "El último tráfico oficial localizado es agosto, publicado 3-sep, con factor de ocupación 84.4%; septiembre no está verificado. Cerró 11.77, -1.26%, RVol 0.72.",
+      "watch_condition": "Wait for verified September traffic/capacity data and a price reversal with volume; no numeric entry is validated for tomorrow.",
+      "risk_flags": [
+        "Negative day and five-session movement",
+        "Relative volume was 0.78 at 14:07",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://ir.volaris.com/news-events/press-releases/",
+        "https://ir.volaris.com/financial-information/traffic-reports/",
+        "https://finance.yahoo.com/quote/VOLARA.MX/",
+        "https://query2.finance.yahoo.com/v8/finance/chart/VOLARA.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-09-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer traffic release"
+        },
+        "event_time": {
+          "date": "2026-08",
+          "time_local": null,
+          "precision": "month_only",
+          "description": "August traffic/load factor; September traffic not verified."
+        },
+        "classification": "Historical primary traffic report; no September update verified; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-03",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer traffic release"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/VOLARA.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 9572
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "GFNORTEO",
+      "name": "Banorte O",
+      "market_symbol": "GFNORTEO.MX",
+      "currency": "MXN",
+      "status": "NO_TRADE",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 187.41,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GFNORTEO.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 70843
+      },
+      "technical": {
+        "mom_5d_pct": -4.88,
+        "mom_20d_pct": -5.46,
+        "rvol": 1.22,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 5.0971,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "PRIMARY_MATERIAL_EVENT_VERIFIED_PUBLICATION_TIME_UNKNOWN",
+      "evidence_summary": "BMV lists a Sep 18 volume notice. Oct 5-dated Tier 2 redemption for Oct 4 remains latest issuer event; already captured.",
+      "watch_condition": "Keep NO_TRADE. Review the issuer event’s capital and earnings effects against the next verified filing, then require a fresh regular-session price, price/volume confirmation, verified Actinver series, portfolio state, and after-cost risk/reward before any manual order.",
+      "risk_flags": [
+        "Negative 5- and 20-session momentum",
+        "Earnings are later in October",
+        "Actinver identity unverified",
+        "Tier 2 capital reduction effect not quantified",
+        "Publication hour unknown relative to prior cut"
+      ],
+      "source_urls": [
+        "https://investors.banorte.com/en/news-and-events/events-and-presentations",
+        "https://finance.yahoo.com/quote/GFNORTEO.MX/",
+        "https://investors.banorte.com/es/news-and-events/press-releases/2026",
+        "https://investors.banorte.com/~/media/Files/B/Banorte-IR/press-release/es/2026/ER_Amortizacion_Anticipada_Notas_Tier2_04oct26.pdf",
+        "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GFNORTE-5433-CGEN_CAPIT",
+        "https://query2.finance.yahoo.com/v8/finance/chart/GFNORTEO.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Banorte issuer material-event page; official PDF dated Oct 5"
+        },
+        "event_time": {
+          "date": "2026-10-04",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Banorte fully prepaid USD 74.009m of 5.750% Tier 2 subordinated preferred non-convertible obligations, BNR1031 575C (formerly BANOC36), on the Optional Call Date."
+        },
+        "classification": "Primary issuer material event newly verified in this cut; publication date is Oct 5 but exact posting time is absent, so it cannot be assigned to the interval after 17:16. It is not a standalone buy signal; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "discovered_in_current_cut": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Banorte issuer material-event page; official PDF dated Oct 5"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/GFNORTEO.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 70843
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "WALMEX",
+      "name": "Walmex",
+      "market_symbol": "WALMEX.MX",
+      "currency": "MXN",
+      "status": "WATCH",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 46.44,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/WALMEX.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 3028998
+      },
+      "technical": {
+        "mom_5d_pct": -0.43,
+        "mom_20d_pct": -2.46,
+        "rvol": 0.98,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 0.9721,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "NO_NEW_MONTHLY_SALES_RELEASE_VERIFIED",
+      "evidence_summary": "Resultados 2T26 son los últimos ubicados; calendario oficial de 3T26 para 27-oct. No se verificó venta mensual de septiembre. Cerró +0.58%, RVol 0.98.",
+      "watch_condition": "Wait for official monthly sales or 3Q results plus price/volume confirmation; a one-day bounce is insufficient.",
+      "risk_flags": [
+        "Negative 20-session movement",
+        "Relative volume was 0.78 at 14:07",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://www.walmex.mx/",
+        "https://www.walmex.mx/informacion-financiera/trimestral.html",
+        "https://finance.yahoo.com/quote/WALMEX.MX/",
+        "https://www.walmex.mx/informacion-financiera/mensual.html",
+        "https://query2.finance.yahoo.com/v8/finance/chart/WALMEX.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-07-22",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer Q2 results"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "period_only",
+          "description": "Q2 2026 results; September monthly sales not verified. Issuer calendar lists Q3 results Oct 27."
+        },
+        "classification": "No new monthly sales release verified; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-07-22",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer Q2 results"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/WALMEX.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 3028998
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "CEMEXCPO",
+      "name": "Cemex CPO",
+      "market_symbol": "CEMEXCPO.MX",
+      "currency": "MXN",
+      "status": "WATCH",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 17.36,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/CEMEXCPO.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 6866776
+      },
+      "technical": {
+        "mom_5d_pct": 0.23,
+        "mom_20d_pct": -6.18,
+        "rvol": 0.74,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 0.4464,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "OCT_1_PROPOSED_ASSET_SALE; TERMS_NOT_DISCLOSED",
+      "evidence_summary": "BMV lists Sep 18 unusual volume; Vicat's Oct 1 conditional process remains latest fundamental item.",
+      "watch_condition": "Wait for definitive terms, regulatory/closing updates and price confirmation. No numeric entry is validated for tomorrow.",
+      "risk_flags": [
+        "Deal is proposed and conditional",
+        "20-session movement -6.18%",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://www.vicat.com/actualites/projet-dacquisition-par-le-groupe-vicat-des-filiales-de-beton-pret-a-lemploi-et-granulats",
+        "https://finance.yahoo.com/quote/CEMEXCPO.MX/",
+        "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/CEMEX-5203-CGEN_C",
+        "https://query2.finance.yahoo.com/v8/finance/chart/CEMEXCPO.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Vicat corporate announcement; no new Cemex filing verified"
+        },
+        "event_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "description": "Conditional exclusive negotiations to acquire ready-mix concrete and aggregates assets in France; terms/price not disclosed."
+        },
+        "classification": "Historical conditional process; not a new Oct 5 event; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-10-01",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Vicat corporate announcement; no new Cemex filing verified"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/CEMEXCPO.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 6866776
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    },
+    {
+      "ticker": "ALPEKA",
+      "name": "Alpek A",
+      "market_symbol": "ALPEKA.MX",
+      "currency": "MXN",
+      "status": "NO_TRADE",
+      "actinver_identity_verified": false,
+      "quote": {
+        "price": 14.56,
+        "currency": "MXN",
+        "observed_at_local": "2026-10-05T13:59:00-06:00",
+        "age_minutes_at_preparation": 616,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/ALPEKA.MX?range=5d&interval=1m&includePrePost=true",
+        "actionable": false,
+        "last_regular_market_time_local": "2026-10-05T13:59:00-06:00",
+        "quote_checked_at_local": "2026-10-06T00:15:28-06:00",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "provider_delay": "not disclosed",
+        "price_basis": "last regular-session bar with positive reported volume; non-executable",
+        "latest_after_hours_snapshot": null,
+        "regular_bar_volume": 27635
+      },
+      "technical": {
+        "mom_5d_pct": -1.74,
+        "mom_20d_pct": 12.88,
+        "rvol": 0.37,
+        "rvol_as_of_local": "2026-10-05T14:00:00-06:00",
+        "atr14": 0.485,
+        "rvol_comparison_sessions": 19,
+        "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
+      },
+      "primary_catalyst_status": "NO_NEW_ISSUER_EVENT_VERIFIED",
+      "evidence_summary": "BMV lists a Sep 18 volume notice; Sep 14 IPC inclusion remains latest corporate item.",
+      "watch_condition": "Wait for consolidation and a new primary catalyst; do not chase the 20-session extension. No numeric entry is validated for tomorrow.",
+      "risk_flags": [
+        "20-session movement +12.88%",
+        "Negative day and five-session movement",
+        "Relative volume was 0.68 at 14:07",
+        "Actinver identity unverified"
+      ],
+      "source_urls": [
+        "https://www.alpek.com/es/investor-center/news-press-releases/",
+        "https://www.alpek.com/es/investor-center/reports/",
+        "https://finance.yahoo.com/quote/ALPEKA.MX/",
+        "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/ALPEK-5057-CGEN_CAPIT",
+        "https://query2.finance.yahoo.com/v8/finance/chart/ALPEKA.MX?range=1d&interval=1m&includePrePost=true"
+      ],
+      "event_timing": {
+        "latest_relevant_publication": {
+          "date": "2026-09-14",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        },
+        "event_time": {
+          "date": null,
+          "time_local": null,
+          "precision": "date_not_captured",
+          "description": "Announced return to S&P/BMV IPC; effective index date not captured."
+        },
+        "classification": "Historical issuer event; no new announcement found; no new publication verified after 22:08.",
+        "scan_observed_at_local": "2026-10-06T00:15:28-06:00",
+        "new_relevant_publication_since_previous_review": false,
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "publication_time": {
+          "date": "2026-09-14",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "issuer release"
+        }
+      },
+      "quote_refresh": {
+        "observed_at_local": "2026-10-06T00:15:28-06:00",
+        "observed_at": "2026-10-06T00:15:28-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:00-06:00",
+        "currency": "MXN",
+        "provider": "Yahoo Finance chart API (query2.finance.yahoo.com), interval 1m, range=5d, includePrePost=true; demora nominal no publicada",
+        "listing": "MEX",
+        "venue": "not exposed",
+        "age_minutes_at_cut": 616,
+        "nominal_provider_delay": "not disclosed",
+        "actionable": false,
+        "source_url": "https://query2.finance.yahoo.com/v8/finance/chart/ALPEKA.MX?range=5d&interval=1m&includePrePost=true",
+        "price_basis": "last regular-session bar with positive reported volume",
+        "separate_after_hours_observation": null,
+        "regular_bar_volume": 27635
+      },
+      "after_hours_snapshot": null,
+      "new_primary_publication_since_previous_cut": false
+    }
+  ],
+  "sources": [
+    {
+      "title": "Boeing Oct 5 PAC-3 MSE contract release",
+      "url": "https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-receives-seven-year-contract-to-accelerate-PAC-3-MSE-seeker-output/default.aspx"
+    },
+    {
+      "title": "Broadcom Q3 FY2026 results and Q4 outlook",
+      "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "title": "NVIDIA Q2 FY2027 results",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/"
+    },
+    {
+      "title": "Applied Materials and Besi Oct 1 partnership",
+      "url": "https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-and-besi-expand-strategic-partnership-advance/"
+    },
+    {
+      "title": "Wells Fargo Oct 5 earnings-date notice",
+      "url": "https://newsroom.wf.com/news-releases/news-details/2026/Wells-Fargo-to-Announce-Third-Quarter-2026-Earnings-on-Oct--13-2026/default.aspx"
+    },
+    {
+      "title": "América Móvil share class information",
+      "url": "https://www.americamovil.com/Spanish/relacion-con-inversionistas/informacion-de-acciones/grafico-de-valores/default.aspx"
+    },
+    {
+      "title": "GAP official traffic/releases page",
+      "url": "https://www.aeropuertosgap.com.mx/es/material-events.html"
+    },
+    {
+      "title": "HSBC upgrade reported by Investing.com (secondary source)",
+      "url": "https://es.investing.com/news/analyst-ratings/hsbc-mejora-la-calificacion-de-las-acciones-de-grupo-aeroportuario-del-pacifico-93CH-3860000"
+    },
+    {
+      "title": "Grupo México 2Q26 report",
+      "url": "https://gmexico.com/GMDocs/ReportesFinancieros/ING/2026/RF_EN_2026_2Q.pdf"
+    },
+    {
+      "title": "Peñoles investor releases and 2Q26 results",
+      "url": "https://www.penoles.com.mx/?wcnav.model=%2Foracle%2Fwebcenter%2Fportalapp%2Fnavigations%2Fdefault-navigation-model"
+    },
+    {
+      "title": "ASUR official releases, latest traffic report",
+      "url": "https://www.asur.com.mx/comunicados-1?category=42322kvd17xz14zqpr257rxtwp&offset=0&year="
+    },
+    {
+      "title": "OMA traffic reports",
+      "url": "https://ir.oma.aero/en/traffic-reports/"
+    },
+    {
+      "title": "OMA events calendar",
+      "url": "https://ir.oma.aero/en/calendario-de-eventos/"
+    },
+    {
+      "title": "Volaris IR press releases",
+      "url": "https://ir.volaris.com/news-events/press-releases/"
+    },
+    {
+      "title": "Banorte event calendar",
+      "url": "https://investors.banorte.com/en/news-and-events/events-and-presentations"
+    },
+    {
+      "title": "Walmex latest releases and 3Q calendar",
+      "url": "https://www.walmex.mx/"
+    },
+    {
+      "title": "Vicat Oct 1 proposed Cemex asset acquisition",
+      "url": "https://www.vicat.com/actualites/projet-dacquisition-par-le-groupe-vicat-des-filiales-de-beton-pret-a-lemploi-et-granulats"
+    },
+    {
+      "title": "Alpek official releases",
+      "url": "https://www.alpek.com/es/investor-center/news-press-releases/"
+    },
+    {
+      "title": "Actinver Reto rules and mechanics",
+      "url": "https://www.retoactinver.com/bases-y-mecanica"
+    },
+    {
+      "title": "ASUR Sep 28 CPC Aeroportos material filing",
+      "url": "https://www.asur.com.mx/media/Comunicados%20de%20prensa/Comunicados%20a%20Bolsa/2026/9/ASUR-Aeropuerto-Cancun-Mexico-Evento-Relevante-Sep-2026.pdf"
+    },
+    {
+      "title": "BMV trading hours",
+      "url": "https://www.bmv.com.mx/docs-pub/MARCO_NORMATIVO/CTEN_MERMO/20231106_V1.90_Horario%20DC_Filtros%201E_%20Avisos%20en%20Susp_ReagruapTarif%20Anexo12%28ESP%29.pdf"
+    },
+    {
+      "title": "BMV 2026 non-trading-day calendar",
+      "url": "https://www.bmv.com.mx/es/Grupo_BMV/Calendario_de_dias_festivos/_rid/662/_mod/TAB_DIAS_FEST/_nid/688/_act/add"
+    },
+    {
+      "title": "TheFly report on Morgan Stanley WFC upgrade, via TipRanks (secondary)",
+      "url": "https://www.tipranks.com/news/the-fly/wells-fargo-upgraded-to-overweight-from-equal-weight-at-morgan-stanley-thefly-news"
+    },
+    {
+      "title": "WFC analyst-upgrade roundup for Oct 5 (secondary)",
+      "url": "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/10/62160112/this-wells-fargo-analyst-turns-bullish-here-are-top-5-upgrades-for-monday"
+    },
+    {
+      "title": "AMAT Form 4 filed Oct 5; transaction Oct 1",
+      "url": "https://ir.appliedmaterials.com/node/29691/html"
+    },
+    {
+      "title": "AMAT Form 4 filing metadata",
+      "url": "https://ir.appliedmaterials.com/sec-filings/sec-filing/4/0001628280-26-065093"
+    },
+    {
+      "title": "ASUR Sep 28, 2026 material event (official PDF)",
+      "url": "https://probemonitor.asur.com.mx/media/Comunicados%20de%20prensa/Comunicados%20a%20Bolsa/2026/9/ASUR-Aeropuerto-Cancun-Mexico-Evento-Relevante-Sep-2026.pdf"
+    },
+    {
+      "title": "ASUR official latest releases",
+      "url": "https://probemonitor.asur.com.mx/"
+    },
+    {
+      "title": "Banorte official 2026 press releases",
+      "url": "https://investors.banorte.com/es/news-and-events/press-releases/2026"
+    },
+    {
+      "title": "Banorte official investor calendar and next earnings event",
+      "url": "https://investors.banorte.com/en"
+    },
+    {
+      "title": "Walmex official quarterly reports",
+      "url": "https://www.walmex.mx/informacion-financiera/trimestral.html"
+    },
+    {
+      "title": "América Móvil BMV filings",
+      "url": "https://www.americamovil.com/Spanish/relacion-con-inversionistas/informes-financieros/bmv-filings/default.aspx"
+    },
+    {
+      "title": "Peñoles official investor releases",
+      "url": "https://www.penoles.com.mx/inversionistas/comunicados.html"
+    },
+    {
+      "title": "Peñoles official reporting calendar",
+      "url": "https://www.penoles.com.mx/inversionistas/reportes-y-presentaciones/"
+    },
+    {
+      "title": "ASUR event summary page",
+      "url": "https://probemonitor.asur.com.mx/evento-relevante-informacion-financiera-y-de-divulgacion-respecto-de-acontecimientos-recientes-y-resultados-de-operacion"
+    },
+    {
+      "title": "Banorte official 2Q26 results report",
+      "url": "https://investors.banorte.com/~/media/Files/B/Banorte-IR/financial-information/quarterly-results/en/2026/2Q26/2Q26__.pdf"
+    },
+    {
+      "title": "Nasdaq market activity and regular/after-hours schedule",
+      "url": "https://www.nasdaq.com/market-activity"
+    },
+    {
+      "title": "Banorte Oct 5 official material event: USD 74.009m Tier 2 early redemption",
+      "url": "https://investors.banorte.com/~/media/Files/B/Banorte-IR/press-release/es/2026/ER_Amortizacion_Anticipada_Notas_Tier2_04oct26.pdf"
+    },
+    {
+      "title": "Volaris IR market widget and issuer news",
+      "url": "https://ir.volaris.com/"
+    },
+    {
+      "title": "Walmex monthly sales page (dynamic current list)",
+      "url": "https://www.walmex.mx/informacion-financiera/mensual.html"
+    },
+    {
+      "title": "BMV issuer-events and press-room page",
+      "url": "https://bmv.com.mx/es/sala-de-prensa?viewPage=AVISOS_OFERTAS"
+    },
+    {
+      "title": "Broadcom investor center",
+      "url": "https://investors.broadcom.com/"
+    },
+    {
+      "title": "BMV América Móvil relevant events",
+      "url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/AMX-6024-CGEN_CAPIT"
+    },
+    {
+      "title": "ASUR issuer releases",
+      "url": "https://www.asur.com.mx/comunicados-1"
+    },
+    {
+      "title": "Vicat issuer announcement on Cemex negotiations",
+      "url": "https://www.vicat.com/actualites/projet-dacquisition-par-le-groupe-vicat-des-filiales-de-beton-pret-lemploi-et-granulats"
+    },
+    {
+      "title": "Alpek issuer releases",
+      "url": "https://www.alpek.com/investor-center/"
+    },
+    {
+      "title": "Yahoo Finance chart API — U.S. postmarket snapshot, one-minute interval",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m&includePrePost=true"
+    },
+    {
+      "title": "Yahoo Finance chart API — BMV five-minute bars",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GAPB.MX?range=1d&interval=5m"
+    },
+    {
+      "title": "BMV trading hours",
+      "url": "https://www.bmv.com.mx/es/Grupo_BMV/Calendario_de_dias_festivos/_rid/662/_mod/TAB_HORARIOS_NEG/_nid/688/_act/add"
+    },
+    {
+      "title": "Grupo México BMV events",
+      "url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GMEXICO-6008-CGEN_CAPIT"
+    },
+    {
+      "title": "OMA BMV events",
+      "url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/OMA-6707-CGEN_CAPIT"
+    },
+    {
+      "title": "OMA issuer releases",
+      "url": "https://ir.oma.aero/es/comunicados-de-prensa/"
+    },
+    {
+      "title": "GAP BMV events",
+      "url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GAP-6579-CGEN_CAPIT"
+    },
+    {
+      "title": "Banorte BMV events",
+      "url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GFNORTE-5433-CGEN_CAPIT"
+    },
+    {
+      "title": "Alpek BMV events",
+      "url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/ALPEK-5057-CGEN_CAPIT"
+    },
+    {
+      "title": "Cemex BMV events",
+      "url": "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/CEMEX-5203-CGEN_C"
+    },
+    {
+      "title": "Broadcom Sep 29 AST facility completion release",
+      "url": "https://investors.broadcom.com/news-releases/news-release-details/ast-completes-singapores-first-high-end-fc-bga-substrate"
+    },
+    {
+      "title": "NVIDIA Sep 9 historical release",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Expands-AI-Infrastructure-Capacity-in-Partnership-With-Australias-Data-Center-Ecosystem/default.aspx"
+    }
+  ],
+  "report_metadata": {
+    "timestamp_local": "2026-10-06T00:15:28-06:00",
+    "timestamp_utc": "2026-10-06T06:15:28Z",
+    "compared_with": "reports/intraday/2026-10-05_2208_cdmx.md",
+    "watchlist_scope": [
+      "BA",
+      "AVGO",
+      "NVDA",
+      "AMAT",
+      "WFC",
+      "AMXB",
+      "GAPB",
+      "GMEXICOB",
+      "PE&OLES",
+      "ASURB",
+      "OMAB",
+      "VOLARA",
+      "GFNORTEO",
+      "WALMEX",
+      "CEMEXCPO",
+      "ALPEKA"
+    ],
+    "decision": "NO_TRADE",
+    "orders": 0,
+    "email_sent": false,
+    "corrections": [
+      {
+        "corrected_at_local": "2026-10-05T16:47:15-06:00",
+        "finding": "El 1-oct-2026 a las 17:35 CDMX BMV publicó el evento relevante de América Móvil: una subsidiaria cerró la adquisición del 72.83% de Desktop S.A. El hecho ocurrió el 1-oct; publicación after-hours. No es publicación nueva del 5-oct. La omisión se corrige en el corte posterior; decisión sigue NO_TRADE.",
+        "primary_source_urls": [
+          "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/AMX-6024-CGEN_CAPIT",
+          "https://www.bmv.com.mx/docs-pub/eventemi/eventemi_1592736_1.pdf"
+        ],
+        "note": "La fila original se conserva como reporte histórico y esta enmienda registra el descubrimiento posterior."
+      },
+      {
+        "corrected_at_local": "2026-10-05T16:47:15-06:00",
+        "finding": "GAP IR lists an MXN 8bn bank credit-line disclosure dated Sep 11 and August traffic (+0.5% YoY) dated Sep 4. Both are primary but predate Oct 5. The HSBC Buy rating is secondary analyst research dated Oct 5. Earlier reports omitted the Sep 11 financing event; no trade signal follows.",
+        "primary_source_urls": [
+          "https://www.aeropuertosgap.com.mx/es/material-events.html"
+        ],
+        "note": "Historical reports receive this post-cut coverage correction."
+      },
+      {
+        "corrected_at_local": "2026-10-05T18:08:44-06:00",
+        "finding": "Banorte IR lists an Oct 5 material event and its official PDF reports full early redemption of USD 74.009m of 5.750% Tier 2 notes on Oct 4. The posting hour is not available, so it is unknown whether it was published after the 17:16 comparison cut. No buy signal follows.",
+        "primary_source_urls": [
+          "https://investors.banorte.com/es/news-and-events/press-releases/2026",
+          "https://investors.banorte.com/~/media/Files/B/Banorte-IR/press-release/es/2026/ER_Amortizacion_Anticipada_Notas_Tier2_04oct26.pdf"
+        ],
+        "note": "This records a newly verified source finding; it does not claim the item was first published after 17:16."
+      },
+      {
+        "corrected_at_local": "2026-10-05T21:00:11.987-06:00",
+        "finding": "Final visible Yahoo extended-hours chart rows for BA, AVGO, NVDA, AMAT and WFC report volume 0; excluded as unverified marks. Current references are last regular-session prices, stale and non-executable.",
+        "primary_source_urls": [
+          "https://query2.finance.yahoo.com/v8/finance/chart/BA?range=1d&interval=1m&includePrePost=true",
+          "https://query2.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m&includePrePost=true",
+          "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m&includePrePost=true",
+          "https://query2.finance.yahoo.com/v8/finance/chart/AMAT?range=1d&interval=1m&includePrePost=true",
+          "https://query2.finance.yahoo.com/v8/finance/chart/WFC?range=1d&interval=1m&includePrePost=true"
+        ],
+        "note": "Correction to prior report's after-hours chart interpretation."
+      },
+      {
+        "corrected_at_local": "2026-10-05T21:00:11.987-06:00",
+        "finding": "BMV/issuer event listings verify historical Group México-Saavi close, OMA IR change, and Sep 18 volume notices for OMA, GAP, Banorte, Alpek and Cemex; all before 19:09.",
+        "primary_source_urls": [
+          "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GMEXICO-6008-CGEN_CAPIT",
+          "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/OMA-6707-CGEN_CAPIT",
+          "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GAP-6579-CGEN_CAPIT",
+          "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/GFNORTE-5433-CGEN_CAPIT",
+          "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/ALPEK-5057-CGEN_CAPIT",
+          "https://www.bmv.com.mx/es/emisoras/eventosrelevantes/CEMEX-5203-CGEN_C"
+        ],
+        "note": "Coverage correction only."
+      },
+      {
+        "corrected_at_local": "2026-10-05T21:34:22-06:00",
+        "finding": "Refreshed Yahoo one-minute charts at 21:34 CDMX and selected last positive-volume regular bars. NVDA reference is USD 238.87 at 14:00 CDMX; its later USD 240.1954 mark reports volume 0 and is excluded. All five US extended marks report zero volume.",
+        "primary_source_urls": [
+          "https://query2.finance.yahoo.com/v8/finance/chart/BA?range=1d&interval=1m&includePrePost=true",
+          "https://query2.finance.yahoo.com/v8/finance/chart/AVGO?range=1d&interval=1m&includePrePost=true",
+          "https://query2.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m&includePrePost=true",
+          "https://query2.finance.yahoo.com/v8/finance/chart/AMAT?range=1d&interval=1m&includePrePost=true",
+          "https://query2.finance.yahoo.com/v8/finance/chart/WFC?range=1d&interval=1m&includePrePost=true"
+        ],
+        "note": "This cut records refreshed reference prices; previous reports remain preserved."
+      },
+      {
+        "corrected_at_local": "2026-10-06T00:15:28-06:00",
+        "finding": "Se añadió comunicado oficial NVIDIA del 9-sep sobre expansión de infraestructura de IA en Australia. Publicación anterior al comparativo de 22:08; es corrección histórica, no noticia nueva.",
+        "primary_source_urls": [
+          "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Expands-AI-Infrastructure-Capacity-in-Partnership-With-Australias-Data-Center-Ecosystem/default.aspx"
+        ],
+        "note": "No cambia estado ni decisión."
+      }
+    ],
+    "observation_time_semantics": "observed_at es la hora de consulta; publication_time es la fecha/hora visible de publicación; event_time es el hecho subyacente y se deja sin determinar cuando no se publica. La hora de barra no es la hora de consulta.",
+    "actionable_change": false,
+    "latest_event_discovered": {
+      "ticker": "NVDA",
+      "publication_date": "2026-09-09",
+      "publication_time_local": null,
+      "event_date": "2026-09-09",
+      "newly_verified_this_cut": true,
+      "publication_after_comparison_cut": false,
+      "decision_effect": "WAIT_FOR_PULLBACK",
+      "note": "Cobertura histórica verificada en este corte; publicación anterior al informe comparativo de 22:08."
+    },
+    "incremental_cut": true
+  }
+}
