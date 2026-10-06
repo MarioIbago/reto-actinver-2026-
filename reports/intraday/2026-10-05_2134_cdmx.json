@@ -29,8 +29,8 @@
     "order_entry": "human_manual_only"
   },
   "research": {
-    "comparison_report": "reports/intraday/2026-10-05_2134_cdmx.md",
-    "comparison_cut_local": "2026-10-05T21:34:22-06:00",
+    "comparison_report": "reports/intraday/2026-10-05_2100_cdmx.md",
+    "comparison_cut_local": "2026-10-05T21:00:11.987-06:00",
     "deep_research_status": "INCREMENTAL_PUBLIC_SOURCE_CHECK_COMPLETE; PERPLEXITY_DEEP_RESEARCH_NOT_USED",
     "method": "Incremental check against the 21:00 CDMX report. Refreshed one-minute Yahoo chart bars for all 16 symbols; checked issuer/BMV pages and calendars for newer publications. Source-check time, publication time and underlying event time remain separate. No Actinver access or orders.",
     "primary_sources_verified": 42,
@@ -857,7 +857,7 @@
       "Walmex's accessible monthly page is largely dynamic; the static listing did not expose a September 2026 sales release, so absence is not asserted.",
       "Volaris traffic archive did not expose a September 2026 report in accessible page content; absence is not asserted."
     ],
-    "comparison_input_report": "reports/intraday/2026-10-05_2134_cdmx.json",
+    "comparison_input_report": "reports/intraday/2026-10-05_2100_cdmx.json",
     "current_cut_watchlist_checked": [
       "BA",
       "AVGO",
