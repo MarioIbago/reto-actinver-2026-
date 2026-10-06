@@ -29,8 +29,8 @@
     "order_entry": "human_manual_only"
   },
   "research": {
-    "comparison_report": "reports/intraday/2026-10-05_1808_cdmx.md",
-    "comparison_cut_local": "2026-10-05T18:08:44-06:00",
+    "comparison_report": "reports/intraday/2026-10-05_1716_cdmx.md",
+    "comparison_cut_local": "2026-10-05T17:16:00-06:00",
     "deep_research_status": "PUBLIC_WEB_RESEARCH_COMPLETE; PERPLEXITY_DEEP_RESEARCH_UNAVAILABLE_UPGRADE_REQUIRED",
     "method": "Fuentes web públicas, páginas de emisores y snapshots de cotización; se compararon publicaciones del emisor con notas secundarias. Investigación profunda de Perplexity no se ejecutó porque la sesión mostraba requisito de actualizar el plan.",
     "primary_sources_verified": 36,
@@ -461,7 +461,7 @@
         "new_publication_since_previous_cut": false
       }
     ],
-    "primary_source_count_definition": "Distinct URL count for issuer, exchange, or filing pages related to the 16-name watchlist; secondary research, quote pages, and macro pages excluded.",
+    "primary_source_count_definition": "Distinct issuer, exchange, or filing URLs for the 16-name watchlist; excludes quote pages, secondary analyst notes, and operational market-hours references.",
     "source_scan_warnings": [
       "Banorte's Oct 5 event PDF gives the transaction date and document date, but no publication time; interval placement relative to the 17:16 cut is unknown.",
       "Yahoo Finance quote pages returned HTTP 429 in browser retrieval; the public chart API returned the 11 BMV final bars. Nominal delay is not disclosed.",
@@ -469,17 +469,34 @@
       "Walmex monthly-sales page is dynamically rendered and did not expose a current September 2026 sales entry in extracted page text; no such release was verified.",
       "Peñoles' official page still lists the Aug 3 material-event notice; its linked PDF remains unavailable (404), so event details remain unverified."
     ],
-    "comparison_input_report": "reports/intraday/2026-10-05_1647_cdmx.md",
+    "comparison_input_report": "reports/intraday/2026-10-05_1716_cdmx.md",
+    "current_cut_watchlist_checked": [
+      "BA",
+      "AVGO",
+      "NVDA",
+      "AMAT",
+      "WFC",
+      "AMXB",
+      "GAPB",
+      "GMEXICOB",
+      "PE&OLES",
+      "ASURB",
+      "OMAB",
+      "VOLARA",
+      "GFNORTEO",
+      "WALMEX",
+      "CEMEXCPO",
+      "ALPEKA"
+    ],
     "current_cut_summary": "Banorte event discovered with date-only publication timestamp; no signal passed all gates. Other 15 watchlist issuer pages/release listings showed no new material primary publication verified in this cut.",
-    "quote_capture_observed_at": "2026-10-05T18:08:44-06:00",
-    "quotes_actionable": false
+    "quote_capture_observed_at": "2026-10-05T18:08:44-06:00"
   },
   "market_data": {
-    "quote_provider": "Yahoo Finance five-minute regular-session bars; separate public finance-feed snapshots for U.S. after-hours. Neither source provides Actinver bid/ask or authenticated simulator identities.",
-    "latest_us_regular_session_bar_local": "2026-10-05T14:00:00-06:00",
-    "latest_mexico_bar_local": "2026-10-05T14:00:00-06:00",
-    "mexico_refresh_check_local": "2026-10-05T17:16:00-06:00",
-    "refresh_result": "Verificación 17:16 CDMX: las 16 barras regulares de 5 minutos permanecen en 13:55–14:00 (196 minutos de antigüedad frente a 167 en el corte 16:47); BMV y sesiones regulares de EE. UU. están cerradas. Cinco snapshots postmercado tienen último trade entre 16:55 y 17:00 CDMX, sin cambio de precio contra el corte previo; venue y bid/ask no expuestos. Datos informativos, no ejecutables.",
+    "quote_provider": "Yahoo Finance chart API for 11 BMV regular-session bars; public finance-feed snapshots for five U.S. after-hours trades. Neither source provides Actinver bid/ask or authenticated simulator identities.",
+    "latest_us_regular_session_bar_local": "2026-10-05T13:55:00-06:00/2026-10-05T14:00:00-06:00",
+    "latest_mexico_bar_local": "2026-10-05T13:55:00-06:00/2026-10-05T14:00:00-06:00",
+    "mexico_refresh_check_local": "2026-10-05T18:08:44-06:00",
+    "refresh_result": "Refresh a las 18:08:44 CDMX: API de Yahoo devuelve las mismas 11 barras finales BMV (13:55–14:00), con trades entre 13:59:38 y 13:59:58; edad redondeada 249 minutos. Cinco snapshots de postmercado de EE. UU. conservaron precio y ahora registran último trade entre 17:48 y 17:52, edad 16–21 min. BMV y postmercado cerrados; demora nominal no divulgada y no hay bid/ask.",
     "relative_volume_as_of_local": "2026-10-05T14:00:00-06:00",
     "relative_volume_method": "Cumulative regular-session volume through the same 5-minute cutoff divided by the mean cumulative volume at that cutoff across the prior 19 sessions.",
     "quotes_actionable": false,
@@ -490,7 +507,8 @@
       "investing_reference_mxn": 371.44,
       "investing_page_date": "2026-10-05",
       "investing_timestamp": null,
-      "note": "Secondary quote has no precise observation time and differs by about 2.0%; neither is treated as executable."
+      "note": "Secondary quote has no precise observation time and differs by about 2.0%; neither is treated as executable.",
+      "last_checked_at_local": "2026-10-05T18:08:44-06:00"
     },
     "macro_context": "No se refrescó en este corte; la decisión usa únicamente la watchlist solicitada.",
     "additional_provider_conflicts": [
@@ -507,28 +525,52 @@
         "finance_snapshot_low_usd": 354.14,
         "finance_snapshot_time_local": "2026-10-05T15:15:20-06:00",
         "note": "Both observed lows fall in/near the USD 353–357 pullback zone; neither source supplies a fresh post-pullback stabilization signal."
+      },
+      {
+        "ticker": "VOLARA",
+        "yahoo_reference_mxn": 11.77,
+        "yahoo_bar_local": "2026-10-05T14:00:00-06:00",
+        "issuer_ir_widget_reference_mxn": 11.88,
+        "issuer_widget_time_local": "2026-10-05T07:31:00-06:00",
+        "issuer_widget_previous_close_mxn": 11.92,
+        "issuer_widget_volume": 4660,
+        "note": "Volaris IR widget is timestamped before the BMV regular session and does not identify the market-data vendor; conflicts with the regular-session Yahoo close. Neither quote is executable."
       }
     ],
-    "latest_us_after_hours_snapshot_local": "2026-10-05T17:00:08-06:00",
-    "after_hours_snapshot_provider": "Snapshot de feed público; hora del último trade visible en la herramienta de finanzas. Venue/bolsa exactos no expuestos; informativo, no ejecutable.",
-    "quote_delay_note": "Edad calculada desde el último trade/barra observado hasta 17:16:00 CDMX. La demora nominal de Yahoo Finance no se expuso. El feed postmercado no revela proveedor final ni venue; los cinco snapshots son informativos, no ejecutables.",
+    "latest_us_after_hours_snapshot_local": "2026-10-05T17:51:59-06:00 (latest displayed trade among the five U.S. names)",
+    "after_hours_snapshot_provider": "Public finance-feed snapshot; latest trade timestamps shown by the tool, but final vendor and venue are not exposed; quotes are informational, not executable.",
+    "quote_delay_note": "Ages are measured against 2026-10-05T18:08:44-06:00. Yahoo's nominal delay is not disclosed in the retrieved response; U.S. feed vendor delay/venue is not exposed. Mexican last trades are about 249 minutes old; U.S. after-hours last trades are about 16–21 minutes old. No Actinver bid/ask or execution identity.",
     "quote_refreshes": [
       {
         "ticker": "BA",
         "currency": "USD",
         "regular_bar_price": 192.77,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
         "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false,
+        "latest_public_snapshot": {
+          "price": 192.72,
+          "currency": "USD",
+          "last_trade_at_local": "2026-10-05T17:50:20-06:00",
+          "age_minutes_at_cut": 18,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        },
+        "age_minutes_at_cut": 249,
         "after_hours_observation": {
           "price": 192.72,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T16:55:00-06:00",
-          "age_minutes_at_cut": 21,
-          "provider": "Public finance feed snapshot; final vendor and venue not exposed",
+          "last_trade_at_local": "2026-10-05T17:50:20-06:00",
+          "age_minutes_at_cut": 18,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
         }
       },
@@ -537,17 +579,31 @@
         "currency": "USD",
         "regular_bar_price": 362.875,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
         "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false,
+        "latest_public_snapshot": {
+          "price": 362.51,
+          "currency": "USD",
+          "last_trade_at_local": "2026-10-05T17:51:56-06:00",
+          "age_minutes_at_cut": 17,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        },
+        "age_minutes_at_cut": 249,
         "after_hours_observation": {
           "price": 362.51,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T17:00:00-06:00",
-          "age_minutes_at_cut": 16,
-          "provider": "Public finance feed snapshot; final vendor and venue not exposed",
+          "last_trade_at_local": "2026-10-05T17:51:56-06:00",
+          "age_minutes_at_cut": 17,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
         }
       },
@@ -556,17 +612,31 @@
         "currency": "USD",
         "regular_bar_price": 239.11,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
         "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false,
+        "latest_public_snapshot": {
+          "price": 238.9,
+          "currency": "USD",
+          "last_trade_at_local": "2026-10-05T17:51:59-06:00",
+          "age_minutes_at_cut": 17,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        },
+        "age_minutes_at_cut": 249,
         "after_hours_observation": {
           "price": 238.9,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T17:00:08-06:00",
-          "age_minutes_at_cut": 15,
-          "provider": "Public finance feed snapshot; final vendor and venue not exposed",
+          "last_trade_at_local": "2026-10-05T17:51:59-06:00",
+          "age_minutes_at_cut": 17,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
         }
       },
@@ -575,17 +645,31 @@
         "currency": "USD",
         "regular_bar_price": 542.28,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
         "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false,
+        "latest_public_snapshot": {
+          "price": 542.28,
+          "currency": "USD",
+          "last_trade_at_local": "2026-10-05T17:48:07-06:00",
+          "age_minutes_at_cut": 21,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        },
+        "age_minutes_at_cut": 249,
         "after_hours_observation": {
           "price": 542.28,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T17:00:03-06:00",
-          "age_minutes_at_cut": 15,
-          "provider": "Public finance feed snapshot; final vendor and venue not exposed",
+          "last_trade_at_local": "2026-10-05T17:48:07-06:00",
+          "age_minutes_at_cut": 21,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
         }
       },
@@ -594,17 +678,31 @@
         "currency": "USD",
         "regular_bar_price": 81.435,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
         "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false,
+        "latest_public_snapshot": {
+          "price": 81.44,
+          "currency": "USD",
+          "last_trade_at_local": "2026-10-05T17:50:12-06:00",
+          "age_minutes_at_cut": 19,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        },
+        "age_minutes_at_cut": 249,
         "after_hours_observation": {
           "price": 81.44,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T16:55:00-06:00",
-          "age_minutes_at_cut": 21,
-          "provider": "Public finance feed snapshot; final vendor and venue not exposed",
+          "last_trade_at_local": "2026-10-05T17:50:12-06:00",
+          "age_minutes_at_cut": 19,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
         }
       },
@@ -613,132 +711,187 @@
         "currency": "MXN",
         "regular_bar_price": 20.09,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:57-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "AMXB.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AMXB.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "GAPB",
         "currency": "MXN",
         "regular_bar_price": 379.01,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:51-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "GAPB.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GAPB.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "GMEXICOB",
         "currency": "MXN",
         "regular_bar_price": 235.7,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:56-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "GMEXICOB.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GMEXICOB.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "PE&OLES",
         "currency": "MXN",
         "regular_bar_price": 890.51,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:57-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "PE&OLES.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/PE&OLES.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "ASURB",
         "currency": "MXN",
         "regular_bar_price": 433.32,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:42-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "ASURB.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ASURB.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "OMAB",
         "currency": "MXN",
         "regular_bar_price": 215.56,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:55-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "OMAB.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/OMAB.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "VOLARA",
         "currency": "MXN",
         "regular_bar_price": 11.77,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:56-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "VOLARA.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/VOLARA.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "GFNORTEO",
         "currency": "MXN",
         "regular_bar_price": 187.41,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:38-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "GFNORTEO.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GFNORTEO.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "WALMEX",
         "currency": "MXN",
         "regular_bar_price": 46.44,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:58-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "WALMEX.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/WALMEX.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "CEMEXCPO",
         "currency": "MXN",
         "regular_bar_price": 17.36,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:40-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "CEMEXCPO.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/CEMEXCPO.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       },
       {
         "ticker": "ALPEKA",
         "currency": "MXN",
         "regular_bar_price": 14.56,
         "regular_bar_observed_at_local": "2026-10-05T14:00:00-06:00",
-        "regular_bar_age_minutes_at_cut": 196,
-        "regular_bar_provider": "Yahoo Finance five-minute regular-session bar",
-        "provider_delay_minutes": "not disclosed in this response",
+        "regular_bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:57-06:00",
+        "regular_bar_age_minutes_at_cut": 249,
+        "regular_bar_provider": "Yahoo Finance chart API five-minute regular-session bar",
+        "provider_delay_minutes": "not disclosed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "source_symbol": "ALPEKA.MX",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ALPEKA.MX?range=1d&interval=5m",
         "actionable": false,
-        "after_hours_observation": null
+        "age_minutes_at_cut": 249
       }
     ],
-    "all_market_quotes_actionable": false
+    "all_market_quotes_actionable": false,
+    "quote_capture_observed_at": "2026-10-05T18:08:44-06:00"
   },
   "why_no_orders": [
     "No instrument had a current, executable BMV bid/ask and a verified Actinver simulator series at the same time.",
     "The current portfolio, cash, positions, rank, leader gap, and simulator transaction-cost capture were not verified; no order size can be calculated.",
     "The M6/M7/M8 empirical gates remain NEEDS_MORE_EVIDENCE and M9 remains NO_TRADE; no promoted forecast unlocks an order recommendation.",
     "Quote feeds are delayed; the Mexican feed did not provide a verified closing bar, and GAP quotes conflict between vendors.",
-    "No candidate simultaneously passed fresh primary-catalyst, technical-confirmation, execution-identity, and risk/reward checks.",
-    "Banorte’s official Oct 5 material event reports a USD 74.009m Tier 2 early redemption dated Oct 4, but its capital/earnings impact is not quantified, the quote is stale, and no Actinver series or bid/ask is verified."
+    "No candidate simultaneously passed fresh primary-catalyst, technical-confirmation, execution-identity, and risk/reward checks."
   ],
   "watchlist": [
     {
@@ -751,14 +904,29 @@
       "quote": {
         "price": 192.77,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/BA/",
         "actionable": false,
         "day_low": 191.34,
         "day_high": 195.23,
         "day_change_pct": -0.42,
         "day_open": 194.6,
-        "volume_to_close": 5614066
+        "volume_to_close": 5614066,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T17:50:20-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": {
+          "price": 192.72,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:50:20-06:00",
+          "last_trade_at_local": "2026-10-05T17:50:20-06:00",
+          "age_minutes_at_cut": 18,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        }
       },
       "technical": {
         "mom_5d_pct": -2.73,
@@ -783,12 +951,14 @@
         "https://finance.yahoo.com/quote/BA/"
       ],
       "after_hours_snapshot": {
-        "price_usd": 192.72,
+        "price": 192.72,
         "currency": "USD",
-        "latest_trade_time_utc": "2026-10-05T22:55:00Z",
-        "latest_trade_time_local": "2026-10-05T16:55:00-06:00",
-        "age_minutes_at_preparation": 21,
-        "source": "Public finance feed snapshot; final vendor and exchange/venue not exposed",
+        "observed_at_local": "2026-10-05T17:50:20-06:00",
+        "last_trade_at_local": "2026-10-05T17:50:20-06:00",
+        "age_minutes_at_cut": 18,
+        "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+        "venue": "not exposed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false
       },
       "event_timing": {
@@ -805,9 +975,9 @@
           "description": "Boeing announced an undefinitized PAC-3 MSE contract action; execution/revenue timing not disclosed."
         },
         "classification": "Primary issuer announcement, already known before 16:22.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-10-05",
           "time_local": null,
@@ -816,22 +986,28 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T17:50:20-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "USD",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Public finance-feed snapshot; underlying vendor and venue not exposed",
+        "age_minutes_at_cut": 18,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
+        "source_url": null,
         "separate_after_hours_observation": {
           "price": 192.72,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T16:55:00-06:00",
-          "age_minutes_at_cut": 21,
-          "provider": "Public finance feed snapshot; final vendor not exposed",
+          "observed_at_local": "2026-10-05T17:50:20-06:00",
+          "last_trade_at_local": "2026-10-05T17:50:20-06:00",
+          "age_minutes_at_cut": 18,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
-        },
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        }
       }
     },
     {
@@ -844,14 +1020,29 @@
       "quote": {
         "price": 362.875,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/AVGO/",
         "actionable": false,
         "day_low": 356.14,
         "day_high": 363.865,
         "day_change_pct": 2.18,
         "day_open": 357.79,
-        "volume_to_close": 14880280
+        "volume_to_close": 14880280,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T17:51:56-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": {
+          "price": 362.51,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:51:56-06:00",
+          "last_trade_at_local": "2026-10-05T17:51:56-06:00",
+          "age_minutes_at_cut": 17,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        }
       },
       "technical": {
         "mom_5d_pct": 2.73,
@@ -875,12 +1066,14 @@
         "https://finance.yahoo.com/quote/AVGO/"
       ],
       "after_hours_snapshot": {
-        "price_usd": 362.51,
+        "price": 362.51,
         "currency": "USD",
-        "latest_trade_time_utc": "2026-10-05T23:00:00Z",
-        "latest_trade_time_local": "2026-10-05T17:00:00-06:00",
-        "age_minutes_at_preparation": 16,
-        "source": "Public finance feed snapshot; final vendor and exchange/venue not exposed",
+        "observed_at_local": "2026-10-05T17:51:56-06:00",
+        "last_trade_at_local": "2026-10-05T17:51:56-06:00",
+        "age_minutes_at_cut": 17,
+        "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+        "venue": "not exposed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false
       },
       "event_timing": {
@@ -897,9 +1090,9 @@
           "description": "Q3 FY2026 results and Q4 guidance; period-end time not captured."
         },
         "classification": "Historical issuer results; no new event verified.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-09-02",
           "time_local": null,
@@ -908,22 +1101,28 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T17:51:56-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "USD",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Public finance-feed snapshot; underlying vendor and venue not exposed",
+        "age_minutes_at_cut": 17,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
+        "source_url": null,
         "separate_after_hours_observation": {
           "price": 362.51,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T17:00:00-06:00",
-          "age_minutes_at_cut": 16,
-          "provider": "Public finance feed snapshot; final vendor not exposed",
+          "observed_at_local": "2026-10-05T17:51:56-06:00",
+          "last_trade_at_local": "2026-10-05T17:51:56-06:00",
+          "age_minutes_at_cut": 17,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
-        },
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        }
       }
     },
     {
@@ -936,14 +1135,29 @@
       "quote": {
         "price": 239.11,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/NVDA/",
         "actionable": false,
         "day_low": 235.15,
         "day_high": 240.0983,
         "day_change_pct": 2.19,
         "day_open": 236.07,
-        "volume_to_close": 101246665
+        "volume_to_close": 101246665,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T17:51:59-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": {
+          "price": 238.9,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:51:59-06:00",
+          "last_trade_at_local": "2026-10-05T17:51:59-06:00",
+          "age_minutes_at_cut": 17,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        }
       },
       "technical": {
         "mom_5d_pct": 6.12,
@@ -967,12 +1181,14 @@
         "https://finance.yahoo.com/quote/NVDA/"
       ],
       "after_hours_snapshot": {
-        "price_usd": 238.9,
+        "price": 238.9,
         "currency": "USD",
-        "latest_trade_time_utc": "2026-10-05T23:00:08Z",
-        "latest_trade_time_local": "2026-10-05T17:00:08-06:00",
-        "age_minutes_at_preparation": 15,
-        "source": "Public finance feed snapshot; final vendor and exchange/venue not exposed",
+        "observed_at_local": "2026-10-05T17:51:59-06:00",
+        "last_trade_at_local": "2026-10-05T17:51:59-06:00",
+        "age_minutes_at_cut": 17,
+        "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+        "venue": "not exposed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false
       },
       "event_timing": {
@@ -989,9 +1205,9 @@
           "description": "Q2 FY2027 results and Q3 guidance; period-end time not captured."
         },
         "classification": "Historical issuer results; no new financial catalyst verified.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-08-26",
           "time_local": null,
@@ -1000,22 +1216,28 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T17:51:59-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "USD",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Public finance-feed snapshot; underlying vendor and venue not exposed",
+        "age_minutes_at_cut": 17,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
+        "source_url": null,
         "separate_after_hours_observation": {
           "price": 238.9,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T17:00:08-06:00",
-          "age_minutes_at_cut": 15,
-          "provider": "Public finance feed snapshot; final vendor not exposed",
+          "observed_at_local": "2026-10-05T17:51:59-06:00",
+          "last_trade_at_local": "2026-10-05T17:51:59-06:00",
+          "age_minutes_at_cut": 17,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
-        },
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        }
       }
     },
     {
@@ -1028,14 +1250,29 @@
       "quote": {
         "price": 542.28,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/AMAT/",
         "actionable": false,
         "day_low": 533.685,
         "day_high": 545.814,
         "day_change_pct": 0.41,
         "day_open": 540.82,
-        "volume_to_close": 4598338
+        "volume_to_close": 4598338,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T17:48:07-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": {
+          "price": 542.28,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:48:07-06:00",
+          "last_trade_at_local": "2026-10-05T17:48:07-06:00",
+          "age_minutes_at_cut": 21,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        }
       },
       "technical": {
         "mom_5d_pct": 11.71,
@@ -1059,12 +1296,14 @@
         "https://finance.yahoo.com/quote/AMAT/"
       ],
       "after_hours_snapshot": {
-        "price_usd": 542.28,
+        "price": 542.28,
         "currency": "USD",
-        "latest_trade_time_utc": "2026-10-05T23:00:03Z",
-        "latest_trade_time_local": "2026-10-05T17:00:03-06:00",
-        "age_minutes_at_preparation": 15,
-        "source": "Public finance feed snapshot; final vendor and exchange/venue not exposed",
+        "observed_at_local": "2026-10-05T17:48:07-06:00",
+        "last_trade_at_local": "2026-10-05T17:48:07-06:00",
+        "age_minutes_at_cut": 21,
+        "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+        "venue": "not exposed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false
       },
       "event_timing": {
@@ -1081,9 +1320,9 @@
           "description": "Besi advanced-packaging and AI infrastructure partnership announcement."
         },
         "classification": "Recent issuer event, not new Oct 5; price did not confirm >USD 546.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-10-01",
           "time_local": null,
@@ -1092,22 +1331,28 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T17:48:07-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "USD",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Public finance-feed snapshot; underlying vendor and venue not exposed",
+        "age_minutes_at_cut": 21,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
+        "source_url": null,
         "separate_after_hours_observation": {
           "price": 542.28,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T17:00:03-06:00",
-          "age_minutes_at_cut": 15,
-          "provider": "Public finance feed snapshot; final vendor not exposed",
+          "observed_at_local": "2026-10-05T17:48:07-06:00",
+          "last_trade_at_local": "2026-10-05T17:48:07-06:00",
+          "age_minutes_at_cut": 21,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
-        },
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        }
       }
     },
     {
@@ -1120,14 +1365,29 @@
       "quote": {
         "price": 81.435,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/WFC/",
         "actionable": false,
         "day_low": 80.94,
         "day_high": 82.22,
         "day_change_pct": 1.22,
         "day_open": 82.16,
-        "volume_to_close": 10480149
+        "volume_to_close": 10480149,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T17:50:12-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": {
+          "price": 81.44,
+          "currency": "USD",
+          "observed_at_local": "2026-10-05T17:50:12-06:00",
+          "last_trade_at_local": "2026-10-05T17:50:12-06:00",
+          "age_minutes_at_cut": 19,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+          "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
+          "actionable": false
+        }
       },
       "technical": {
         "mom_5d_pct": -1.78,
@@ -1156,12 +1416,14 @@
       ],
       "secondary_catalyst_status": "MORGAN_STANLEY_UPGRADE_REPORTED_BY_SECONDARY_SOURCES",
       "after_hours_snapshot": {
-        "price_usd": 81.44,
+        "price": 81.44,
         "currency": "USD",
-        "latest_trade_time_utc": "2026-10-05T22:55:00Z",
-        "latest_trade_time_local": "2026-10-05T16:55:00-06:00",
-        "age_minutes_at_preparation": 21,
-        "source": "Public finance feed snapshot; final vendor and exchange/venue not exposed",
+        "observed_at_local": "2026-10-05T17:50:12-06:00",
+        "last_trade_at_local": "2026-10-05T17:50:12-06:00",
+        "age_minutes_at_cut": 19,
+        "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
+        "venue": "not exposed",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "actionable": false
       },
       "event_timing": {
@@ -1178,9 +1440,9 @@
           "description": "Repeated notice of scheduled Q3 earnings; no new guidance. Morgan Stanley upgrade reported by secondary sources on Oct 5."
         },
         "classification": "Repeated issuer date plus secondary analyst research; already present in prior cut.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-10-05",
           "time_local": null,
@@ -1189,22 +1451,28 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T17:50:12-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "USD",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Public finance-feed snapshot; underlying vendor and venue not exposed",
+        "age_minutes_at_cut": 19,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
+        "source_url": null,
         "separate_after_hours_observation": {
           "price": 81.44,
           "currency": "USD",
-          "observed_at_local": "2026-10-05T16:55:00-06:00",
-          "age_minutes_at_cut": 21,
-          "provider": "Public finance feed snapshot; final vendor not exposed",
+          "observed_at_local": "2026-10-05T17:50:12-06:00",
+          "last_trade_at_local": "2026-10-05T17:50:12-06:00",
+          "age_minutes_at_cut": 19,
+          "provider": "Public finance-feed snapshot; final vendor and venue not exposed",
           "venue": "not exposed",
+          "observed_at": "2026-10-05T18:08:44-06:00",
           "actionable": false
-        },
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        }
       }
     },
     {
@@ -1217,14 +1485,19 @@
       "quote": {
         "price": 20.09,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/AMXB.MX/",
         "actionable": false,
         "day_low": 19.9,
         "day_high": 20.17,
         "day_change_pct": 3.77,
         "day_open": 19.92,
-        "volume_to_close": 35312361
+        "volume_to_close": 35312361,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:57-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": 3.03,
@@ -1251,7 +1524,7 @@
         "https://elceo.com/mercados/bmv-ipc-wall-street-hoy-5-de-octubre-de-2026-apertura/"
       ],
       "event_timing": {
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "latest_relevant_publication": {
           "date": "2026-10-01",
           "time_local": "17:35",
@@ -1280,7 +1553,7 @@
         "classification": "Material primary transaction closure, published after the Oct 1 BMV close; not new on Oct 5. It was omitted in earlier reports and is corrected here.",
         "new_relevant_publication_since_previous_review": false,
         "newly_identified_in_this_review": true,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-10-01",
           "time_local": "17:35",
@@ -1290,14 +1563,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:57-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AMXB.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1311,14 +1588,19 @@
       "quote": {
         "price": 379.01,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/GAPB.MX/",
         "actionable": false,
         "day_low": 368.94,
         "day_high": 382.01,
         "day_change_pct": 3.89,
         "day_open": 373.77,
-        "volume_to_close": 1512479
+        "volume_to_close": 1512479,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:51-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": -0.82,
@@ -1345,7 +1627,7 @@
         "https://www.investing.com/equities/grupo-aeroportuario-del-pacifico-b"
       ],
       "event_timing": {
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "latest_relevant_publication": {
           "date": "2026-09-11",
           "time_local": null,
@@ -1383,7 +1665,7 @@
           "description": "Analyst rating action; not issuer guidance or an issuer event."
         },
         "classification": "Primary financing disclosure and August traffic report predate Oct 5. HSBC upgrade is secondary analyst research on Oct 5; no fresh September traffic.",
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-09-11",
           "time_local": null,
@@ -1392,14 +1674,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:51-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GAPB.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1413,14 +1699,19 @@
       "quote": {
         "price": 235.7,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/GMEXICOB.MX/",
         "actionable": false,
         "day_low": 230.5,
         "day_high": 238.26,
         "day_change_pct": 1.25,
         "day_open": 231.04,
-        "volume_to_close": 5655871
+        "volume_to_close": 5655871,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:56-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": 5.45,
@@ -1457,9 +1748,9 @@
           "description": "Second quarter 2026 reporting period ended; the official results report is dated July 21. Sector copper snapshot is not an issuer event."
         },
         "classification": "Historical issuer results published July 21; no new issuer event verified.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-07-21",
           "time_local": null,
@@ -1468,14 +1759,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:56-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GMEXICOB.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1489,14 +1784,19 @@
       "quote": {
         "price": 890.51,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/PE%26OLES.MX/",
         "actionable": false,
         "day_low": 878.07,
         "day_high": 903.53,
         "day_change_pct": 0.92,
         "day_open": 881.27,
-        "volume_to_close": 169086
+        "volume_to_close": 169086,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:57-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": -1.21,
@@ -1536,9 +1836,9 @@
           "description": "Issuer listing title identifies resignation of a proprietary director; effective date/details not verified because the linked PDF returns 404."
         },
         "classification": "Historical governance notice listed Aug 3; title verified, PDF and event details not accessible; not a new Oct 5 catalyst.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-08-03",
           "time_local": null,
@@ -1547,14 +1847,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:57-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/PE%26OLES.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1568,14 +1872,19 @@
       "quote": {
         "price": 433.32,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/ASURB.MX/",
         "actionable": false,
         "day_low": 422.28,
         "day_high": 436.0,
         "day_change_pct": 1.61,
         "day_open": 425.33,
-        "volume_to_close": 388311
+        "volume_to_close": 388311,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:42-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": 0.45,
@@ -1613,9 +1922,9 @@
           "description": "Cancún airport completed purchase of 100% of CPC Aeroportos; disclosed consideration R$5.1bn. August traffic was published Sep 8."
         },
         "classification": "Historical material primary disclosure, not new Oct 5.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-09-28",
           "time_local": null,
@@ -1624,14 +1933,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:42-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ASURB.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1645,14 +1958,19 @@
       "quote": {
         "price": 215.56,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/OMAB.MX/",
         "actionable": false,
         "day_low": 212.16,
         "day_high": 216.52,
         "day_change_pct": 0.66,
         "day_open": 213.3,
-        "volume_to_close": 630914
+        "volume_to_close": 630914,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:55-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": -5.73,
@@ -1691,9 +2009,9 @@
           "description": "August 2026 passenger traffic; September traffic is scheduled for October 8."
         },
         "classification": "Historical August traffic report published Sep 4; next September traffic report scheduled Oct 8.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-09-04",
           "time_local": null,
@@ -1702,14 +2020,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:55-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/OMAB.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1723,14 +2045,19 @@
       "quote": {
         "price": 11.77,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/VOLARA.MX/",
         "actionable": false,
         "day_low": 11.72,
         "day_high": 11.9,
         "day_change_pct": -1.26,
         "day_open": 11.88,
-        "volume_to_close": 1434087
+        "volume_to_close": 1434087,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:56-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": -2.88,
@@ -1768,9 +2095,9 @@
           "description": "August traffic/load factor; September traffic not verified."
         },
         "classification": "Historical primary traffic report; no September update verified.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-09-03",
           "time_local": null,
@@ -1779,14 +2106,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:56-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/VOLARA.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1800,14 +2131,19 @@
       "quote": {
         "price": 187.41,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/GFNORTEO.MX/",
         "actionable": false,
         "day_low": 185.01,
         "day_high": 188.63,
         "day_change_pct": -1.49,
         "day_open": 187.56,
-        "volume_to_close": 7187270
+        "volume_to_close": 7187270,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:38-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": -4.88,
@@ -1818,51 +2154,60 @@
         "rvol_comparison_sessions": 19,
         "momentum_and_atr_as_of_local": "2026-10-05T14:07:00-06:00"
       },
-      "primary_catalyst_status": "NO_NEW_ISSUER_EVENT_VERIFIED",
-      "evidence_summary": "El calendario oficial lista resultados 3T26 el 28-oct. Cerró -1.49% con RVol 1.22; volumen relativo en una sesión bajista no confirma reversión.",
-      "watch_condition": "Wait for a confirmed higher low/reversal and fresh issuer catalyst; do not interpret one high-volume down session as a buy signal.",
+      "primary_catalyst_status": "PRIMARY_MATERIAL_EVENT_VERIFIED_PUBLICATION_TIME_UNKNOWN",
+      "evidence_summary": "Banorte IR lists a material event dated Oct 5: on Oct 4 the bank fully prepaid USD 74.009m of 5.750% Tier 2 notes. The posting hour is not shown, so it is unknown whether the announcement appeared after the prior 17:16 cut. Capital-ratio/interest effects are not quantified. The regular close was MXN 187.41 at 14:00 and is now about 249 minutes old; no verified Actinver identity, bid/ask, updated technical confirmation, or portfolio state.",
+      "watch_condition": "Keep NO_TRADE. Review the issuer event’s capital and earnings effects against the next verified filing, then require a fresh regular-session price, price/volume confirmation, verified Actinver series, portfolio state, and after-cost risk/reward before any manual order.",
       "risk_flags": [
         "Negative 5- and 20-session momentum",
         "Earnings are later in October",
-        "Actinver identity unverified"
+        "Actinver identity unverified",
+        "Tier 2 capital reduction effect not quantified",
+        "Publication hour unknown relative to prior cut"
       ],
       "source_urls": [
         "https://investors.banorte.com/en/news-and-events/events-and-presentations",
-        "https://finance.yahoo.com/quote/GFNORTEO.MX/"
+        "https://finance.yahoo.com/quote/GFNORTEO.MX/",
+        "https://investors.banorte.com/es/news-and-events/press-releases/2026",
+        "https://investors.banorte.com/~/media/Files/B/Banorte-IR/press-release/es/2026/ER_Amortizacion_Anticipada_Notas_Tier2_04oct26.pdf"
       ],
       "event_timing": {
         "latest_relevant_publication": {
-          "date": null,
-          "time_local": null,
-          "precision": "not_captured",
-          "source_type": "issuer quarterly report; exact date not captured"
-        },
-        "event_time": {
-          "date": "2026-10-28",
+          "date": "2026-10-05",
           "time_local": null,
           "precision": "date_only",
-          "description": "Next 3Q26 earnings date on issuer calendar; latest located results are Q2 2026."
+          "source_type": "Banorte issuer material-event page; official PDF dated Oct 5"
         },
-        "classification": "No new issuer event verified; 3Q release is later in October.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
-        "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
-        "publication_time": {
-          "date": null,
+        "event_time": {
+          "date": "2026-10-04",
           "time_local": null,
-          "precision": "not_captured",
-          "source_type": "issuer quarterly report; exact date not captured"
+          "precision": "date_only",
+          "description": "Banorte fully prepaid USD 74.009m of 5.750% Tier 2 subordinated preferred non-convertible obligations, BNR1031 575C (formerly BANOC36), on the Optional Call Date."
+        },
+        "classification": "Primary issuer material event newly verified in this cut; publication date is Oct 5 but exact posting time is absent, so it cannot be assigned to the interval after 17:16. It is not a standalone buy signal.",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
+        "new_relevant_publication_since_previous_review": "unknown",
+        "discovered_in_current_cut": true,
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "publication_time": {
+          "date": "2026-10-05",
+          "time_local": null,
+          "precision": "date_only",
+          "source_type": "Banorte issuer material-event page; official PDF dated Oct 5"
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:38-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GFNORTEO.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1876,14 +2221,19 @@
       "quote": {
         "price": 46.44,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/WALMEX.MX/",
         "actionable": false,
         "day_low": 46.02,
         "day_high": 46.95,
         "day_change_pct": 0.58,
         "day_open": 46.22,
-        "volume_to_close": 12026478
+        "volume_to_close": 12026478,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:58-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": -0.43,
@@ -1921,9 +2271,9 @@
           "description": "Q2 2026 results; September monthly sales not verified. Issuer calendar lists Q3 results Oct 27."
         },
         "classification": "No new monthly sales release verified.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-07-22",
           "time_local": null,
@@ -1932,14 +2282,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:58-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/WALMEX.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -1953,14 +2307,19 @@
       "quote": {
         "price": 17.36,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/CEMEXCPO.MX/",
         "actionable": false,
         "day_low": 17.07,
         "day_high": 17.47,
         "day_change_pct": -0.46,
         "day_open": 17.18,
-        "volume_to_close": 20727672
+        "volume_to_close": 20727672,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:40-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": 0.23,
@@ -1997,9 +2356,9 @@
           "description": "Conditional exclusive negotiations to acquire ready-mix concrete and aggregates assets in France; terms/price not disclosed."
         },
         "classification": "Historical conditional process; not a new Oct 5 event.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-10-01",
           "time_local": null,
@@ -2008,14 +2367,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:40-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/CEMEXCPO.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     },
@@ -2029,14 +2392,19 @@
       "quote": {
         "price": 14.56,
         "observed_at_local": "2026-10-05T14:00:00-06:00",
-        "age_minutes_at_preparation": 196,
+        "age_minutes_at_preparation": 249,
         "source_url": "https://finance.yahoo.com/quote/ALPEKA.MX/",
         "actionable": false,
         "day_low": 14.53,
         "day_high": 14.8,
         "day_change_pct": -1.29,
         "day_open": 14.57,
-        "volume_to_close": 7917207
+        "volume_to_close": 7917207,
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "last_trade_at_local": "2026-10-05T13:59:57-06:00",
+        "quote_checked_at_local": "2026-10-05T18:08:44-06:00",
+        "provider_delay": "not disclosed",
+        "latest_after_hours_snapshot": null
       },
       "technical": {
         "mom_5d_pct": -1.74,
@@ -2075,9 +2443,9 @@
           "description": "Announced return to S&P/BMV IPC; effective index date not captured."
         },
         "classification": "Historical issuer event; no new announcement found.",
-        "scan_observed_at_local": "2026-10-05T17:16:00-06:00",
+        "scan_observed_at_local": "2026-10-05T18:08:44-06:00",
         "new_relevant_publication_since_previous_review": false,
-        "observed_at": "2026-10-05T17:16:00-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
         "publication_time": {
           "date": "2026-09-14",
           "time_local": null,
@@ -2086,14 +2454,18 @@
         }
       },
       "quote_refresh": {
-        "observed_at_local": "2026-10-05T14:00:00-06:00",
+        "observed_at_local": "2026-10-05T18:08:44-06:00",
+        "observed_at": "2026-10-05T18:08:44-06:00",
+        "price_observed_at_local": "2026-10-05T13:59:57-06:00",
+        "bar_start_local": "2026-10-05T13:55:00-06:00",
+        "bar_end_local": "2026-10-05T14:00:00-06:00",
         "currency": "MXN",
-        "provider": "Yahoo Finance five-minute regular-session bar",
-        "age_minutes_at_cut": 196,
-        "nominal_provider_delay": "not disclosed in this response",
+        "provider": "Yahoo Finance chart API (query1.finance.yahoo.com), BMV/MEX listing",
+        "age_minutes_at_cut": 249,
+        "nominal_provider_delay": "not disclosed",
         "actionable": false,
-        "separate_after_hours_observation": null,
-        "observed_at": "2026-10-05T14:00:00-06:00"
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/ALPEKA.MX?range=1d&interval=5m",
+        "separate_after_hours_observation": null
       },
       "after_hours_snapshot": null
     }
@@ -2246,12 +2618,28 @@
     {
       "title": "Nasdaq market activity and regular/after-hours schedule",
       "url": "https://www.nasdaq.com/market-activity"
+    },
+    {
+      "title": "Banorte Oct 5 official material event: USD 74.009m Tier 2 early redemption",
+      "url": "https://investors.banorte.com/~/media/Files/B/Banorte-IR/press-release/es/2026/ER_Amortizacion_Anticipada_Notas_Tier2_04oct26.pdf"
+    },
+    {
+      "title": "Volaris IR market widget and issuer news",
+      "url": "https://ir.volaris.com/"
+    },
+    {
+      "title": "Walmex monthly sales page (dynamic current list)",
+      "url": "https://www.walmex.mx/informacion-financiera/mensual.html"
+    },
+    {
+      "title": "BMV issuer-events and press-room page",
+      "url": "https://bmv.com.mx/es/sala-de-prensa?viewPage=AVISOS_OFERTAS"
     }
   ],
   "report_metadata": {
-    "timestamp_local": "2026-10-05T17:16:00-06:00",
-    "timestamp_utc": "2026-10-05T23:16:00Z",
-    "compared_with": "reports/intraday/2026-10-05_1647_cdmx.md",
+    "timestamp_local": "2026-10-05T18:08:44-06:00",
+    "timestamp_utc": "2026-10-06T00:08:44Z",
+    "compared_with": "reports/intraday/2026-10-05_1716_cdmx.md",
     "watchlist_scope": [
       "BA",
       "AVGO",
@@ -2290,9 +2678,27 @@
           "https://www.aeropuertosgap.com.mx/es/material-events.html"
         ],
         "note": "Historical reports receive this post-cut coverage correction."
+      },
+      {
+        "corrected_at_local": "2026-10-05T18:08:44-06:00",
+        "finding": "Banorte IR lists an Oct 5 material event and its official PDF reports full early redemption of USD 74.009m of 5.750% Tier 2 notes on Oct 4. The posting hour is not available, so it is unknown whether it was published after the 17:16 comparison cut. No buy signal follows.",
+        "primary_source_urls": [
+          "https://investors.banorte.com/es/news-and-events/press-releases/2026",
+          "https://investors.banorte.com/~/media/Files/B/Banorte-IR/press-release/es/2026/ER_Amortizacion_Anticipada_Notas_Tier2_04oct26.pdf"
+        ],
+        "note": "This records a newly verified source finding; it does not claim the item was first published after 17:16."
       }
     ],
-    "observation_time_semantics": "observed_at is when this scan/source page was checked; publication_time is the issuer/filing publication date and clock time when available; event_time is the underlying transaction, filing transaction, reporting period, or scheduled event. Unknown clock times remain null.",
-    "actionable_change": false
+    "observation_time_semantics": "observed_at is the source/quote check time; publication_time is the issuer/filing publication date and clock time where available; event_time is the underlying event/transaction/period. Quote last_trade_at_local and bar interval are stored separately. Unknown clock times remain null.",
+    "actionable_change": false,
+    "latest_event_discovered": {
+      "ticker": "GFNORTEO",
+      "publication_date": "2026-10-05",
+      "publication_time_local": null,
+      "event_date": "2026-10-04",
+      "newly_verified_this_cut": true,
+      "publication_after_comparison_cut": "unknown",
+      "decision_effect": "NO_TRADE"
+    }
   }
 }
