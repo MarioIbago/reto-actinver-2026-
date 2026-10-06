@@ -1459,8 +1459,7 @@
     "The current portfolio, cash, positions, rank, leader gap, and simulator transaction-cost capture were not verified; no order size can be calculated.",
     "The M6/M7/M8 empirical gates remain NEEDS_MORE_EVIDENCE and M9 remains NO_TRADE; no promoted forecast unlocks an order recommendation.",
     "Quote feeds are delayed; the Mexican feed did not provide a verified closing bar, and GAP quotes conflict between vendors.",
-    "No candidate simultaneously passed fresh primary-catalyst, technical-confirmation, execution-identity, and risk/reward checks.",
-    "Banorte’s official Oct 5 material event reports a USD 74.009m Tier 2 early redemption dated Oct 4, but its capital/earnings impact is not quantified, the quote is stale, and no Actinver series or bid/ask is verified."
+    "No candidate simultaneously passed fresh primary-catalyst, technical-confirmation, execution-identity, and risk/reward checks."
   ],
   "watchlist": [
     {
