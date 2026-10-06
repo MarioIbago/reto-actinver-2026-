@@ -29,8 +29,8 @@
     "order_entry": "human_manual_only"
   },
   "research": {
-    "comparison_report": "reports/intraday/2026-10-05_2208_cdmx.md",
-    "comparison_cut_local": "2026-10-05T22:08:16-06:00",
+    "comparison_report": "reports/intraday/2026-10-05_2134_cdmx.md",
+    "comparison_cut_local": "2026-10-05T21:34:22-06:00",
     "deep_research_status": "INCREMENTAL_PUBLIC_SOURCE_CHECK_COMPLETE; PERPLEXITY_DEEP_RESEARCH_NOT_USED",
     "method": "Corte incremental frente al informe de 21:34 CDMX. Se consultaron de nuevo fuentes oficiales de los 16 emisores/BMV y calendarios relevantes; se refrescaron las 16 series de 1 minuto. Se separan observed_at, publication_time y event_time. Sin acceso a Actinver ni órdenes.",
     "primary_sources_verified": 42,
@@ -1620,7 +1620,7 @@
     ],
     "source_scan_observed_at_local": "2026-10-05T22:04:38-06:00"
   },
-  "why_no_orders": "NO_TRADE: todos los precios son barras del 5-oct con 488–489 minutos de antigüedad; identidad exacta Actinver, bid/ask, estado de cuenta y costos oficiales siguen sin verificar. No preparar órdenes overnight.",
+  "why_no_orders": "NO_TRADE: no quote is fresh or executable at this cut; the Actinver portfolio, exact series, bid/ask, official simulator costs, technical confirmation, invalidation and net risk/reward remain unverified. Do not place overnight orders.",
   "watchlist": [
     {
       "ticker": "BA",
