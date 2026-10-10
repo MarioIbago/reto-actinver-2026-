@@ -398,3 +398,25 @@ El siguiente paso depende de evidencia externa autorizada: capturar/versionar
 datos PIT, mapeo de instrumentos, fills de práctica y leaderboard completo. No
 se debe relajar `NO_TRADE` ni atribuir alpha hasta que esos artefactos superen
 los gates científicos existentes. La entrada en Actinver permanece manual.
+
+## 17. Equipo operativo diario — solicitud del 10 de octubre de 2026
+
+El propietario solicita una revisión diaria **solo a las 07:00
+America/Mexico_City**, con tres subagentes nativos: investigador de información
+financiera (incluye Perplexity disponible), contador del concurso y FOMO de
+consumidor/inversionista. El contrato de horario, fuentes, privacidad,
+conciliación, entregables y responsabilidades está en
+[`docs/daily_0700_operations.md`](docs/daily_0700_operations.md).
+
+Se actualiza el heartbeat existente de este chat y se elimina su frecuencia
+horaria; no se habilitan los schedules de M6 ni se instala un framework de
+agentes. El coordinador mantiene escritura única y aplica los gates actuales.
+Los dossiers son informativos; la conciliación usa evidencia manual y código
+determinista. Las bases oficiales impiden habilitar un robot del portal y no
+se ha verificado un mecanismo autorizado de lectura automática.
+
+Esta es una extensión operativa solicitada expresamente. No reabre fases,
+modifica el prompt pack ni promueve señales. Su aceptación de configuración
+requiere verificar recurrencia/CDMX, los tres contratos, Perplexity y ausencia
+de secretos; la ejecución completa se comprueba en la primera corrida real
+de las 07:00, registrando faltantes sin simular una cuenta verificada.

@@ -4,6 +4,18 @@ Repositorio maestro para construir un sistema cuantitativo reproducible orientad
 
 > Estado: M0–M9 pasaron sus gates de software dentro del alcance documentado. El trabajo por fases está cerrado; los gates empíricos de M6, M7 y M8 siguen `NEEDS_MORE_EVIDENCE`. M1 conserva sin resolver el mapeo a símbolos/series del simulador y ambigüedades oficiales. M2 verifica PIT con el calendario oficial BMV; aún no hay OHLCV ni noticias históricas autorizadas. No hay evidencia de alpha ni backtests financieros con datos reales.
 
+## Operación diaria a las 07:00 CDMX
+
+El [plan operativo diario](docs/daily_0700_operations.md) incorpora tres
+subagentes nativos de Codex: investigador de resultados/noticias (con la sesión
+disponible de Perplexity), contador de evidencia manual del concurso y analista
+FOMO de consumidor/inversionista. Una sola corrida diaria a las **07:00
+America/Mexico_City**, hasta el 13 de noviembre de 2026, reemplaza la vigilancia
+horaria del 5–6 de octubre. El heartbeat vive en Codex; no hay un segundo
+programador de Perplexity/Actions. La cuenta requiere evidencia manual y la
+entrada de órdenes sigue siendo manual conforme a las bases oficiales. El
+estado operativo actual conserva `NO_TRADE`.
+
 ## Objetivo
 
 No buscamos un portafolio tradicional ni un bot de picks.

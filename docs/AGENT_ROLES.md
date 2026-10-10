@@ -99,3 +99,21 @@ Research agents do not silently change production code.
 Do not hard-code any Perplexity model name into the workflow. If a model such as Fable 5.1 appears in the user's model selector, it may be tested for synthesis quality, but availability can change.
 
 The architecture depends on ROLE, not model brand.
+
+## Equipo diario de las 07:00 CDMX
+
+Solicitud explícita del propietario del 10 de octubre de 2026. Usar tres
+subagentes nativos acotados, bajo un coordinador Codex que es el único escritor.
+Contrato completo: [daily_0700_operations.md](daily_0700_operations.md).
+
+| Rol | Responsabilidad | Límite |
+| --- | --- | --- |
+| Investigador | Resultados, estados financieros, guidance, filings y eventos nuevos; fuentes primarias, Yahoo, X y Perplexity disponible. | Verificar cada afirmación; cobertura faltante explícita; máximo cinco eventos finales. |
+| Contador | Conciliar evidencia manual de caja, tenencias, fills/cargos y rango; reglas y cálculos deterministas. | Sin login automático, saldos inferidos, órdenes ni publicación de datos privados. |
+| FOMO | Reacciones de consumidor e inversionista por separado, narrativas, contradicciones y mecanismos falsables. | Muestras limitadas; sin probabilidades, targets ni puntuaciones inventadas. |
+| Coordinador Codex | Reloj/manifiesto, asignación, síntesis, cálculos, reporte M9 y auditoría. | Un inicio diario a las 07:00 CDMX; cierre antes de las 08:00; `NO_TRADE` mientras falten gates. |
+| Propietario | Captura autorizada de cuenta, registro manual de órdenes y cancelación manual de órdenes no asignadas. | Las bases prohíben sistemas automáticos y no permiten modificar órdenes. |
+
+Esta rutina permite Perplexity como herramienta del investigador durante la
+corrida diaria; no crea tareas recurrentes independientes en Perplexity. Su
+salida cualitativa usa un dossier separado de los schemas estrictos M6/M9.

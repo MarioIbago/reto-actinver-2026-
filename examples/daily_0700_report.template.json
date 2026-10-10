@@ -1,0 +1,55 @@
+{
+  "document_type": "DAILY_0700_RESEARCH_DOSSIER_TEMPLATE",
+  "contract_version": "1.0.0",
+  "is_template": true,
+  "run_id": null,
+  "scheduled_for": null,
+  "timezone": "America/Mexico_City",
+  "started_at": null,
+  "completed_at": null,
+  "report_as_of_utc": null,
+  "window_start": null,
+  "previous_successful_run_id": null,
+  "git_commit": null,
+  "prompt_sha256": null,
+  "model_id": null,
+  "universe_snapshot_id": null,
+  "universe_sha256": null,
+  "operational_status": "NOT_RUN",
+  "research_status": "NEEDS_MORE_EVIDENCE",
+  "scope": {
+    "eligible_equities_count": null,
+    "reviewed_instrument_ids": [],
+    "omitted_instrument_ids": [],
+    "queries": []
+  },
+  "agents": {
+    "investigator": { "status": "NOT_RUN" },
+    "accountant": { "status": "NOT_RUN" },
+    "fomo": { "status": "NOT_RUN" }
+  },
+  "source_coverage": [],
+  "findings": [],
+  "quotes": [],
+  "fomo_cases": [],
+  "contradictions": [],
+  "account_reconciliation": {
+    "status": "MISSING",
+    "portfolio_state_verified": false,
+    "has_private_evidence": false,
+    "missing_inputs": ["Current manually captured account evidence"]
+  },
+  "decision": {
+    "action": "NO_TRADE",
+    "orders": [],
+    "blockers": [
+      "M6/M7/M8 empirical gates: NEEDS_MORE_EVIDENCE",
+      "Actinver execution identity and account state unverified",
+      "Automated portal access and order entry lack an authorized mechanism"
+    ],
+    "order_entry_responsibility": "HUMAN_MANUAL"
+  },
+  "missing_inputs": [],
+  "sources": [],
+  "next_verification_steps": []
+}

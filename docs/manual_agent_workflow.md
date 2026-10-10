@@ -1,4 +1,4 @@
-# Manual Agent Workflow — Before Real Multi-Agent Orchestration
+# Agent Workflow — Manual Research and Bounded Native Subagents
 
 ## Why
 
@@ -12,11 +12,19 @@ Official references:
 
 ## Project rule
 
-For now:
+Default research workflow:
 - **research may use simulated specialist roles**;
 - **Codex remains the single writer of production code**;
 - no two coding agents should edit the same files in parallel;
-- real multi-agent orchestration is postponed until we have evals showing it helps.
+- a custom multi-agent SDK/service is postponed until we have evals showing it helps.
+
+On 10 October 2026 the owner explicitly requested three real native Codex
+subagents for the daily 07:00 CDMX routine: investigator, accountant and FOMO.
+That bounded operational delegation is authorized; it does not introduce a
+custom orchestration service or claim a measured improvement. Follow
+[the daily contract](daily_0700_operations.md), keep Codex as the sole report
+writer and evaluate quality/coverage against a single investigator. The
+accountant consumes manually captured evidence; portal interaction stays manual.
 
 ## Simulated research team
 
@@ -49,7 +57,7 @@ Produces one evidence-weighted dossier for Codex.
 - multiple agents changing the same configuration or dataset.
 
 ## Promotion rule
-We do not build real multi-agent infrastructure until:
+We do not build custom multi-agent infrastructure until:
 1. single-agent/manual-role workflow is working;
 2. we have repeated tasks worth parallelizing;
 3. we define evals;
